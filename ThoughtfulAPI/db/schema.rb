@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 20181022032052) do
 
   create_table "families", force: :cascade do |t|
     t.string "family_name"
-    t.integer "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,6 +38,7 @@ ActiveRecord::Schema.define(version: 20181022032052) do
   create_table "session_questions", force: :cascade do |t|
     t.integer "patient_sessions_id"
     t.integer "questions_id"
+    t.boolean "correct"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_sessions_id"], name: "index_session_questions_on_patient_sessions_id"

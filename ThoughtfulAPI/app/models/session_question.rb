@@ -5,5 +5,5 @@ class SessionQuestion < ApplicationRecord
   belongs_to :question
 
   # Validations
-  validates_presence_of :patient_session_id, :question_id
+  validates_presence_of :patient_session_id, :question_id, :correct
 end
