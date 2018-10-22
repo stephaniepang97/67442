@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration[5.1]
       t.string :question
       t.string :answer
       t.integer :created_by
-      t.integer :image_id
+      t.string :attachment
 
       t.timestamps
     end

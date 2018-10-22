@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # Relationships
   has_one :family, foreign_key: :patient_id
   belongs_to :family, foreign_key: :family_id
+  has_many :patient_sessions, foreign_key: :patient_id
+  has_many :questions, foreign_key: :created_by
 
   # Validations
   validates_presence_of :first_name, :last_name, :role, :family_id

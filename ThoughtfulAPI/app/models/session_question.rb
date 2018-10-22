@@ -1,4 +1,9 @@
 class SessionQuestion < ApplicationRecord
-  belongs_to :patient_session_id
-  belongs_to :question_id
+
+  # Relationships
+  belongs_to :patient_session
+  belongs_to :question
+
+  # Validations
+  validates_presence_of :patient_session_id, :question_id
 end
