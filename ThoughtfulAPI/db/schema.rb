@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181022022008) do
+ActiveRecord::Schema.define(version: 20181022032052) do
 
   create_table "families", force: :cascade do |t|
     t.string "family_name"
@@ -25,6 +25,32 @@ ActiveRecord::Schema.define(version: 20181022022008) do
     t.integer "uploaded_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "patient_sessions", force: :cascade do |t|
+    t.integer "patient_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "question"
+    t.string "answer"
+    t.integer "created_by"
+    t.integer "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "session_questions", force: :cascade do |t|
+    t.integer "patient_session_id_id"
+    t.integer "question_id_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_session_id_id"], name: "index_session_questions_on_patient_session_id_id"
+    t.index ["question_id_id"], name: "index_session_questions_on_question_id_id"
   end
 
   create_table "users", force: :cascade do |t|
