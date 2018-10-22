@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181022152534) do
+ActiveRecord::Schema.define(version: 20181022032052) do
 
   create_table "families", force: :cascade do |t|
     t.string "family_name"
@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20181022152534) do
     t.boolean "correct"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "answered_correctly"
     t.index ["patient_sessions_id"], name: "index_session_questions_on_patient_sessions_id"
     t.index ["questions_id"], name: "index_session_questions_on_questions_id"
   end
