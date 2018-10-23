@@ -33,6 +33,6 @@ class PatientSessionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def patient_session_params
-      params.require(:patient_session).permit(:patient_id, :start_time, :end_time)
+      params.permit(:patient_id, :start_time, :end_time)
     end
 end
