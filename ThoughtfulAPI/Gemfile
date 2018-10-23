@@ -8,6 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
+gem 'railties'
 # Use postgres as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -47,3 +48,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'swagger-docs'
 # gem for json serialization
 gem 'active_model_serializers'
+
+# heroku deployment
+group :production do
+  gem 'rails_12factor'
+end
