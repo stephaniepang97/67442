@@ -22,8 +22,8 @@ Swagger::Docs::Config.register_apis({
     # add custom attributes to api-docs
     :attributes => {
       :info => {
-        "title" => "Chore Tracker API",
-        "description" => "Uses swagger ui and docs to document the ChoreTracker API"
+        "title" => "thoughtul API",
+        "description" => "Uses swagger ui and docs to document the thoughtful API"
       }
     }
   }
