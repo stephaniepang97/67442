@@ -23,14 +23,14 @@
           "parameters": [
             {
               "paramType": "form",
-              "name": "patient_sessions_id",
+              "name": "patient_session_id",
               "type": "integer",
               "description": "Patient Session ID",
               "required": true
             },
             {
               "paramType": "form",
-              "name": "questions_id",
+              "name": "question_id",
               "type": "integer",
               "description": "Question ID",
               "required": true

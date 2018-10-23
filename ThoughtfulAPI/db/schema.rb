@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20181022032052) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "families", force: :cascade do |t|
     t.string "family_name"
     t.datetime "created_at", null: false
@@ -36,13 +39,11 @@ ActiveRecord::Schema.define(version: 20181022032052) do
   end
 
   create_table "session_questions", force: :cascade do |t|
-    t.integer "patient_sessions_id"
-    t.integer "questions_id"
+    t.integer "patient_session_id"
+    t.integer "question_id"
     t.boolean "correct"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["patient_sessions_id"], name: "index_session_questions_on_patient_sessions_id"
-    t.index ["questions_id"], name: "index_session_questions_on_questions_id"
   end
 
   create_table "users", force: :cascade do |t|
