@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  ROLES = [ :doctor, :patient, :caretaker, :admin ]
 
   # Relationships
   belongs_to :family, foreign_key: :family_id
@@ -7,6 +8,7 @@ class User < ApplicationRecord
 
   # Validations
   validates_presence_of :first_name, :last_name, :role, :family_id
+  validates_inclusion_of :role, in: ROLES
 
   # Scopes
   scope :alphabetical, -> { order('last_name, first_name')}
