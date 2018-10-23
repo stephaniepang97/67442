@@ -3,10 +3,14 @@
   "swaggerVersion": "1.2",
   "basePath": "http://localhost:3000",
   "apis": [
+<<<<<<< HEAD
     {
       "path": "/apidocs/users.{format}",
       "description": "User Management"
     }
+=======
+
+>>>>>>> d02fdebcee11e1bdbde8d8807a53b45b2ffe2c0c
   ],
   "authorizations": null,
   "info": {

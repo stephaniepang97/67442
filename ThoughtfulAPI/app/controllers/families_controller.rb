@@ -41,6 +41,6 @@ class FamiliesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def family_params
-      params.require(:family).permit(:family_name, :patient_id)
+      params.permit(:family_name, :patient_id)
     end
 end
