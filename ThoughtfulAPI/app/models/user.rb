@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  ROLES = [ :doctor, :patient, :caretaker, :admin ]
+  ROLES = [ "doctor", "patient", "caretaker", "admin" ]
 
   # Relationships
   belongs_to :family, foreign_key: :family_id

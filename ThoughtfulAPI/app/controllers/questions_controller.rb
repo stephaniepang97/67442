@@ -19,6 +19,7 @@ class QuestionsController < ApplicationController
     summary "Creates a new Question"
     param :form, :question, :string, :required, "Question"
     param :form, :answer, :string, :required, "Answer"
+    param :form, :attachment, :string, :optional, "Attachment (Base 64)"
     param :form, :created_by, :integer, :required, "Created By (User ID)"
     response :not_acceptable
   end
@@ -28,6 +29,7 @@ class QuestionsController < ApplicationController
     param :path, :id, :integer, :required, "Question ID"
     param :form, :question, :string, :optional, "Question"
     param :form, :answer, :string, :optional, "Answer"
+    param :form, :attachment, :string, :optional, "Attachment (Base 64)"
     param :form, :created_by, :integer, :optional, "Created By (User ID)"
     response :not_found
     response :not_acceptable

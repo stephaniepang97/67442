@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     param :path, :id, :integer, :required, "User Id"
     param :form, :first_name, :string, :opitonal, "First name"
     param :form, :last_name, :string, :optional, "Last name"
-    param_list :form, :role, :string, :optional, "Role", [ :doctor, :patient, :caretaker, :admin ]
+    param_list :form, :role, :string, :optional, "Role", [ "doctor", "patient", "caretaker", "admin" ]
     param :form, :family_id, :integer, :optional, "Family ID"
     response :not_found
     response :not_acceptable

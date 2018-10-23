@@ -45,3 +45,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # swagger docs for documentation
 gem 'swagger-docs'
+# gem for json serialization
+gem 'active_model_serializers'

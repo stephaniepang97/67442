@@ -37,6 +37,13 @@
             },
             {
               "paramType": "form",
+              "name": "attachment",
+              "type": "string",
+              "description": "Attachment (Base 64)",
+              "required": false
+            },
+            {
+              "paramType": "form",
               "name": "created_by",
               "type": "integer",
               "description": "Created By (User ID)",
@@ -107,6 +114,13 @@
               "name": "answer",
               "type": "string",
               "description": "Answer",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "attachment",
+              "type": "string",
+              "description": "Attachment (Base 64)",
               "required": false
             },
             {
