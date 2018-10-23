@@ -18,7 +18,7 @@ class SessionQuestionsController < ApplicationController
   swagger_api :create do
     summary "Creates a new Session Question"
     param :form, :patient_sessions_id, :integer, :required, "Patient Session ID"
-    param :form, :question_id, :integer, :required, "Question ID"
+    param :form, :questions_id, :integer, :required, "Question ID"
     param :form, :correct, :boolean, :required, "Correct"
     response :not_acceptable
   end
@@ -28,7 +28,7 @@ class SessionQuestionsController < ApplicationController
   def index
     @session_questions = SessionQuestion.all
 
-    render json: @session_question
+    render json: @session_questions
   end
 
   # GET /session_questions/1
@@ -56,6 +56,6 @@ class SessionQuestionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def session_question_params
-      params.permit(:patient_sessions_id, :question_id, :correct)
+      params.permit(:patient_sessions_id, :questions_id, :correct)
     end
 end

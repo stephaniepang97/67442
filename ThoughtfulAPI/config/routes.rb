@@ -4,12 +4,7 @@ Rails.application.routes.draw do
   resources :questions
   resources :users
 
-  get '/patient_sessions', to: 'patient_sessions#index'
-  post '/patient_sessions', to: 'patient_sessions#create'
-  get '/patient_sessions/:id', to: 'patient_sessions#show'
-
-  get '/session_questions', to: 'session_questions#index'
-  post '/session_questions', to: 'session_questions#create'
-  get '/session_questions/:id', to: 'session_questions#show'
+  resources :patient_sessions
+  resources :session_questions
 
 end

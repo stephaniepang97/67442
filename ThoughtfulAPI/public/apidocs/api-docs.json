@@ -8,16 +8,20 @@
       "description": "Family Management"
     },
     {
-      "path": "/apidocs/patient_sessions.{format}",
-      "description": "Patient Session Management"
-    },
-    {
       "path": "/apidocs/questions.{format}",
       "description": "Question Management"
     },
     {
       "path": "/apidocs/users.{format}",
       "description": "User Management"
+    },
+    {
+      "path": "/apidocs/patient_sessions.{format}",
+      "description": "Patient Session Management"
+    },
+    {
+      "path": "/apidocs/session_questions.{format}",
+      "description": "Session Question Management"
     }
   ],
   "authorizations": null,
