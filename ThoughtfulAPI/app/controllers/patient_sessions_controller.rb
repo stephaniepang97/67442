@@ -1,6 +1,29 @@
 class PatientSessionsController < ApplicationController
   before_action :set_patient_session, only: [:show]
 
+  swagger_controller :users, "Patient Session Management"
+
+  swagger_api :index do
+    summary "Fetches all Patient Sessions"
+    notes "This lists all the patient sessions"
+  end
+
+  swagger_api :show do
+    summary "Shows one patient session"
+    param :path, :id, :integer, :required, "Patient Session ID"
+    notes "This lists details of one patient session"
+    response :not_found
+  end
+
+  swagger_api :create do
+    summary "Creates a new Patient Session"
+    param :form, :patient_id, :integer, :required, "Patient ID"
+    param :form, :start_time, :datetime, :required, "Start Time"
+    param :form, :end_time, :datetime, :optional, "End Time"
+    response :not_acceptable
+  end
+
+
   # GET /patient_sessions
   def index
     @patient_sessions = PatientSession.all

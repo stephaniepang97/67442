@@ -1,6 +1,40 @@
 class FamiliesController < ApplicationController
   before_action :set_family, only: [:show, :update]
 
+  swagger_controller :users, "Family Management"
+
+  swagger_api :index do
+    summary "Fetches all families"
+    notes "This lists all the families"
+  end
+
+  swagger_api :show do
+    summary "Shows one family"
+    param :path, :id, :integer, :required, "Family ID"
+    notes "This lists details of one family"
+    response :not_found
+  end
+
+  swagger_api :create do
+    summary "Creates a new Family"
+    param :form, :family_name, :string, :required, "Family name"
+    response :not_acceptable
+  end
+
+  swagger_api :update do
+    summary "Updates an existing Family"
+    param :path, :id, :integer, :required, "Family Id"
+    param :form, :family_name, :string, :opitonal, "Family name"
+    response :not_found
+    response :not_acceptable
+  end
+
+  swagger_api :destroy do
+    summary "Deletes an existing Family"
+    param :path, :id, :integer, :required, "Family Id"
+    response :not_found
+  end
+
   # GET /families
   def index
     @families = Family.all
