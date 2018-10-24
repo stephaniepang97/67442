@@ -35,6 +35,12 @@ class UsersController < ApplicationController
     response :not_acceptable
   end
 
+  swagger_api :destroy do
+    summary "Deletes an existing User"
+    param :path, :id, :integer, :required, "User Id"
+    response :not_found
+  end
+
   # GET /users
   def index
     @users = User.all
