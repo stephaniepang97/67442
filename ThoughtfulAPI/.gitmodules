@@ -1,0 +1,3 @@
+[submodule "public/thoughtful-api"]
+	path = public/thoughtful-api
+	url = https://github.com/cmu-is-projects/RailsSwaggerUI

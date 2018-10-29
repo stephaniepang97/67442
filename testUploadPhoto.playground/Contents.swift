@@ -41,21 +41,21 @@ func createBody(parameters: [String: String],
 }
 
 
-var r  = URLRequest(url: URL(string: "http://localhost:3000/questions")!)
+var r  = URLRequest(url: URL(string: "https://thoughtfulapi.herokuapp.com/questions")!)
 r.httpMethod = "POST"
 let boundary = "Boundary-\(UUID().uuidString)"
 r.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
 var params = [
   "question": "Whose face is this?",
-  "answer": "Stephanie Pang",
-  "created_by": "1"
+  "answer": "Alec Lam",
+  "created_by": "3"
 ]
 r.httpBody = createBody(parameters: params,
                         boundary: boundary,
-                        data: UIImageJPEGRepresentation(UIImage(named: "steph.jpg")!, 0.7)!,
+                        data: UIImageJPEGRepresentation(UIImage(named: "alec.jpg")!, 0.7)!,
                         mimeType: "image/jpg",
-                        filename: "steph.jpg")
+                        filename: "alec.jpg")
 
 //NSURLConnection.sendAsynchronousRequest(r, queue: OperationQueue.main) {(response, data, error) in
 //  guard let data = data else { return }
@@ -64,39 +64,39 @@ r.httpBody = createBody(parameters: params,
 
 
 // get photo back
-struct Question: Decodable {
-  let question: String
-  let answer: String
-  let attachment: Attachment
-  let created_by: Int
-}
-
-struct Attachment: Decodable {
-  let url: String
-}
-
-
-let url = "http://localhost:3000/questions/2"
-
-let task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
-  guard let data = data else {
-    print("Error: No data to decode")
-    return
-  }
-  
-  guard let question = try? JSONDecoder().decode(Question.self, from: data) else {
-    print("Error: Couldn't decode data into a question")
-    return
-  }
-  
-  print(question.question)
-  print(question.answer)
-  print(question.created_by)
-  print(question.attachment.url)
-  
-}
-
-task.resume()
+//struct Question: Decodable {
+//  let question: String
+//  let answer: String
+//  let attachment: Attachment
+//  let created_by: Int
+//}
+//
+//struct Attachment: Decodable {
+//  let url: String
+//}
+//
+//
+//let url = "https://thoughtfulapi.herokuapp.com/questions/2"
+//
+//let task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
+//  guard let data = data else {
+//    print("Error: No data to decode")
+//    return
+//  }
+//
+//  guard let question = try? JSONDecoder().decode(Question.self, from: data) else {
+//    print("Error: Couldn't decode data into a question")
+//    return
+//  }
+//
+//  print(question.question)
+//  print(question.answer)
+//  print(question.created_by)
+//  print(question.attachment.url)
+//
+//}
+//
+//task.resume()
 
 
 
