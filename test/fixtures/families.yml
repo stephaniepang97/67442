@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  family_name: MyString
-  patient_id: 1
-
-two:
-  family_name: MyString
-  patient_id: 1
