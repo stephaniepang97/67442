@@ -29,7 +29,7 @@ class MyViewController : UIViewController {
     let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 600))
     view.addSubview(imageView)
     
-    let imgUrl = URL(string: "http://localhost:3000/uploads/question/attachment/2/steph.jpg")
+    let imgUrl = URL(string: "http://thoughtfulapi.herokuapp.com/uploads/question/attachment/2/steph.jpg")
     let imgData = try? Data(contentsOf: imgUrl!)
     imageView.image = UIImage(data: imgData!)
 

@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		907CB79B2186A0C2004A6A27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CB79A2186A0C2004A6A27 /* AppDelegate.swift */; };
 		907CB79D2186A0C2004A6A27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CB79C2186A0C2004A6A27 /* ViewController.swift */; };
-		907CB7A02186A0C2004A6A27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907CB79E2186A0C2004A6A27 /* Main.storyboard */; };
+		907CB7A02186A0C2004A6A27 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907CB79E2186A0C2004A6A27 /* Question.storyboard */; };
 		907CB7A32186A0C2004A6A27 /* Thoughtful.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 907CB7A12186A0C2004A6A27 /* Thoughtful.xcdatamodeld */; };
 		907CB7A52186A0C3004A6A27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907CB7A42186A0C3004A6A27 /* Assets.xcassets */; };
 		907CB7A82186A0C3004A6A27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907CB7A62186A0C3004A6A27 /* LaunchScreen.storyboard */; };
 		907CB7B32186A0C4004A6A27 /* ThoughtfulTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CB7B22186A0C4004A6A27 /* ThoughtfulTests.swift */; };
+		909C26F0218F71E50008FC48 /* AddQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909C26EF218F71E50008FC48 /* AddQuestionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +31,7 @@
 		907CB7972186A0C2004A6A27 /* Thoughtful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thoughtful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907CB79A2186A0C2004A6A27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		907CB79C2186A0C2004A6A27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		907CB79F2186A0C2004A6A27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		907CB79F2186A0C2004A6A27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Question.storyboard; sourceTree = "<group>"; };
 		907CB7A22186A0C2004A6A27 /* Thoughtful.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thoughtful.xcdatamodel; sourceTree = "<group>"; };
 		907CB7A42186A0C3004A6A27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		907CB7A72186A0C3004A6A27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +39,7 @@
 		907CB7AE2186A0C4004A6A27 /* ThoughtfulTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThoughtfulTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		907CB7B22186A0C4004A6A27 /* ThoughtfulTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtfulTests.swift; sourceTree = "<group>"; };
 		907CB7B42186A0C4004A6A27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		909C26EF218F71E50008FC48 /* AddQuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +81,10 @@
 		907CB7992186A0C2004A6A27 /* Thoughtful */ = {
 			isa = PBXGroup;
 			children = (
+				909C26EE218F6E9F0008FC48 /* Views */,
+				909C26ED218F6E9A0008FC48 /* Controllers */,
+				909C26EC218F6E8D0008FC48 /* Models */,
 				907CB79A2186A0C2004A6A27 /* AppDelegate.swift */,
-				907CB79C2186A0C2004A6A27 /* ViewController.swift */,
-				907CB79E2186A0C2004A6A27 /* Main.storyboard */,
 				907CB7A42186A0C3004A6A27 /* Assets.xcassets */,
 				907CB7A62186A0C3004A6A27 /* LaunchScreen.storyboard */,
 				907CB7A92186A0C3004A6A27 /* Info.plist */,
@@ -97,6 +100,30 @@
 				907CB7B42186A0C4004A6A27 /* Info.plist */,
 			);
 			path = ThoughtfulTests;
+			sourceTree = "<group>";
+		};
+		909C26EC218F6E8D0008FC48 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		909C26ED218F6E9A0008FC48 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				907CB79C2186A0C2004A6A27 /* ViewController.swift */,
+				909C26EF218F71E50008FC48 /* AddQuestionController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		909C26EE218F6E9F0008FC48 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				907CB79E2186A0C2004A6A27 /* Question.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +209,7 @@
 			files = (
 				907CB7A82186A0C3004A6A27 /* LaunchScreen.storyboard in Resources */,
 				907CB7A52186A0C3004A6A27 /* Assets.xcassets in Resources */,
-				907CB7A02186A0C2004A6A27 /* Main.storyboard in Resources */,
+				907CB7A02186A0C2004A6A27 /* Question.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +230,7 @@
 				907CB7A32186A0C2004A6A27 /* Thoughtful.xcdatamodeld in Sources */,
 				907CB79D2186A0C2004A6A27 /* ViewController.swift in Sources */,
 				907CB79B2186A0C2004A6A27 /* AppDelegate.swift in Sources */,
+				909C26F0218F71E50008FC48 /* AddQuestionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,12 +253,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		907CB79E2186A0C2004A6A27 /* Main.storyboard */ = {
+		907CB79E2186A0C2004A6A27 /* Question.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				907CB79F2186A0C2004A6A27 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Question.storyboard;
 			sourceTree = "<group>";
 		};
 		907CB7A62186A0C3004A6A27 /* LaunchScreen.storyboard */ = {
