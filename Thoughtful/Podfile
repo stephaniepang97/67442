@@ -1,0 +1,16 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+
+target 'Thoughtful' do
+  use_frameworks!
+
+  # Pods for Thoughtful
+  pod 'Alamofire', '~> 4.7'
+  pod 'SwiftyJSON', '~> 4.0'
+
+  target 'ThoughtfulTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

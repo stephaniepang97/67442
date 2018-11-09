@@ -13,6 +13,7 @@
 		5368EE46219050C30011860F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5368EE44219050C30011860F /* LaunchScreen.storyboard */; };
 		5368EE4A219086510011860F /* CreateUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5368EE49219086510011860F /* CreateUserController.swift */; };
 		5368EE4C219093F70011860F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5368EE4B219093F70011860F /* HomeController.swift */; };
+		72BEC0CD8B3CFF393AE8794B /* Pods_Thoughtful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38680F01BE4A916757C8AF15 /* Pods_Thoughtful.framework */; };
 		907CB79B2186A0C2004A6A27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CB79A2186A0C2004A6A27 /* AppDelegate.swift */; };
 		907CB7A32186A0C2004A6A27 /* Thoughtful.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 907CB7A12186A0C2004A6A27 /* Thoughtful.xcdatamodeld */; };
 		907CB7A52186A0C3004A6A27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907CB7A42186A0C3004A6A27 /* Assets.xcassets */; };
@@ -20,6 +21,12 @@
 		907CB7B32186A0C4004A6A27 /* ThoughtfulTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CB7B22186A0C4004A6A27 /* ThoughtfulTests.swift */; };
 		909C26F72190A0390008FC48 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909C26F52190A0390008FC48 /* Question.storyboard */; };
 		90C1EDB2219566560027440F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDB1219566560027440F /* Question.swift */; };
+		90C1EDB42195EB870027440F /* QuestionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDB32195EB870027440F /* QuestionsController.swift */; };
+		90C1EDB62195EEEB0027440F /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDB52195EEEB0027440F /* QuestionViewModel.swift */; };
+		90C1EDBA21960DEF0027440F /* QuestionTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90C1EDB921960DEF0027440F /* QuestionTableCell.xib */; };
+		90C1EDBC21960E900027440F /* QuestionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDBB21960E900027440F /* QuestionTableCell.swift */; };
+		90C1EDBE219615AD0027440F /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDBD219615AD0027440F /* QuestionDetailViewController.swift */; };
+		C2037C10836386D914F2DA8A /* Pods_ThoughtfulTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93EEDDE52E256EDF5D75AF85 /* Pods_ThoughtfulTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,12 +40,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		134467094834F48FC6B34B20 /* Pods-ThoughtfulTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtfulTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtfulTests/Pods-ThoughtfulTests.debug.xcconfig"; sourceTree = "<group>"; };
+		38680F01BE4A916757C8AF15 /* Pods_Thoughtful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thoughtful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5368EE3721904AC60011860F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5368EE3821904AC60011860F /* AddQuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuestionController.swift; sourceTree = "<group>"; };
 		5368EE4121904ADD0011860F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5368EE45219050C30011860F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5368EE49219086510011860F /* CreateUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserController.swift; sourceTree = "<group>"; };
 		5368EE4B219093F70011860F /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		5EB9C88D8F7D7ABCE4D38A8A /* Pods-Thoughtful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thoughtful.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thoughtful/Pods-Thoughtful.debug.xcconfig"; sourceTree = "<group>"; };
+		64E4AE1B0374248EB897FF96 /* Pods-Thoughtful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thoughtful.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thoughtful/Pods-Thoughtful.release.xcconfig"; sourceTree = "<group>"; };
 		907CB7972186A0C2004A6A27 /* Thoughtful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thoughtful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907CB79A2186A0C2004A6A27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		907CB7A22186A0C2004A6A27 /* Thoughtful.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thoughtful.xcdatamodel; sourceTree = "<group>"; };
@@ -50,6 +61,13 @@
 		907CB7B42186A0C4004A6A27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		909C26F62190A0390008FC48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Question.storyboard; sourceTree = "<group>"; };
 		90C1EDB1219566560027440F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		90C1EDB32195EB870027440F /* QuestionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsController.swift; sourceTree = "<group>"; };
+		90C1EDB52195EEEB0027440F /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
+		90C1EDB921960DEF0027440F /* QuestionTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionTableCell.xib; sourceTree = "<group>"; };
+		90C1EDBB21960E900027440F /* QuestionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableCell.swift; sourceTree = "<group>"; };
+		90C1EDBD219615AD0027440F /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewController.swift; sourceTree = "<group>"; };
+		93EEDDE52E256EDF5D75AF85 /* Pods_ThoughtfulTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThoughtfulTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B25CB27034A5993EF849856A /* Pods-ThoughtfulTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtfulTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtfulTests/Pods-ThoughtfulTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72BEC0CD8B3CFF393AE8794B /* Pods_Thoughtful.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,19 +83,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2037C10836386D914F2DA8A /* Pods_ThoughtfulTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FEB2A3B99F018952D09CC40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38680F01BE4A916757C8AF15 /* Pods_Thoughtful.framework */,
+				93EEDDE52E256EDF5D75AF85 /* Pods_ThoughtfulTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A6E033274B7A7AA98766FD6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EB9C88D8F7D7ABCE4D38A8A /* Pods-Thoughtful.debug.xcconfig */,
+				64E4AE1B0374248EB897FF96 /* Pods-Thoughtful.release.xcconfig */,
+				134467094834F48FC6B34B20 /* Pods-ThoughtfulTests.debug.xcconfig */,
+				B25CB27034A5993EF849856A /* Pods-ThoughtfulTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5368EE3621904AC60011860F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				90C1EDBD219615AD0027440F /* QuestionDetailViewController.swift */,
 				5368EE3721904AC60011860F /* ViewController.swift */,
 				5368EE3821904AC60011860F /* AddQuestionController.swift */,
 				5368EE4B219093F70011860F /* HomeController.swift */,
 				5368EE49219086510011860F /* CreateUserController.swift */,
+				90C1EDB32195EB870027440F /* QuestionsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -86,6 +128,8 @@
 			children = (
 				909C26F52190A0390008FC48 /* Question.storyboard */,
 				5368EE4021904ADD0011860F /* Main.storyboard */,
+				90C1EDB921960DEF0027440F /* QuestionTableCell.xib */,
+				90C1EDBB21960E900027440F /* QuestionTableCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,6 +148,8 @@
 				907CB7992186A0C2004A6A27 /* Thoughtful */,
 				907CB7B12186A0C4004A6A27 /* ThoughtfulTests */,
 				907CB7982186A0C2004A6A27 /* Products */,
+				4A6E033274B7A7AA98766FD6 /* Pods */,
+				3FEB2A3B99F018952D09CC40 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				90C1EDB1219566560027440F /* Question.swift */,
+				90C1EDB52195EEEB0027440F /* QuestionViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,9 +203,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 907CB7B72186A0C4004A6A27 /* Build configuration list for PBXNativeTarget "Thoughtful" */;
 			buildPhases = (
+				D92A1A70B9BB3925DE514648 /* [CP] Check Pods Manifest.lock */,
 				907CB7932186A0C2004A6A27 /* Sources */,
 				907CB7942186A0C2004A6A27 /* Frameworks */,
 				907CB7952186A0C2004A6A27 /* Resources */,
+				58477BF511051BDC8DE2764F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,6 +222,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 907CB7BA2186A0C4004A6A27 /* Build configuration list for PBXNativeTarget "ThoughtfulTests" */;
 			buildPhases = (
+				903B5538B919E57247CA1EC6 /* [CP] Check Pods Manifest.lock */,
 				907CB7AA2186A0C4004A6A27 /* Sources */,
 				907CB7AB2186A0C4004A6A27 /* Frameworks */,
 				907CB7AC2186A0C4004A6A27 /* Resources */,
@@ -232,6 +282,7 @@
 			files = (
 				907CB7A82186A0C3004A6A27 /* LaunchScreen.storyboard in Resources */,
 				909C26F72190A0390008FC48 /* Question.storyboard in Resources */,
+				90C1EDBA21960DEF0027440F /* QuestionTableCell.xib in Resources */,
 				5368EE46219050C30011860F /* LaunchScreen.storyboard in Resources */,
 				907CB7A52186A0C3004A6A27 /* Assets.xcassets in Resources */,
 				5368EE4221904ADD0011860F /* Main.storyboard in Resources */,
@@ -247,17 +298,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		58477BF511051BDC8DE2764F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Thoughtful/Pods-Thoughtful-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Thoughtful/Pods-Thoughtful-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		903B5538B919E57247CA1EC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThoughtfulTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D92A1A70B9BB3925DE514648 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Thoughtful-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		907CB7932186A0C2004A6A27 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C1EDBC21960E900027440F /* QuestionTableCell.swift in Sources */,
 				907CB7A32186A0C2004A6A27 /* Thoughtful.xcdatamodeld in Sources */,
 				5368EE3A21904AC60011860F /* AddQuestionController.swift in Sources */,
+				90C1EDB42195EB870027440F /* QuestionsController.swift in Sources */,
 				5368EE4C219093F70011860F /* HomeController.swift in Sources */,
 				5368EE3921904AC60011860F /* ViewController.swift in Sources */,
+				90C1EDBE219615AD0027440F /* QuestionDetailViewController.swift in Sources */,
 				907CB79B2186A0C2004A6A27 /* AppDelegate.swift in Sources */,
 				90C1EDB2219566560027440F /* Question.swift in Sources */,
+				90C1EDB62195EEEB0027440F /* QuestionViewModel.swift in Sources */,
 				5368EE4A219086510011860F /* CreateUserController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +558,7 @@
 		};
 		907CB7B82186A0C4004A6A27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EB9C88D8F7D7ABCE4D38A8A /* Pods-Thoughtful.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +576,7 @@
 		};
 		907CB7B92186A0C4004A6A27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64E4AE1B0374248EB897FF96 /* Pods-Thoughtful.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +594,7 @@
 		};
 		907CB7BB2186A0C4004A6A27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 134467094834F48FC6B34B20 /* Pods-ThoughtfulTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -486,6 +615,7 @@
 		};
 		907CB7BC2186A0C4004A6A27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B25CB27034A5993EF849856A /* Pods-ThoughtfulTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
