@@ -24,21 +24,18 @@ class QuestionDetailViewController: UIViewController {
   
   func configureView() {
     // Update the user interface for the detail item.
-    if let detail: Contact = self.detailItem {
-      if let name = self.nameLabel {
-        name.text = detail.name
+    if let detail: Question = self.detailItem {
+      if let question = self.questionLabel {
+        question.text = detail.question
       }
-      if let email = self.emailLabel {
-        email.text = detail.email
+      if let answer = self.answerLabel {
+        answer.text = detail.answer
       }
-      if let workPhone = self.workPhoneLabel {
-        workPhone.text = detail.workPhone
-      }
-      if let homePhone = self.homePhoneLabel {
-        homePhone.text = detail.homePhone
+      if let createdBy = self.createdByLabel {
+        createdBy.text = "\(detail.created_by!)"
       }
       if let imageView = self.imageView {
-        imageView.image = detail.image
+        imageView.image = detail.attachment
       }
     }
   }
@@ -50,6 +47,8 @@ class QuestionDetailViewController: UIViewController {
     self.configureView()
   }
   
-  
-
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
 }
