@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ycB-0o-J0X">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ycB-0o-J0X" customClass="QuestionTableCell" customModule="Thoughtful" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ycB-0o-J0X" id="taf-3O-Eld">
@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="2692" y="230"/>
         </scene>
-        <!--View Controller-->
+        <!--Question Detail View Controller-->
         <scene sceneID="h5g-si-bkD">
             <objects>
-                <viewController id="bWA-ru-Uil" sceneMemberID="viewController">
+                <viewController id="bWA-ru-Uil" customClass="QuestionDetailViewController" customModule="Thoughtful" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uRD-aH-XZa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,11 +81,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSR-z6-A47">
+                                <rect key="frame" x="210" y="530" width="140" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6tO-1q-Ppg"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="answerLabel" destination="I7c-Uu-U6M" id="IZx-SU-oxz"/>
+                        <outlet property="createdByLabel" destination="jSR-z6-A47" id="Khu-iZ-y5H"/>
+                        <outlet property="imageView" destination="QDf-Ha-Stg" id="wfJ-cF-H4h"/>
+                        <outlet property="questionLabel" destination="skG-01-IqG" id="js7-fb-cTQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSM-gg-MXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -242,12 +255,17 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Add Question" id="7uZ-WN-DRA"/>
                     <navigationItem key="navigationItem" title="Add Question" id="c8k-aW-VvG">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="Lfb-nc-77S"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Lfb-nc-77S">
+                            <connections>
+                                <action selector="done" destination="AqI-WO-CnJ" id="aar-FV-jcG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="answerField" destination="EsY-QB-zgp" id="JnB-sn-pe6"/>
                         <outlet property="createdByField" destination="eGS-jv-8sG" id="UA2-S7-6Kf"/>
+                        <outlet property="doneBarButton" destination="Lfb-nc-77S" id="lQc-j7-Za9"/>
                         <outlet property="picPreview" destination="65d-lp-oCa" id="hg9-Rs-9rf"/>
                         <outlet property="questionField" destination="nOI-11-0Qw" id="LOX-f7-9Tl"/>
                     </connections>

@@ -13,8 +13,7 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
   // MARK: - Properties
   var questions = [Question]()
   var questionsVM = QuestionViewModel()
-  let test = "Test"
-  
+
   // MARK: - General
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,8 +21,8 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
     
     questionsVM.loadQuestions()
     questions = questionsVM.questions
-    
-    let cellNib = UINib(nibName: "QuestionsTableCell", bundle: nil)
+    print("question: \(String(describing: questions))")
+    let cellNib = UINib(nibName: "QuestionTableCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
   }
 

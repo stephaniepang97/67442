@@ -66,17 +66,25 @@ class QuestionViewModel {
       
       if let json = response.result.value{
         let swiftyJson = JSON(json)
-        if let qs = swiftyJson.arrayObject as! [JSON]? {
-          for q in qs {
+        if let qs = swiftyJson.arrayObject {
+          for index in 0..<qs.count {
             let question = Question()
+            let q = swiftyJson[index]
             question.question = q["question"].string
             question.answer = q["answer"].string
             question.created_by = q["user"]["user_id"].int
             
             if let attachmentUrl = q["attachment"]["url"].string {
-              let imgUrl = URL(string: "http://thoughtfulapi.herokuapp.com" + attachmentUrl)
-              let imgData = try? Data(contentsOf: imgUrl!)
-              question.attachment = UIImage(data: imgData!)
+              let imgUrl = URL(string: "https://thoughtfulapi.herokuapp.com" + attachmentUrl)
+//              if let imgData = try? Data(contentsOf: imgUrl!){
+//                question.attachment = UIImage(data: imgData)
+//              }
+              print("retrieving image from: \(String(describing: imgUrl!))")
+              Alamofire.download(imgUrl!).responseData { response in
+                if let data = response.result.value {
+                  question.attachment = UIImage(data: data)
+                }
+              }
             }
             
             self.questions.append(question)
