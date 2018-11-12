@@ -11,7 +11,7 @@ import UIKit
 class QuestionsController: UITableViewController, AddQuestionControllerDelegate {
   
   // MARK: - Properties
-  var questions = [Question]()
+//  var questions = [Question]()
   var questionsVM = QuestionViewModel()
 
   // MARK: - General
@@ -19,9 +19,9 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
     super.viewDidLoad()
     self.navigationItem.leftBarButtonItem = self.editButtonItem
     
-    questionsVM.loadQuestions()
-    questions = questionsVM.questions
-    print("question: \(String(describing: questions))")
+    questionsVM.loadQuestions(tableViewController: self)
+//    questions = questionsVM.questions
+    print("question: \(String(describing: questionsVM.questions))")
     let cellNib = UINib(nibName: "QuestionTableCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
   }
@@ -30,18 +30,18 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return questionsVM.questions.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! QuestionTableCell
     
-      let question = questions[indexPath.row]
+      let question = questionsVM.questions[indexPath.row]
       // Configure the cell...
       cell.question?.text = question.question
       cell.answer?.text = question.answer
@@ -83,10 +83,10 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
   }
   
   func addQuestionController(controller: AddQuestionController, didFinishAddingQuestion question: Question) {
-    let newRowIndex = questions.count
+    let newRowIndex = questionsVM.questions.count
     
     questionsVM.saveQuestion(question: question)
-    questions.append(question)
+//    questions.append(question)
     
     let indexPath = NSIndexPath(row: newRowIndex, section: 0)
     let indexPaths = [indexPath]

@@ -17,7 +17,7 @@ class QuestionViewModel {
   var questions = [Question]()
   
   init() {
-    loadQuestions()
+//    loadQuestions(tableViewController: nil)
   }
   
   // MARK: - Saving & Loading Data
@@ -58,7 +58,7 @@ class QuestionViewModel {
   }
   
   // TODO: load only family's questions
-  func loadQuestions() {
+  func loadQuestions(tableViewController: QuestionsController) {
     Alamofire.request("https://thoughtfulapi.herokuapp.com/questions").responseJSON { response in
       print("Request: \(String(describing: response.request))")   // original url request
       print("Response: \(String(describing: response.response))") // http url response
@@ -91,6 +91,8 @@ class QuestionViewModel {
           }
         }
       }
+      tableViewController.tableView.reloadData()
+      
     }
   }
 }
