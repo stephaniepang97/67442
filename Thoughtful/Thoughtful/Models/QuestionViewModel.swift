@@ -16,10 +16,6 @@ class QuestionViewModel {
   // MARK: - General
   var questions = [Question]()
   
-  init() {
-//    loadQuestions(tableViewController: nil)
-  }
-  
   // MARK: - Saving & Loading Data
   
   func saveQuestion(question : Question) {
@@ -52,9 +48,6 @@ class QuestionViewModel {
         }
     }
     )
-    
-    
-      
   }
   
   // TODO: load only family's questions
@@ -76,12 +69,10 @@ class QuestionViewModel {
             
             if let attachmentUrl = q["attachment"]["url"].string {
               let imgUrl = URL(string: "https://thoughtfulapi.herokuapp.com" + attachmentUrl)
-//              if let imgData = try? Data(contentsOf: imgUrl!){
-//                question.attachment = UIImage(data: imgData)
-//              }
-              print("retrieving image from: \(String(describing: imgUrl!))")
-              Alamofire.download(imgUrl!).responseData { response in
+              Alamofire.request(imgUrl!).responseData { response in
+                print("response from image retrieval: \(String(describing: response))")
                 if let data = response.result.value {
+                  print(response.result)
                   question.attachment = UIImage(data: data)
                 }
               }

@@ -20,7 +20,6 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
     self.navigationItem.leftBarButtonItem = self.editButtonItem
     
     questionsVM.loadQuestions(tableViewController: self)
-//    questions = questionsVM.questions
     print("question: \(String(describing: questionsVM.questions))")
     let cellNib = UINib(nibName: "QuestionTableCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
@@ -71,10 +70,14 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
   
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+      if (segue.identifier == "showDetail") {
+        let qdvc = segue.destination as! QuestionDetailViewController
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+          let question = questionsVM.questions[indexPath.row]
+          qdvc.detailItem = question
+        }
+      }
     }
   
   // MARK: - Delegate protocols
@@ -86,7 +89,6 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
     let newRowIndex = questionsVM.questions.count
     
     questionsVM.saveQuestion(question: question)
-//    questions.append(question)
     
     let indexPath = NSIndexPath(row: newRowIndex, section: 0)
     let indexPaths = [indexPath]
