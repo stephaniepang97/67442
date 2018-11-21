@@ -77,6 +77,10 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
           let question = questionsVM.questions[indexPath.row]
           qdvc.detailItem = question
         }
+      } else if segue.identifier == "addQuestion" {
+        let navigationController = segue.destination as! UINavigationController
+        let controller = navigationController.topViewController as! AddQuestionController
+        controller.delegate = self
       }
     }
   

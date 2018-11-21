@@ -36,14 +36,14 @@ class AddQuestionController: UITableViewController, UIImagePickerControllerDeleg
     // MARK: - General
     override func viewDidLoad() {
         super.viewDidLoad()
-        doneBarButton.isEnabled = false
-        if let questionText = questionField.text,
-           let answerText = answerField.text,
-           let createdByText = createdByField.text {
-          doneBarButton.isEnabled = (questionText != "" &&
-                                     answerText != "" &&
-                                     createdByText != "")
-        }
+//        doneBarButton.isEnabled = false
+//        if let questionText = questionField.text,
+//           let answerText = answerField.text,
+//           let createdByText = createdByField.text {
+//          doneBarButton.isEnabled = (questionText != "" &&
+//                                     answerText != "" &&
+//                                     createdByText != "")
+//        }
 
         PHPhotoLibrary.requestAuthorization({_ in return})
         imagePicker.delegate = (self as UIImagePickerControllerDelegate & UINavigationControllerDelegate)

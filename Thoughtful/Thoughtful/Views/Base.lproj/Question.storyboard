@@ -255,6 +255,11 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Add Question" id="7uZ-WN-DRA"/>
                     <navigationItem key="navigationItem" title="Add Question" id="c8k-aW-VvG">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="ePM-Kq-73J">
+                            <connections>
+                                <action selector="cancel" destination="AqI-WO-CnJ" id="6n1-dk-r9r"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="Lfb-nc-77S">
                             <connections>
                                 <action selector="done" destination="AqI-WO-CnJ" id="aar-FV-jcG"/>
