@@ -46,6 +46,21 @@ class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerView
 		return roleData[row]
 	}
 	
+	func createUserRequest() {
+		let parameters: Parameters = [
+			"foo": "bar",
+			"baz": ["a", 1],
+			"qux": [
+				"x": 1,
+				"y": 2,
+				"z": 3
+			]
+		]
+		
+		// All three of these calls are equivalent
+		Alamofire.request("https://httpbin.org/post", method: .post, parameters: parameters)
+	}
+	
 	
 }
 
