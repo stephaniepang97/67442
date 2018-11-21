@@ -17,6 +17,11 @@ class QuizViewController: UIViewController {
 		print(familyName)
 
 		// Do any additional setup after loading the view, typically from a nib.
+		quizObject?.refresh { [unowned self] in
+			DispatchQueue.main.async {
+				self.quizObject!.fetchQuestions()
+			}
+		}
 	}
 	
 	override func didReceiveMemoryWarning() {
