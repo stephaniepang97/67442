@@ -14,8 +14,8 @@ class QuizViewModel {
 	var questions = [Question]()
 	var familyName :String?
 	
-	func refresh(completion: () -> Void) {
-		fetchQuestions()
+	func refresh(completion: @escaping () -> Void) {
+		fetchQuestions(completion: completion)
 	}
 	
 	init(familyName: String) {
@@ -24,6 +24,16 @@ class QuizViewModel {
 	
 	func setQuestions(questions: [Question]) {
 		self.questions = questions
+	}
+	
+	public func correctAnswer(question: Question, clickedYes: Bool, shownCorrectAnswer: Bool) -> Bool {
+		if (clickedYes == shownCorrectAnswer) {
+			print("Correct!")
+		} else {
+			print("Incorrect!")
+		}
+		return clickedYes == shownCorrectAnswer
+		
 	}
 
 	
@@ -34,7 +44,7 @@ class QuizViewModel {
 	}
 	
 	
-	public func fetchQuestions() {
+	public func fetchQuestions(completion: @escaping () -> Void) {
 		Alamofire.request("https://thoughtfulapi.herokuapp.com/questions").responseJSON { response in
 			switch response.result
 			{
@@ -73,6 +83,7 @@ class QuizViewModel {
 						}
 					}
 				}
+				completion()
 				self.setQuestions(questions: quizQuestions)
 			case .failure(let error):
 				print("Failed to Fetch")
