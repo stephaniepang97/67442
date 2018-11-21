@@ -196,12 +196,18 @@
                                 <state key="normal" title="submit">
                                     <color key="titleColor" red="0.94367343189999997" green="0.99225538970000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createUserRequest" destination="QI7-i4-Ay7" eventType="touchUpInside" id="RXc-WT-Xoi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77693396960000005" green="0.98189384670000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="aDF-VB-h9R"/>
                     </view>
                     <connections>
+                        <outlet property="familyNameInput" destination="Xeq-sl-ELw" id="T52-Zj-8Ia"/>
+                        <outlet property="firstNameInput" destination="8ID-Z5-7od" id="gIy-HG-Utc"/>
+                        <outlet property="lastNameInput" destination="qcO-eI-P30" id="C7V-JB-NYp"/>
                         <outlet property="rolePicker" destination="y7G-cK-qjr" id="I26-aD-ePG"/>
                     </connections>
                 </viewController>
