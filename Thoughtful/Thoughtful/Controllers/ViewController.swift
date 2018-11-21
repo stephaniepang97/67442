@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
   @IBOutlet weak var familyNameInput: UITextField!
 	var familyName : String = ""
 	
@@ -17,7 +17,15 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+	self.familyNameInput.delegate = self
+
   }
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		familyNameInput.resignFirstResponder()
+		return true
+	}
+	
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 	
 	@IBOutlet weak var rolePicker: UIPickerView!
 	@IBOutlet weak var firstNameInput: UITextField!
@@ -31,6 +31,17 @@ class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerView
 		self.rolePicker.delegate = self
 		self.rolePicker.dataSource = self
 		
+		self.firstNameInput.delegate = self
+		self.lastNameInput.delegate = self
+		self.familyNameInput.delegate = self
+
+	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		firstNameInput.resignFirstResponder()
+		lastNameInput.resignFirstResponder()
+		familyNameInput.resignFirstResponder()
+		return true
 	}
 	
 	override func didReceiveMemoryWarning() {

@@ -73,12 +73,14 @@ class QuizViewController: UIViewController {
 		self.clickedYes = true
 		print("Clicked Yes")
 		quizObject?.correctAnswer(question: self.currentQuestion!, clickedYes: true, shownCorrectAnswer: self.showCorrectAnswer)
+		newQuestion()
 	}
 	
 	@IBAction func clickedNoButton() {
 		self.clickedYes = false
 		print("Clicked No")
 		quizObject?.correctAnswer(question: self.currentQuestion!, clickedYes: false, shownCorrectAnswer: self.showCorrectAnswer)
+		newQuestion()
 	}
 	
 	
