@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+
 
 class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 	
@@ -20,6 +19,8 @@ class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerView
 	var selectedValue : String = ""
 	var roleData: [String] = [String]()
 	
+	var userObject : User = User()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -29,6 +30,7 @@ class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerView
 		// connector
 		self.rolePicker.delegate = self
 		self.rolePicker.dataSource = self
+		
 		
 	}
 	
@@ -61,44 +63,24 @@ class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerView
 	}
 	
 	@IBAction func createUserRequest() {
-		print("hi")
+		print("clicked")
+		
+		var firstName = ""
+		var lastName = ""
 		var familyName = ""
-		if let temp = familyNameInput.text {
-			familyName = temp
+			
+		if let tempFirst = firstNameInput.text {
+			firstName = tempFirst
 		}
-		
-		Alamofire.request("https://thoughtfulapi.herokuapp.com/families").responseJSON { response in
-			var familyId = -1
-			let families = response.result.value
-			let swifty = JSON(families as Any).arrayObject
-			if let swiftySafe = swifty {
-				for index in 0..<swiftySafe.count {
-					var family = JSON(swiftySafe[index])
-					let currentFamilyName = family["family_name"].string
-					let currentFamilyId = family["family_id"].int!
-					if  (familyName == currentFamilyName) {
-						familyId = currentFamilyId
-						break
-					}
-				}
-			}
-			let parameters: Parameters = [
-				"first_name": self.firstNameInput.text!,
-				"last_name": self.lastNameInput.text!,
-				"family_id": familyId,
-				"role": self.selectedValue.lowercased()
-			]
-			print(parameters)
-			Alamofire.request("https://thoughtfulapi.herokuapp.com/users", method: .post, parameters: parameters).responseJSON
-				{ response in print(response)
-			}
-
+		if let tempLast = lastNameInput.text {
+			lastName = tempLast
 		}
-		
-		
+		if let tempFamily = familyNameInput.text {
+			familyName = tempFamily
+		}
 
-		// All three of these calls are equivalent
-//		Alamofire.request("https://httpbin.org/post", method: .post, parameters: parameters)
+
+		self.userObject.createUser(firstName: firstName, lastName: lastName, familyName: familyName, role: self.selectedValue)
 	}
 	
 	
