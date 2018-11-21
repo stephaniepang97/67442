@@ -30,11 +30,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNG-vX-iWH">
-                                <rect key="frame" x="137" y="404" width="101" height="30"/>
+                                <rect key="frame" x="137" y="402" width="101" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94367343189999997" green="0.99225538970000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <state key="normal" title="submit">
+                                <state key="normal" title="questions">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -53,12 +53,29 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNj-CO-YIP">
+                                <rect key="frame" x="134" y="445" width="101" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94367343189999997" green="0.99225538970000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="quiz">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="42X-ad-Fpx" kind="show" identifier="QuizStartSegue" id="K0o-vY-Trk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77693396960000005" green="0.98189384670000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Add Content" id="YMQ-63-P5J">
+                        <barButtonItem title="Add User" id="YMQ-63-P5J">
                             <connections>
                                 <segue destination="QI7-i4-Ay7" kind="show" identifier="CreateSegue" id="ZUe-ao-Dgk"/>
                             </connections>
@@ -71,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="727.20000000000005" y="-289.20539730134936"/>
         </scene>
-        <!--Home Controller-->
+        <!--Quiz View Controller-->
         <scene sceneID="8bA-sh-1qb">
             <objects>
-                <viewController id="42X-ad-Fpx" customClass="HomeController" customModule="Thoughtful" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="42X-ad-Fpx" customClass="QuizViewController" customModule="Thoughtful" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qwQ-am-noh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,24 +100,21 @@
                                 <rect key="frame" x="67" y="85" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xb7-TP-Ydx">
-                                <rect key="frame" x="276" y="584" width="90" height="57"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <state key="normal" image="addButton"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQR-4g-eWt">
-                                <rect key="frame" x="31" y="590" width="70" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="backButton"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66921020870000003" green="0.91637082179999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="yal-vi-aWg"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Landing Page" id="wdu-UT-NfR"/>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Ioc-Ze-G27"/>
+                        <barButtonItem title="Question Management" id="CdW-LN-VNL"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="aDR-0v-gQy"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4Z-pU-dcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="482"/>
+            <point key="canvasLocation" x="1664.8" y="589.65517241379314"/>
         </scene>
         <!--Question-->
         <scene sceneID="siz-ad-sGo">
@@ -108,7 +122,7 @@
                 <viewControllerPlaceholder storyboardName="Question" id="Z87-2R-iut" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2UQ-0I-2ff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="514" y="166"/>
+            <point key="canvasLocation" x="495" y="171"/>
         </scene>
         <!--Create User Controller-->
         <scene sceneID="CEI-L9-5ne">
@@ -237,10 +251,33 @@
             </objects>
             <point key="canvasLocation" x="-750" y="-289"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PV0-sb-UbT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="G3Z-kO-uHt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ycI-Oz-E9S">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Px5-9n-PYh">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="42X-ad-Fpx" kind="relationship" relationship="rootViewController" id="p6j-9t-ijq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qf0-G2-Lzr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="725.60000000000002" y="589.65517241379314"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="addButton" width="240" height="150"/>
-        <image name="backButton" width="164.5" height="100"/>
         <image name="thoughfulLogo" width="617" height="334"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="K0o-vY-Trk"/>
+    </inferredMetricsTieBreakers>
 </document>

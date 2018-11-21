@@ -1,5 +1,5 @@
 //
-//  HomeController.swift
+//  QuizController.swift
 //  Thoughtful
 //
 //  Created by Alec Lam on 11/5/18.
@@ -8,9 +8,12 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+class QuizViewController: UIViewController {
+	var familyName : String?
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		print(familyName)
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 	

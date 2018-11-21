@@ -19,7 +19,7 @@ class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerView
 	var selectedValue : String = ""
 	var roleData: [String] = [String]()
 	
-	var userObject : User = User()
+	var userObject : UserViewModel = UserViewModel()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
