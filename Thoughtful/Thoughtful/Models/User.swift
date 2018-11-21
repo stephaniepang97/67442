@@ -11,8 +11,11 @@ import Alamofire
 import SwiftyJSON
 
 class User {
-	func createUser(firstName: String, lastName: String, familyName: String, role: String) {
+	var recentStatus = false;
+	
+	func createUser(firstName: String, lastName: String, familyName: String, role: String) -> Bool {
 		print("Creating User..")
+		var result = true
 		
 		Alamofire.request("https://thoughtfulapi.herokuapp.com/families").responseJSON { response in
 			var familyId = -1
@@ -37,10 +40,17 @@ class User {
 			]
 			print(parameters)
 			Alamofire.request("https://thoughtfulapi.herokuapp.com/users", method: .post, parameters: parameters).responseJSON
-				{ response in print(response)
+				{ response in switch response.result {
+				case .success(let jsonData):
+					self.recentStatus = true
+				case .failure(let error):
+					self.recentStatus = false
+					print("FUCK")
+
+					}
 			}
 			
 		}
-		
+		return result
 	}
 }

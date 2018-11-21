@@ -31,7 +31,6 @@ class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerView
 		self.rolePicker.delegate = self
 		self.rolePicker.dataSource = self
 		
-		
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -81,6 +80,12 @@ class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerView
 
 
 		self.userObject.createUser(firstName: firstName, lastName: lastName, familyName: familyName, role: self.selectedValue)
+		
+		print(userObject.recentStatus)
+
+		self.navigationController?.popViewController(animated: true)
+
+		
 	}
 	
 	

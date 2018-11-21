@@ -60,7 +60,7 @@
                     <toolbarItems>
                         <barButtonItem title="Add Content" id="YMQ-63-P5J">
                             <connections>
-                                <segue destination="QI7-i4-Ay7" kind="show" id="ZUe-ao-Dgk"/>
+                                <segue destination="QI7-i4-Ay7" kind="show" identifier="CreateSegue" id="ZUe-ao-Dgk"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
