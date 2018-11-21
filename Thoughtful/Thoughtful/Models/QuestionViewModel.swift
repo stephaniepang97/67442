@@ -42,12 +42,14 @@ class QuestionViewModel {
         case .success(let upload, _, _):
           upload.responseJSON { response in
             debugPrint(response)
+            print(response)
           }
         case .failure(let encodingError):
           print(encodingError)
         }
-    }
-    )
+    })
+    
+    self.questions.append(question)
   }
   
   // TODO: load only family's questions
