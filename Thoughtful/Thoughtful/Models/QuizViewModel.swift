@@ -12,23 +12,25 @@ import SwiftyJSON
 
 class QuizViewModel {
 	var questions = [Question]()
+	var familyName :String?
+	
 	
 	init(familyName: String) {
-		setQuestions(familyName: familyName)
-	}
-	
-	public func getRandomQuestion() -> Question {
-		let totalQuestions = questions.count
-		let randomIndex = Int.random(in: 0..<totalQuestions)
-		return questions[randomIndex]
+		self.familyName = familyName
 	}
 
-	private func setQuestions(familyName: String) {
+	
+	public func getRandomQuestion() -> Question {
+		let totalQuestions = self.questions.count
+		let randomIndex = Int.random(in: 0..<totalQuestions)
+		return self.questions[randomIndex]
+	}
+
+	private func setQuestions(familyName: String, completion: ([String])->()) {
 		Alamofire.request("https://thoughtfulapi.herokuapp.com/questions").responseJSON { response in
 			print("Request: \(String(describing: response.request))")   // original url request
 			print("Response: \(String(describing: response.response))") // http url response
 			print("Result: \(response.result)")                         // response serialization result
-			
 			if let json = response.result.value{
 				let swiftyJson = JSON(json)
 				if let qs = swiftyJson.arrayObject {
@@ -38,8 +40,6 @@ class QuizViewModel {
 						question.question = q["question"].string
 						question.answer = q["answer"].string
 						question.created_by = q["user"]["user_id"].int
-						let currentFamilyName = q["user"]["family_name"].string
-
 						if let attachmentUrl = q["attachment"]["url"].string {
 							let imgUrl = URL(string: "https://thoughtfulapi.herokuapp.com" + attachmentUrl)
 							Alamofire.request(imgUrl!).responseData { response in
@@ -50,9 +50,13 @@ class QuizViewModel {
 								}
 							}
 						}
-						
-						if (currentFamilyName == familyName) {
-							self.questions.append(question)
+						print(question.question)
+						if let currentFamilyName = q["user"]["family_name"].string {
+							print("yues")
+							print(currentFamilyName)
+							if (currentFamilyName == familyName) {
+								self.questions.append(question)
+							}
 						}
 					}
 				}

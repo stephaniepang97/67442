@@ -9,11 +9,13 @@
 import UIKit
 
 class QuizViewController: UIViewController {
-	var familyName : String?
-
+	var familyName : String = ""
+	var quizObject : QuizViewModel?
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		print(familyName)
+
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 	
@@ -21,6 +23,12 @@ class QuizViewController: UIViewController {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 		
+	}
+	
+	@IBAction func printQuestion() {
+		var question = quizObject?.getRandomQuestion()
+		print(question?.question)
+		print(question?.answer)
 	}
 }
 

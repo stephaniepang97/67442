@@ -83,6 +83,9 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="DZ4-fR-SLf"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="familyNameInput" destination="rJ9-Nl-Hny" id="ezB-tP-ae9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,16 +100,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thoughfulLogo" translatesAutoresizingMaskIntoConstraints="NO" id="u6z-fh-WUg">
-                                <rect key="frame" x="67" y="85" width="240" height="128"/>
+                                <rect key="frame" x="16" y="72" width="133" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUo-h2-VEW">
+                                <rect key="frame" x="140" y="384" width="101" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94367343189999997" green="0.99225538970000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="button">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="printQuestion" destination="42X-ad-Fpx" eventType="touchUpInside" id="EJb-qI-9Fj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66921020870000003" green="0.91637082179999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="yal-vi-aWg"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Landing Page" id="wdu-UT-NfR"/>
-                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Ioc-Ze-G27"/>
                         <barButtonItem title="Question Management" id="CdW-LN-VNL"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="aDR-0v-gQy"/>

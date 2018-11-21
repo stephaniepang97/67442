@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
   @IBOutlet weak var familyNameInput: UITextField!
+	var familyName : String = ""
 	
 
 	
@@ -23,20 +24,26 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 	
-  @IBAction func startQuiz() {
-	var familyName = ""
-	if let tempFamily = familyNameInput.text {
-		familyName = tempFamily
+	
+	private func setFamilyName() {
+		if let tempFamily = familyNameInput.text {
+			self.familyName = tempFamily
+		}
 	}
+	
+  @IBAction func startQuiz() {
+	setFamilyName()
 	
 	
 	
   }
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		setFamilyName()
 		if segue.identifier == "QuizStartSegue" {
 			let showQuiz:QuizViewController = segue.destination as! QuizViewController
-			showQuiz.familyName = "Temp"
+			showQuiz.familyName = self.familyName
+			showQuiz.quizObject = QuizViewModel(familyName: self.familyName)
 		}
 	}
 	
