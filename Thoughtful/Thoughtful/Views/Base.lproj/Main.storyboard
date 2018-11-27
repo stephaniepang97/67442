@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w5N-k7-ciN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w5N-k7-ciN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,7 +81,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="kPb-cQ-9IG" kind="show" id="AgX-RF-qLz"/>
+                                    <action selector="startQuiz" destination="BYZ-38-t0r" eventType="touchUpInside" id="q0Q-yM-68p"/>
+                                    <segue destination="kPb-cQ-9IG" kind="show" identifier="QuizStartSegue" id="AgX-RF-qLz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -91,6 +92,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="DZ4-fR-SLf"/>
                     <connections>
+                        <outlet property="currentUserInput" destination="seE-XO-7fN" id="ody-dz-15m"/>
                         <outlet property="familyNameInput" destination="rJ9-Nl-Hny" id="ezB-tP-ae9"/>
                     </connections>
                 </viewController>
@@ -343,8 +345,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="G3Z-kO-uHt" kind="relationship" relationship="viewControllers" id="iCS-ga-On7"/>
                         <segue destination="Z87-2R-iut" kind="relationship" relationship="viewControllers" id="ERZ-Kz-r3H"/>
+                        <segue destination="G3Z-kO-uHt" kind="relationship" relationship="viewControllers" id="iCS-ga-On7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNd-du-3gD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -354,6 +356,7 @@
         <!--Quiz-->
         <scene sceneID="PV0-sb-UbT">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qf0-G2-Lzr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G3Z-kO-uHt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Quiz" id="38O-F7-kYC"/>
                     <toolbarItems/>
@@ -369,12 +372,11 @@
                         <segue destination="42X-ad-Fpx" kind="relationship" relationship="rootViewController" id="p6j-9t-ijq"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qf0-G2-Lzr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1847" y="564"/>
         </scene>
     </scenes>
     <resources>
-        <image name="thoughfulLogo" width="1234" height="668"/>
+        <image name="thoughfulLogo" width="617" height="334"/>
     </resources>
 </document>

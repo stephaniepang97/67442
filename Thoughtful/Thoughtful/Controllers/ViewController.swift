@@ -9,8 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-  @IBOutlet weak var familyNameInput: UITextField!
-	var familyName : String = ""
+	@IBOutlet weak var familyNameInput: UITextField!
+	@IBOutlet weak var currentUserInput: UITextField!
+  var familyName : String = ""
 	
 
 	
@@ -18,11 +19,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
 	self.familyNameInput.delegate = self
+	self.currentUserInput.delegate = self
 
   }
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		familyNameInput.resignFirstResponder()
+		currentUserInput.resignFirstResponder()
 		return true
 	}
 	
@@ -41,19 +44,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	
   @IBAction func startQuiz() {
 	setFamilyName()
-	
-	
-	
   }
 	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		// set the input data from the storyboard
 		setFamilyName()
 		if segue.identifier == "QuizStartSegue" {
-			let showQuiz:QuizViewController = segue.destination as! QuizViewController
-			showQuiz.familyName = self.familyName
-			showQuiz.quizObject = QuizViewModel(familyName: self.familyName)
+			let tabBarController = segue.destination as! UITabBarController
+			// iterate through navigation controllers
+			for navController in tabBarController.viewControllers! {
+				print(navController)
+				// iterate through view controllers of navigation controllers
+				for controller in navController.childViewControllers {
+					print(controller)
+					// set the user input data, instantiate that model
+					if controller is QuizViewController {
+						let quizView = controller as! QuizViewController
+						quizView.familyName = self.familyName
+						quizView.quizObject = QuizViewModel(familyName: self.familyName)
+					}
+				}
+
+			}
 		}
-	}
+  }
 	
 
 	
