@@ -13,6 +13,52 @@ import SwiftyJSON
 class UserViewModel {
 	var recentStatus = false;
 	
+	func fetchUser(familyName: String, userName: String) {
+		print("Fetching User (Family Name + First Name)..")
+		Alamofire.request("https://thoughtfulapi.herokuapp.com/families").responseJSON {
+			response in switch response.result {
+				case .success(let jsonData):
+					let families = response.result.value
+					let swifty = JSON(families as Any).arrayObject
+					var targetFamily : JSON? = nil
+					var targetUser : JSON? = nil
+					// get the family we are looking for
+					if let swiftySafe = swifty {
+						for index in 0..<swiftySafe.count {
+							var family = JSON(swiftySafe[index])
+							let currentFamilyName = family["family_name"].string
+							let currentFamilyId = family["family_id"].int!
+							if  (familyName == currentFamilyName) {
+								targetFamily = family
+								break
+							}
+						}
+					}
+					// access that family
+					if let currentFamily = targetFamily {
+						// go through all users in that family. return the user that matches the first name
+						let users = currentFamily["users"]
+						for user in users {
+							let userIndex = user.0
+							let userData = user.1
+							let currentName = userData["proper_name"].string
+							// set the target user if it matches the name
+							if (currentName == userName) {
+								targetUser = userData
+							}
+						}
+					}
+					print(targetUser!)
+				case .failure(let error):
+					self.recentStatus = false
+			}
+
+		}
+		
+	}
+	
+	
+	
 	func createUser(firstName: String, lastName: String, familyName: String, role: String) -> Bool {
 		print("Creating User..")
 		var result = true
@@ -45,7 +91,7 @@ class UserViewModel {
 					self.recentStatus = true
 				case .failure(let error):
 					self.recentStatus = false
-					}
+				}
 			}
 			
 		}
