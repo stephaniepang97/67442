@@ -16,10 +16,18 @@ class HomeQuizViewController: UIViewController {
 	var familyName : String = ""
 
 	var quizObject: QuizViewModel?
+	
+	var userObject: UserViewModel = UserViewModel()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+		userObject.fetchUser(familyName: "Pang", userName: "Stephanie Pang")
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		let quizVC = segue.destination as! QuizViewController
+		quizVC.quizObject = self.quizObject
 	}
 	
 	
