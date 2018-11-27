@@ -58,8 +58,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 				for controller in navController.childViewControllers {
 					print(controller)
 					// set the user input data, instantiate that model
-					if controller is QuizViewController {
-						let quizView = controller as! QuizViewController
+					if controller is HomeQuizViewController {
+						let quizView = controller as! HomeQuizViewController
 						quizView.familyName = self.familyName
 						quizView.quizObject = QuizViewModel(familyName: self.familyName)
 					}

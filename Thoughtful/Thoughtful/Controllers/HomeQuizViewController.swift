@@ -1,0 +1,27 @@
+//
+//  HomeQuizViewController.swift
+//  Thoughtful
+//
+//  Created by Alec Lam on 11/27/18.
+//  Copyright © 2018 Stephanie Pang. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+class HomeQuizViewController: UIViewController {
+	
+	var userName : String = ""
+	
+	var familyName : String = ""
+
+	var quizObject: QuizViewModel?
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do any additional setup after loading the view, typically from a nib.
+	}
+	
+	
+	
+}

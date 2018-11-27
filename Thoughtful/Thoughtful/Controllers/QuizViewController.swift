@@ -9,7 +9,6 @@
 import UIKit
 
 class QuizViewController: UIViewController {
-	var familyName : String = ""
 	
 	@IBOutlet weak var questionLabel: UILabel!
 	@IBOutlet weak var promptAnswerLabel: UILabel!
@@ -51,7 +50,6 @@ class QuizViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		print(familyName)
 
 		// Do any additional setup after loading the view, typically from a nib.
 		quizObject?.refresh { [unowned self] in
