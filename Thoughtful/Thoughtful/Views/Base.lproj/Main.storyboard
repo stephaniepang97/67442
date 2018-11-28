@@ -53,7 +53,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUr-Us-f50">
                                 <rect key="frame" x="137" y="545" width="101" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94367343189999997" green="0.99225538970000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <state key="normal" title="register">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -70,7 +70,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNG-vX-iWH">
                                 <rect key="frame" x="137" y="473" width="101" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94367343189999997" green="0.99225538970000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <state key="normal" title="login">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,11 +82,11 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startQuiz" destination="BYZ-38-t0r" eventType="touchUpInside" id="q0Q-yM-68p"/>
-                                    <segue destination="kPb-cQ-9IG" kind="show" identifier="QuizStartSegue" id="AgX-RF-qLz"/>
+                                    <segue destination="5xa-UK-sLH" kind="show" id="nUg-47-wC0"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.77693396960000005" green="0.98189384670000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.8744860520155423" green="0.96511915148276817" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems/>
@@ -183,7 +183,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.66921020870000003" green="0.91637082179999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.88235294117647056" green="0.96470588235294119" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="yal-vi-aWg"/>
                     </view>
                     <toolbarItems/>
@@ -195,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4Z-pU-dcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3733.5999999999999" y="563.56821589205401"/>
+            <point key="canvasLocation" x="1804" y="517"/>
         </scene>
         <!--Question-->
         <scene sceneID="siz-ad-sGo">
@@ -205,7 +205,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2UQ-0I-2ff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="1212"/>
+            <point key="canvasLocation" x="726" y="975"/>
         </scene>
         <!--Create User Controller-->
         <scene sceneID="CEI-L9-5ne">
@@ -298,7 +298,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.77693396960000005" green="0.98189384670000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.96470588235294119" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="aDF-VB-h9R"/>
                     </view>
                     <connections>
@@ -334,46 +334,6 @@
             </objects>
             <point key="canvasLocation" x="-750" y="-289"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="5cm-bI-2B1">
-            <objects>
-                <tabBarController id="kPb-cQ-9IG" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aVz-5N-oN5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Z87-2R-iut" kind="relationship" relationship="viewControllers" id="ERZ-Kz-r3H"/>
-                        <segue destination="G3Z-kO-uHt" kind="relationship" relationship="viewControllers" id="iCS-ga-On7"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rNd-du-3gD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="727" y="564"/>
-        </scene>
-        <!--Quiz-->
-        <scene sceneID="PV0-sb-UbT">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G3Z-kO-uHt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Quiz" id="38O-F7-kYC"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ycI-Oz-E9S">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Px5-9n-PYh">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="5xa-UK-sLH" kind="relationship" relationship="rootViewController" id="Aw4-RL-J2D"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qf0-G2-Lzr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1847" y="564"/>
-        </scene>
         <!--Home Quiz View Controller-->
         <scene sceneID="1iQ-0p-bK5">
             <objects>
@@ -382,26 +342,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMH-2X-elN">
-                                <rect key="frame" x="153" y="318" width="69" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi, Alec!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FI3-jU-JgU">
+                                <rect key="frame" x="39" y="117" width="143" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start Quiz"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rit-E1-Kng">
+                                <rect key="frame" x="39" y="204" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdm-6H-s90">
+                                <rect key="frame" x="249" y="573" width="110" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="yTY-y8-tMo"/>
+                                    <constraint firstAttribute="width" constant="110" id="zdO-Fh-yFW"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="addButton"/>
                                 <connections>
-                                    <segue destination="42X-ad-Fpx" kind="show" id="xna-bh-asR"/>
+                                    <segue destination="Z87-2R-iut" kind="show" id="UA3-8U-uoT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZJ-kP-xK0">
+                                <rect key="frame" x="26" y="583" width="81" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="ENf-US-aKX"/>
+                                    <constraint firstAttribute="width" constant="81" id="sL4-BH-T0P"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="backButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yha-7g-PdH">
+                                <rect key="frame" x="87.5" y="265.5" width="200" height="200"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="VmQ-fo-bbH"/>
+                                    <constraint firstAttribute="height" constant="200" id="wkc-ON-msK"/>
+                                </constraints>
+                                <state key="normal" title="Start Quiz"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="42X-ad-Fpx" kind="show" id="MZz-gK-BAF"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.66921020870000003" green="0.91637082179999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.96470588235294119" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yha-7g-PdH" firstAttribute="centerX" secondItem="lNe-wB-18k" secondAttribute="centerX" id="5HJ-0P-xOX"/>
+                            <constraint firstItem="lNe-wB-18k" firstAttribute="trailing" secondItem="Pdm-6H-s90" secondAttribute="trailing" constant="16" id="SQ0-Ti-MVi"/>
+                            <constraint firstItem="lNe-wB-18k" firstAttribute="bottom" secondItem="2ZJ-kP-xK0" secondAttribute="bottom" constant="30" id="SZa-gg-z5O"/>
+                            <constraint firstItem="yha-7g-PdH" firstAttribute="centerY" secondItem="lNe-wB-18k" secondAttribute="centerY" id="ebv-Dz-eJO"/>
+                            <constraint firstItem="2ZJ-kP-xK0" firstAttribute="leading" secondItem="lNe-wB-18k" secondAttribute="leading" constant="26" id="p9U-i2-ypl"/>
+                            <constraint firstItem="lNe-wB-18k" firstAttribute="bottom" secondItem="Pdm-6H-s90" secondAttribute="bottom" constant="20" id="sDy-ba-dQJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lNe-wB-18k"/>
                     </view>
                     <navigationItem key="navigationItem" id="rAl-X3-xQT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Y3-zy-xmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2830" y="564"/>
+            <point key="canvasLocation" x="727" y="517"/>
         </scene>
     </scenes>
     <resources>
-        <image name="thoughfulLogo" width="617" height="334"/>
+        <image name="addButton" width="480" height="300"/>
+        <image name="backButton" width="329" height="200"/>
+        <image name="thoughfulLogo" width="1234" height="668"/>
     </resources>
 </document>
