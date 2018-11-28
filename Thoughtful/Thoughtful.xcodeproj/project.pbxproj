@@ -16,10 +16,10 @@
 		5368EE4A219086510011860F /* CreateUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5368EE49219086510011860F /* CreateUserController.swift */; };
 		5368EE4C219093F70011860F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5368EE4B219093F70011860F /* QuizViewController.swift */; };
 		53CBBB0321AD1A4200F7EC6D /* HomeQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBBB0221AD1A4200F7EC6D /* HomeQuizViewController.swift */; };
+		53EBA87121AF569B001DDC4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53EBA87021AF569B001DDC4F /* Assets.xcassets */; };
 		72BEC0CD8B3CFF393AE8794B /* Pods_Thoughtful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38680F01BE4A916757C8AF15 /* Pods_Thoughtful.framework */; };
 		907CB79B2186A0C2004A6A27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CB79A2186A0C2004A6A27 /* AppDelegate.swift */; };
 		907CB7A32186A0C2004A6A27 /* Thoughtful.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 907CB7A12186A0C2004A6A27 /* Thoughtful.xcdatamodeld */; };
-		907CB7A52186A0C3004A6A27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907CB7A42186A0C3004A6A27 /* Assets.xcassets */; };
 		907CB7A82186A0C3004A6A27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907CB7A62186A0C3004A6A27 /* LaunchScreen.storyboard */; };
 		907CB7B32186A0C4004A6A27 /* ThoughtfulTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CB7B22186A0C4004A6A27 /* ThoughtfulTests.swift */; };
 		909C26F72190A0390008FC48 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909C26F52190A0390008FC48 /* Question.storyboard */; };
@@ -54,12 +54,12 @@
 		5368EE49219086510011860F /* CreateUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserController.swift; sourceTree = "<group>"; };
 		5368EE4B219093F70011860F /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		53CBBB0221AD1A4200F7EC6D /* HomeQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeQuizViewController.swift; sourceTree = "<group>"; };
+		53EBA87021AF569B001DDC4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EB9C88D8F7D7ABCE4D38A8A /* Pods-Thoughtful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thoughtful.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thoughtful/Pods-Thoughtful.debug.xcconfig"; sourceTree = "<group>"; };
 		64E4AE1B0374248EB897FF96 /* Pods-Thoughtful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thoughtful.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thoughtful/Pods-Thoughtful.release.xcconfig"; sourceTree = "<group>"; };
 		907CB7972186A0C2004A6A27 /* Thoughtful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thoughtful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907CB79A2186A0C2004A6A27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		907CB7A22186A0C2004A6A27 /* Thoughtful.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thoughtful.xcdatamodel; sourceTree = "<group>"; };
-		907CB7A42186A0C3004A6A27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		907CB7A72186A0C3004A6A27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		907CB7A92186A0C3004A6A27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		907CB7AE2186A0C4004A6A27 /* ThoughtfulTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThoughtfulTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,12 +172,12 @@
 		907CB7992186A0C2004A6A27 /* Thoughtful */ = {
 			isa = PBXGroup;
 			children = (
+				53EBA87021AF569B001DDC4F /* Assets.xcassets */,
 				909C26F42190A00A0008FC48 /* Models */,
 				5368EE43219050C30011860F /* Base.lproj */,
 				907CB79A2186A0C2004A6A27 /* AppDelegate.swift */,
 				5368EE3F21904ADD0011860F /* Views */,
 				5368EE3621904AC60011860F /* Controllers */,
-				907CB7A42186A0C3004A6A27 /* Assets.xcassets */,
 				907CB7A62186A0C3004A6A27 /* LaunchScreen.storyboard */,
 				907CB7A92186A0C3004A6A27 /* Info.plist */,
 				907CB7A12186A0C2004A6A27 /* Thoughtful.xcdatamodeld */,
@@ -293,7 +293,7 @@
 				909C26F72190A0390008FC48 /* Question.storyboard in Resources */,
 				90C1EDBA21960DEF0027440F /* QuestionTableCell.xib in Resources */,
 				5368EE46219050C30011860F /* LaunchScreen.storyboard in Resources */,
-				907CB7A52186A0C3004A6A27 /* Assets.xcassets in Resources */,
+				53EBA87121AF569B001DDC4F /* Assets.xcassets in Resources */,
 				5368EE4221904ADD0011860F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,13 +562,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NTQ6HSXFFK;
+				DEVELOPMENT_TEAM = L33S2HZC8R;
 				INFOPLIST_FILE = Thoughtful/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Stephanie.Thoughtful;
+				PRODUCT_BUNDLE_IDENTIFIER = Me.Thoughtful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -582,13 +582,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				"CODE_SIGN_STYLE[sdk=*]" = Automatic;
-				DEVELOPMENT_TEAM = NTQ6HSXFFK;
+				DEVELOPMENT_TEAM = L33S2HZC8R;
 				INFOPLIST_FILE = Thoughtful/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Stephanie.Thoughtful;
+				PRODUCT_BUNDLE_IDENTIFIER = Me.Thoughtful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
