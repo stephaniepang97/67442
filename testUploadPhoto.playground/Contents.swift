@@ -53,7 +53,7 @@ var params = [
 ]
 r.httpBody = createBody(parameters: params,
                         boundary: boundary,
-                        data: UIImageJPEGRepresentation(UIImage(named: "steph.jpg")!, 0.7)!,
+                        data: (UIImage(named: "steph.jpg")?.jpegData(compressionQuality: 0.7))!,
                         mimeType: "image/jpg",
                         filename: "steph.jpg")
 

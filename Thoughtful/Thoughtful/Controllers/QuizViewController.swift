@@ -43,6 +43,7 @@ class QuizViewController: UIViewController {
 				
 			}
 			if let picture = question.attachment {
+				print("picture")
 				imageView.image = picture
 			}
 		}

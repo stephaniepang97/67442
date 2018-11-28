@@ -22,7 +22,6 @@ class UserViewModel {
 		fetchUser(familyName: self.currentUserFamilyName, userName: self.currentUserName, completion: completion)
 	}
 	
-	
 	func fetchUser(familyName: String, userName: String, completion: @escaping () -> Void) {
 		print("Fetching User (Family Name + First Name)..")
 		Alamofire.request("https://thoughtfulapi.herokuapp.com/families").responseJSON {

@@ -63,19 +63,16 @@ class QuizViewModel {
 							question.answer = q["answer"].string
 							question.created_by = q["user"]["user_id"].int
 							if let attachmentUrl = q["attachment"]["url"].string {
-								let imgUrl = URL(string: "https://thoughtfulapi.herokuapp.com" + attachmentUrl)
+								let imgUrl = URL(string: attachmentUrl)
 								Alamofire.request(imgUrl!).responseData { response in
 									print("response from image retrieval: \(String(describing: response))")
 									if let data = response.result.value {
-										print(response.result)
 										question.attachment = UIImage(data: data)
 									}
 								}
 							}
 							print(question.question)
 							if let currentFamilyName = q["user"]["family_name"].string {
-								print("yues")
-								print(currentFamilyName)
 								if (currentFamilyName == self.familyName) {
 									quizQuestions.append(question)
 								}

@@ -28,6 +28,8 @@ gem 'puma', '~> 3.7'
 
 gem 'validates_timeliness', '~> 5.0.0.alpha3'
 gem 'carrierwave', '~> 1.0'
+gem 'hirb'
+gem 'fog-aws'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
