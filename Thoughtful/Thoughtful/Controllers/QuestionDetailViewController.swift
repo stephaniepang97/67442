@@ -35,8 +35,6 @@ class QuestionDetailViewController: UIViewController {
         createdBy.text = "\(detail.created_by!)"
       }
       if let imageView = self.imageView {
-        print("adding image to view")
-        print(detail.attachment!)
         imageView.image = detail.attachment
       }
     }

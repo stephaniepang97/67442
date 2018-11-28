@@ -74,9 +74,7 @@ class QuestionViewModel {
               Alamofire.request(imgUrl!).responseData { response in
                 print("response from image retrieval: \(String(describing: response))")
                 if let data = response.result.value {
-                  print(response.result)
                   question.attachment = UIImage(data: data)
-                  print(question.attachment)
                 }
               }
             }
