@@ -56,35 +56,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skG-01-IqG">
-                                <rect key="frame" x="38" y="153" width="298" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7c-Uu-U6M">
-                                <rect key="frame" x="38" y="193" width="298" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7c-Uu-U6M">
+                                <rect key="frame" x="38" y="185" width="57" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDf-Ha-Stg">
-                                <rect key="frame" x="67" y="257" width="240" height="230"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDf-Ha-Stg">
+                                <rect key="frame" x="67" y="249" width="240" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="4Kn-8c-gnF"/>
+                                    <constraint firstAttribute="width" constant="240" id="NIR-Ak-R4N"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Question created by: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpX-f7-OGw">
-                                <rect key="frame" x="38" y="530" width="164" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question created by: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpX-f7-OGw">
+                                <rect key="frame" x="38" y="522" width="164" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSR-z6-A47">
-                                <rect key="frame" x="210" y="530" width="140" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSR-z6-A47">
+                                <rect key="frame" x="210" y="522" width="140" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skG-01-IqG">
+                                <rect key="frame" x="38" y="153" width="298" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -92,7 +91,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QDf-Ha-Stg" firstAttribute="top" secondItem="I7c-Uu-U6M" secondAttribute="bottom" constant="43" id="5sK-Iy-9qg"/>
+                            <constraint firstItem="skG-01-IqG" firstAttribute="top" secondItem="6tO-1q-Ppg" secondAttribute="top" constant="50" id="AjU-HR-I2g"/>
+                            <constraint firstItem="QDf-Ha-Stg" firstAttribute="centerX" secondItem="6tO-1q-Ppg" secondAttribute="centerX" id="BSn-Dh-4N9"/>
                             <constraint firstItem="gpX-f7-OGw" firstAttribute="top" secondItem="QDf-Ha-Stg" secondAttribute="bottom" constant="43" id="Jvp-qE-8OS"/>
+                            <constraint firstItem="gpX-f7-OGw" firstAttribute="leading" secondItem="6tO-1q-Ppg" secondAttribute="leading" constant="38" id="QOW-5A-bEL"/>
+                            <constraint firstItem="jSR-z6-A47" firstAttribute="centerY" secondItem="gpX-f7-OGw" secondAttribute="centerY" id="Wq6-b4-mQx"/>
+                            <constraint firstItem="skG-01-IqG" firstAttribute="leading" secondItem="6tO-1q-Ppg" secondAttribute="leading" constant="38" id="d6f-a6-CS8"/>
+                            <constraint firstItem="I7c-Uu-U6M" firstAttribute="top" secondItem="skG-01-IqG" secondAttribute="bottom" constant="15" id="qbo-yU-uFO"/>
+                            <constraint firstItem="jSR-z6-A47" firstAttribute="leading" secondItem="gpX-f7-OGw" secondAttribute="trailing" constant="8" id="x7e-Xd-8S7"/>
+                            <constraint firstItem="I7c-Uu-U6M" firstAttribute="leading" secondItem="6tO-1q-Ppg" secondAttribute="leading" constant="38" id="xyo-Q6-sbe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6tO-1q-Ppg"/>
                     </view>
@@ -100,7 +107,7 @@
                     <connections>
                         <outlet property="answerLabel" destination="I7c-Uu-U6M" id="T3Q-g8-fN4"/>
                         <outlet property="createdByLabel" destination="jSR-z6-A47" id="Khu-iZ-y5H"/>
-                        <outlet property="imageView" destination="QDf-Ha-Stg" id="Bej-1J-JbA"/>
+                        <outlet property="imageView" destination="QDf-Ha-Stg" id="nYq-89-f2r"/>
                         <outlet property="questionLabel" destination="skG-01-IqG" id="Rcj-rQ-D0m"/>
                     </connections>
                 </viewController>
@@ -306,6 +313,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="efy-EZ-JfT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N66-yn-07a">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
