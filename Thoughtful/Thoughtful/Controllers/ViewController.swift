@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var familyNameInput: UITextField!
 	@IBOutlet weak var currentUserInput: UITextField!
-  var familyName : String = ""
-	
+	var familyName : String = ""
+	var userName : String = ""
+
 
 	
   override func viewDidLoad() {
@@ -36,19 +38,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
   }
 	
 	
-	private func setFamilyName() {
+	private func setInputs() {
 		if let tempFamily = familyNameInput.text {
 			self.familyName = tempFamily
 		}
+		if let tempUsername = currentUserInput.text {
+			self.userName = tempUsername
+		}
 	}
 	
+	
   @IBAction func startQuiz() {
-	setFamilyName()
+	setInputs()
   }
 	
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		// set the input data from the storyboard
-		setFamilyName()
+		setInputs()
+	
+
 		if segue.identifier == "QuizStartSegue" {
 			let tabBarController = segue.destination as! UITabBarController
 			// iterate through navigation controllers
@@ -61,7 +69,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
 					if controller is HomeQuizViewController {
 						let quizView = controller as! HomeQuizViewController
 						quizView.familyName = self.familyName
+						quizView.userName = self.userName
 						quizView.quizObject = QuizViewModel(familyName: self.familyName)
+						quizView.userObject = UserViewModel()
 					}
 				}
 

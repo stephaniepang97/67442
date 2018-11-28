@@ -13,7 +13,17 @@ import SwiftyJSON
 class UserViewModel {
 	var recentStatus = false;
 	
-	func fetchUser(familyName: String, userName: String) {
+	var currentUser : JSON = JSON()
+	
+	var currentUserFamilyName = ""
+	var currentUserName = ""
+
+	func refresh(completion: @escaping () -> Void) {
+		fetchUser(familyName: self.currentUserFamilyName, userName: self.currentUserName, completion: completion)
+	}
+	
+	
+	func fetchUser(familyName: String, userName: String, completion: @escaping () -> Void) {
 		print("Fetching User (Family Name + First Name)..")
 		Alamofire.request("https://thoughtfulapi.herokuapp.com/families").responseJSON {
 			response in switch response.result {
@@ -48,13 +58,14 @@ class UserViewModel {
 							}
 						}
 					}
-					print(targetUser!)
+					completion()
+					self.currentUser = targetUser!
 				case .failure(let error):
 					self.recentStatus = false
 			}
 
 		}
-		
+	
 	}
 	
 	
