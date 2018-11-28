@@ -20,7 +20,7 @@ protocol AddQuestionControllerDelegate: class {
 }
 
 // MARK: - AddQuestionController
-class AddQuestionController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddQuestionController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     // MARK: - Outlets
     @IBOutlet weak var questionField: UITextField!
     @IBOutlet weak var answerField: UITextField!
@@ -33,6 +33,12 @@ class AddQuestionController: UITableViewController, UIImagePickerControllerDeleg
     let imagePicker = UIImagePickerController()
     var picture: UIImage?
   
+  // MARK: - Text Delegates
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
+  
     // MARK: - General
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +50,10 @@ class AddQuestionController: UITableViewController, UIImagePickerControllerDeleg
 //                                     answerText != "" &&
 //                                     createdByText != "")
 //        }
+      
+      self.questionField.delegate = self
+      self.answerField.delegate = self
+      self.createdByField.delegate = self
 
         PHPhotoLibrary.requestAuthorization({_ in return})
         imagePicker.delegate = (self as UIImagePickerControllerDelegate & UINavigationControllerDelegate)
