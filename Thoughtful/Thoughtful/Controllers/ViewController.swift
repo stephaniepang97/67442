@@ -63,20 +63,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	
 	
   @IBAction func startQuiz() {
-	setInputs()
+    setInputs()
+  }
+  
+  @IBAction func unwindToLogin(segue: UIStoryboardSegue) {
   }
 	
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		// set the input data from the storyboard
 		setInputs()
-		let controller = segue.destination as! HomeQuizViewController
-		if controller is HomeQuizViewController {
-			let quizView = controller as! HomeQuizViewController
-			quizView.familyName = self.familyName
-			quizView.userName = self.userName
-			quizView.quizObject = QuizViewModel(familyName: self.familyName)
-			quizView.userObject = UserViewModel()
-		}
+    if segue.identifier == "login" {
+      let quizView = segue.destination as! HomeQuizViewController
+      quizView.familyName = self.familyName
+      quizView.userName = self.userName
+      quizView.quizObject = QuizViewModel(familyName: self.familyName)
+      quizView.userObject = UserViewModel()
+    }
   }
 	
 

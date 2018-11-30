@@ -24,9 +24,9 @@ class AddQuestionController: UITableViewController, UIImagePickerControllerDeleg
     // MARK: - Outlets
     @IBOutlet weak var questionField: UITextField!
     @IBOutlet weak var answerField: UITextField!
-    @IBOutlet weak var createdByField: UITextField!
     @IBOutlet weak var picPreview: UIImageView!
-    @IBOutlet weak var doneBarButton: UIBarButtonItem!
+  
+    @IBOutlet var customTabBarView: UIView!
   
     // MARK: - Properties
     weak var delegate: AddQuestionControllerDelegate?
@@ -42,21 +42,17 @@ class AddQuestionController: UITableViewController, UIImagePickerControllerDeleg
     // MARK: - General
     override func viewDidLoad() {
         super.viewDidLoad()
-//        doneBarButton.isEnabled = false
-//        if let questionText = questionField.text,
-//           let answerText = answerField.text,
-//           let createdByText = createdByField.text {
-//          doneBarButton.isEnabled = (questionText != "" &&
-//                                     answerText != "" &&
-//                                     createdByText != "")
-//        }
       
       self.questionField.delegate = self
       self.answerField.delegate = self
-      self.createdByField.delegate = self
 
-        PHPhotoLibrary.requestAuthorization({_ in return})
-        imagePicker.delegate = (self as UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+      PHPhotoLibrary.requestAuthorization({_ in return})
+      imagePicker.delegate = (self as UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+      
+      customTabBarView.frame.size.width = self.view.frame.width
+      customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
+      customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
+      self.view.addSubview(customTabBarView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,7 +63,6 @@ class AddQuestionController: UITableViewController, UIImagePickerControllerDeleg
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       questionField.becomeFirstResponder()
-      //    doneBarButton.isEnabled = false
     }
   
     // MARK: - Actions
@@ -79,7 +74,7 @@ class AddQuestionController: UITableViewController, UIImagePickerControllerDeleg
       let question = Question()
       question.question = questionField.text!
       question.answer = answerField.text!
-      question.created_by = Int(createdByField.text!)
+      question.created_by = 1
       question.attachment = picture
       saveQuestion(question: question)
       if question.question.count > 0 {

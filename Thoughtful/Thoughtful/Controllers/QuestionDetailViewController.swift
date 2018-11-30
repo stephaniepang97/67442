@@ -14,6 +14,7 @@ class QuestionDetailViewController: UIViewController {
   @IBOutlet weak var answerLabel: UILabel!
   @IBOutlet weak var createdByLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet var customTabBarView: UIView!
   
   var detailItem: Question? {
     didSet {
@@ -45,6 +46,10 @@ class QuestionDetailViewController: UIViewController {
 
     // Do any additional setup after loading the view.
     self.configureView()
+    customTabBarView.frame.size.width = self.view.frame.width
+    customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
+    customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
+    self.view.addSubview(customTabBarView)
   }
   
   override func didReceiveMemoryWarning() {

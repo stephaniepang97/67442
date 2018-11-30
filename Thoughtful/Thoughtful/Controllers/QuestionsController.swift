@@ -11,8 +11,8 @@ import UIKit
 class QuestionsController: UITableViewController, AddQuestionControllerDelegate {
   
   // MARK: - Properties
-//  var questions = [Question]()
   var questionsVM = QuestionViewModel()
+  @IBOutlet var customTabBarView: UIView!
 
   // MARK: - General
   override func viewDidLoad() {
@@ -23,6 +23,14 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
     print("question: \(String(describing: questionsVM.questions))")
     let cellNib = UINib(nibName: "QuestionTableCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
+    
+    customTabBarView.frame.size.width = self.view.frame.width
+    customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
+    customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
+    self.view.addSubview(customTabBarView)
+  }
+  
+  @IBAction func unwindToQuestions(segue: UIStoryboardSegue) {
   }
 
     // MARK: - Table view data source

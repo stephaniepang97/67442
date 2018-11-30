@@ -48,12 +48,9 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUr-Us-f50">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUr-Us-f50">
                                 <rect key="frame" x="137" y="545" width="101" height="35"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="101" id="YhR-Oz-Dw6"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <state key="normal" title="register">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,7 +61,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="QI7-i4-Ay7" kind="show" id="Ago-Mb-Gf7"/>
+                                    <segue destination="QI7-i4-Ay7" kind="show" identifier="register" id="Ago-Mb-Gf7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNG-vX-iWH">
@@ -84,7 +81,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startQuiz" destination="BYZ-38-t0r" eventType="touchUpInside" id="q0Q-yM-68p"/>
-                                    <segue destination="5xa-UK-sLH" kind="show" id="nUg-47-wC0"/>
+                                    <segue destination="5xa-UK-sLH" kind="show" identifier="login" id="nUg-47-wC0"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteCloudLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Pdh-h8-3pN">
@@ -362,7 +359,7 @@
         <!--Home Quiz View Controller-->
         <scene sceneID="1iQ-0p-bK5">
             <objects>
-                <viewController id="5xa-UK-sLH" customClass="HomeQuizViewController" customModule="Thoughtful" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeQuiz" id="5xa-UK-sLH" customClass="HomeQuizViewController" customModule="Thoughtful" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KBO-19-FCG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -399,6 +396,9 @@
                                     <constraint firstAttribute="width" constant="81" id="sL4-BH-T0P"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="backButton"/>
+                                <connections>
+                                    <segue destination="Ee7-nF-UA3" kind="unwind" unwindAction="unwindToLoginWithSegue:" id="ItT-h3-JKj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yha-7g-PdH">
                                 <rect key="frame" x="87.5" y="265.5" width="200" height="200"/>
@@ -433,8 +433,15 @@
                                         <rect key="frame" x="125" y="293" width="85" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hold on, we're thinking.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSj-oZ-rPA">
+                                        <rect key="frame" x="96" y="350" width="187" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.8784313725490196" green="0.96470588235294119" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -458,6 +465,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Y3-zy-xmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ee7-nF-UA3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="725.60000000000002" y="516.79160419790105"/>
         </scene>

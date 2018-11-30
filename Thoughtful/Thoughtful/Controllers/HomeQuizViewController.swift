@@ -37,21 +37,17 @@ class HomeQuizViewController: UIViewController {
 	
 	func configureView() -> Void {
 		// Update the user interface for the detail item.
-		self.greetingName.text = "Hi, 8" + self.userName
+		self.greetingName.text = "Hi, " + self.userName
 		if let user: UserViewModel = self.userObject {
 			var currentUser = user.currentUser
 			self.currentUser = currentUser
 			print(self.currentUser)
-			print("fuck")
 			print(self.currentUser["proper_name"].string!)
 			print(self.greetingName.text)
 			self.loaded = true
 		}
 	}
 	
-	
-	
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// start loading screen
@@ -69,6 +65,23 @@ class HomeQuizViewController: UIViewController {
 			}
 		}
 	}
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    // Hide the navigation bar on the this view controller
+    self.navigationController?.setNavigationBarHidden(true, animated: animated)
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    // Show the navigation bar on other view controllers
+    self.navigationController?.setNavigationBarHidden(false, animated: animated)
+  }
+  
+  @IBAction func unwindToHomeQuizView(segue: UIStoryboardSegue) {
+  }
 	
 	func startLoadingScreen() {
 		loadingBackdrop.isHidden = false

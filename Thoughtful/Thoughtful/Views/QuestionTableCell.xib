@@ -18,15 +18,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFq-Lc-RIE">
-                        <rect key="frame" x="16" y="11" width="74" height="21"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFq-Lc-RIE">
+                        <rect key="frame" x="16" y="11" width="343" height="21"/>
+                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wb-xT-XxM">
-                        <rect key="frame" x="16" y="36" width="57" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wb-xT-XxM">
+                        <rect key="frame" x="16" y="36" width="343" height="21"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -39,11 +39,12 @@
                     <constraint firstItem="3Wb-xT-XxM" firstAttribute="top" secondItem="tFq-Lc-RIE" secondAttribute="bottom" constant="4" id="b7t-w3-4bP"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="answer" destination="3Wb-xT-XxM" id="QMw-ut-hfw"/>
                 <outlet property="question" destination="tFq-Lc-RIE" id="ay7-i0-RJU"/>
             </connections>
-            <point key="canvasLocation" x="74" y="126"/>
+            <point key="canvasLocation" x="72.799999999999997" y="125.93703148425789"/>
         </tableViewCell>
     </objects>
 </document>
