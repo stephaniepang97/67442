@@ -81,20 +81,20 @@ class HomeQuizViewController: UIViewController {
     self.navigationController?.setNavigationBarHidden(false, animated: animated)
   }
 	
-	@IBAction func startSession() {
-		self.startTime = Date.init()
-	}
-	
-	func createSessionQuestions(sessionId: Int) -> Void {
-		for answered in self.answeredQuestions {
-			sessionObject?.createSessionQuestion(patientSessionId: sessionId, questionId: answered["questionId"].int!, correct: answered["correct"].bool!)
-		}
-	}
-	
-	func endSession() {
-		self.endTime = Date.init()
-		sessionObject?.createSession(startTime: self.startTime, endTime: self.endTime, patientId: self.currentUser["id"].int!, completion: createSessionQuestions)
-	}
+//  @IBAction func startSession() {
+//    self.startTime = Date.init()
+//  }
+//
+//  func createSessionQuestions(sessionId: Int) -> Void {
+//    for answered in self.answeredQuestions {
+//      sessionObject?.createSessionQuestion(patientSessionId: sessionId, questionId: answered["questionId"].int!, correct: answered["correct"].bool!)
+//    }
+//  }
+//
+//  func endSession() {
+//    self.endTime = Date.init()
+//    sessionObject?.createSession(startTime: self.startTime, endTime: self.endTime, patientId: self.currentUser["id"].int!, completion: createSessionQuestions)
+//  }
 	
   @IBAction func unwindToHomeQuizView(segue: UIStoryboardSegue) {
   }
@@ -150,14 +150,15 @@ class HomeQuizViewController: UIViewController {
 
 	}
 	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if (segue.destination is QuizViewController) {
-			let quizVC = segue.destination as! QuizViewController
-			quizVC.quizObject = self.quizObject
-			quizVC.startTime = Date.init()
-			quizVC.patientId =
-		}
-	}
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    if (segue.destination is QuizViewController) {
+//      let quizVC = segue.destination as! QuizViewController
+//      quizVC.quizObject = self.quizObject
+//      quizVC.startTime = Date.init()
+//      quizVC.endTime =
+//      quizVC.patientId =
+//    }
+//  }
 	
 	
 	

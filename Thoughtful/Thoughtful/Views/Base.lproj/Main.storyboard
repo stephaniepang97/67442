@@ -296,7 +296,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4Z-pU-dcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AvA-id-4gp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="517"/>
+            <point key="canvasLocation" x="1838" y="557"/>
         </scene>
         <!--End Quiz View Controller-->
         <scene sceneID="52K-bs-pCB">
@@ -342,34 +342,38 @@
                         <viewLayoutGuide key="safeArea" id="c8y-6J-DRg"/>
                     </view>
                 </viewController>
-                <view opaque="NO" contentMode="scaleToFill" id="Co1-bk-Puj">
+                <view opaque="NO" contentMode="scaleToFill" id="0EJ-Qv-SnI">
                     <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bottomCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="Pj5-Wc-KUu">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bottomCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="9X0-oc-EIT">
                             <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nu7-gy-9zJ">
-                            <rect key="frame" x="26" y="36" width="81" height="54"/>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9r-wZ-fUC">
+                            <rect key="frame" x="266" y="36" width="81" height="54"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="54" id="Ur6-pI-6Xx"/>
-                                <constraint firstAttribute="width" constant="81" id="uyN-X7-Y7v"/>
+                                <constraint firstAttribute="width" constant="81" id="I33-8C-dD3"/>
+                                <constraint firstAttribute="height" constant="54" id="Q3S-wT-1Vo"/>
                             </constraints>
-                            <state key="normal" image="backButton"/>
+                            <state key="normal" image="homeCloud"/>
+                            <connections>
+                                <segue destination="V8F-ef-JiK" kind="unwind" unwindAction="unwindToHomeQuizViewWithSegue:" id="whr-gA-XZ4"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="Pj5-Wc-KUu" firstAttribute="height" secondItem="Co1-bk-Puj" secondAttribute="height" id="TLU-J2-FD3"/>
-                        <constraint firstItem="Pj5-Wc-KUu" firstAttribute="width" secondItem="Co1-bk-Puj" secondAttribute="width" id="jFY-1z-IR1"/>
-                        <constraint firstItem="nu7-gy-9zJ" firstAttribute="leading" secondItem="yhW-ee-ZWt" secondAttribute="leading" constant="26" id="mkg-Ow-G0G"/>
-                        <constraint firstItem="yhW-ee-ZWt" firstAttribute="bottom" secondItem="nu7-gy-9zJ" secondAttribute="bottom" constant="20" id="zHf-7d-eqn"/>
+                        <constraint firstItem="RtH-Xz-9gf" firstAttribute="trailing" secondItem="e9r-wZ-fUC" secondAttribute="trailing" constant="26" id="GP6-JS-ch5"/>
+                        <constraint firstItem="9X0-oc-EIT" firstAttribute="height" secondItem="0EJ-Qv-SnI" secondAttribute="height" id="Klo-pV-lwV"/>
+                        <constraint firstItem="9X0-oc-EIT" firstAttribute="width" secondItem="0EJ-Qv-SnI" secondAttribute="width" id="fwg-St-fNN"/>
+                        <constraint firstItem="RtH-Xz-9gf" firstAttribute="bottom" secondItem="e9r-wZ-fUC" secondAttribute="bottom" constant="20" id="ryX-Kt-3Lq"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="yhW-ee-ZWt"/>
+                    <viewLayoutGuide key="safeArea" id="RtH-Xz-9gf"/>
                 </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zok-Ov-Vgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="V8F-ef-JiK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2720.8000000000002" y="516.79160419790105"/>
+            <point key="canvasLocation" x="2722" y="557"/>
         </scene>
         <!--Question-->
         <scene sceneID="siz-ad-sGo">
@@ -379,7 +383,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2UQ-0I-2ff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="1294"/>
+            <point key="canvasLocation" x="727" y="1033"/>
         </scene>
         <!--Create User Controller-->
         <scene sceneID="CEI-L9-5ne">
@@ -569,28 +573,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdm-6H-s90">
-                                <rect key="frame" x="249" y="573" width="110" height="74"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="yTY-y8-tMo"/>
-                                    <constraint firstAttribute="width" constant="110" id="zdO-Fh-yFW"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="addButton"/>
-                                <connections>
-                                    <segue destination="Z87-2R-iut" kind="show" id="UA3-8U-uoT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZJ-kP-xK0">
-                                <rect key="frame" x="26" y="583" width="81" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="ENf-US-aKX"/>
-                                    <constraint firstAttribute="width" constant="81" id="sL4-BH-T0P"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="backButton"/>
-                                <connections>
-                                    <segue destination="Ee7-nF-UA3" kind="unwind" unwindAction="unwindToLoginWithSegue:" id="ItT-h3-JKj"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yha-7g-PdH">
                                 <rect key="frame" x="87.5" y="243.5" width="200" height="200"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -647,11 +629,7 @@
                         <color key="backgroundColor" red="0.8784313725490196" green="0.96470588235294119" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yha-7g-PdH" firstAttribute="centerX" secondItem="lNe-wB-18k" secondAttribute="centerX" id="5HJ-0P-xOX"/>
-                            <constraint firstItem="lNe-wB-18k" firstAttribute="trailing" secondItem="Pdm-6H-s90" secondAttribute="trailing" constant="16" id="SQ0-Ti-MVi"/>
-                            <constraint firstItem="lNe-wB-18k" firstAttribute="bottom" secondItem="2ZJ-kP-xK0" secondAttribute="bottom" constant="30" id="SZa-gg-z5O"/>
                             <constraint firstItem="yha-7g-PdH" firstAttribute="centerY" secondItem="lNe-wB-18k" secondAttribute="centerY" id="ebv-Dz-eJO"/>
-                            <constraint firstItem="2ZJ-kP-xK0" firstAttribute="leading" secondItem="lNe-wB-18k" secondAttribute="leading" constant="26" id="p9U-i2-ypl"/>
-                            <constraint firstItem="lNe-wB-18k" firstAttribute="bottom" secondItem="Pdm-6H-s90" secondAttribute="bottom" constant="20" id="sDy-ba-dQJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lNe-wB-18k"/>
                     </view>
@@ -664,17 +642,59 @@
                         <outlet property="loadingCloud3" destination="WRq-7E-lrz" id="iKn-Hp-Is8"/>
                     </connections>
                 </viewController>
+                <view opaque="NO" contentMode="scaleToFill" id="ddT-qn-BJV">
+                    <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bottomCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="svU-o2-2Jp">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7l1-5w-acP">
+                            <rect key="frame" x="26" y="36" width="81" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="81" id="6ad-l7-RFa"/>
+                                <constraint firstAttribute="height" constant="54" id="HLE-bs-fMI"/>
+                            </constraints>
+                            <state key="normal" image="backButton"/>
+                            <connections>
+                                <segue destination="Ee7-nF-UA3" kind="unwind" unwindAction="unwindToLoginWithSegue:" id="bPh-as-Bnj"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQr-p3-DjK">
+                            <rect key="frame" x="266" y="36" width="81" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="81" id="CTf-at-0m0"/>
+                                <constraint firstAttribute="height" constant="54" id="ona-eh-Cxa"/>
+                            </constraints>
+                            <state key="normal" image="questionCloud"/>
+                            <connections>
+                                <segue destination="Z87-2R-iut" kind="show" id="wRk-7i-ULR"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="svU-o2-2Jp" firstAttribute="width" secondItem="ddT-qn-BJV" secondAttribute="width" id="I0P-bn-RdB"/>
+                        <constraint firstItem="7l1-5w-acP" firstAttribute="leading" secondItem="8YJ-DP-8eo" secondAttribute="leading" constant="26" id="MRn-vY-MVO"/>
+                        <constraint firstItem="8YJ-DP-8eo" firstAttribute="bottom" secondItem="cQr-p3-DjK" secondAttribute="bottom" constant="20" id="cbw-UL-gCS"/>
+                        <constraint firstItem="svU-o2-2Jp" firstAttribute="height" secondItem="ddT-qn-BJV" secondAttribute="height" id="d6E-8X-qqJ"/>
+                        <constraint firstItem="8YJ-DP-8eo" firstAttribute="trailing" secondItem="cQr-p3-DjK" secondAttribute="trailing" constant="26" id="e3M-n6-iId"/>
+                        <constraint firstItem="8YJ-DP-8eo" firstAttribute="bottom" secondItem="7l1-5w-acP" secondAttribute="bottom" constant="20" id="wAb-Sb-eOt"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="8YJ-DP-8eo"/>
+                </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Y3-zy-xmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ee7-nF-UA3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="725.60000000000002" y="516.79160419790105"/>
+            <point key="canvasLocation" x="726" y="558"/>
         </scene>
     </scenes>
     <resources>
-        <image name="addButton" width="1563" height="986"/>
         <image name="backButton" width="329" height="200"/>
         <image name="bottomCloudRow" width="1543" height="499"/>
+        <image name="homeCloud" width="413" height="249"/>
         <image name="loadingCloud" width="1761" height="1061"/>
+        <image name="questionCloud" width="377" height="228"/>
         <image name="thoughfulLogo" width="1234" height="668"/>
         <image name="topCloudRow" width="1603" height="347"/>
         <image name="whiteCloudLogo" width="1104" height="667"/>
