@@ -392,6 +392,25 @@
                                     <segue destination="42X-ad-Fpx" kind="show" id="MZz-gK-BAF"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vxm-Li-ZjQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="8uM-YQ-WYo">
+                                        <rect key="frame" x="78" y="307" width="57" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="WRq-7E-lrz">
+                                        <rect key="frame" x="199" y="280" width="100" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="rhp-Cu-3b4">
+                                        <rect key="frame" x="125" y="293" width="85" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.8784313725490196" green="0.96470588235294119" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -407,6 +426,10 @@
                     <navigationItem key="navigationItem" id="rAl-X3-xQT"/>
                     <connections>
                         <outlet property="greetingName" destination="FI3-jU-JgU" id="RbC-1f-jGT"/>
+                        <outlet property="loadingBackdrop" destination="Vxm-Li-ZjQ" id="YL3-hF-saS"/>
+                        <outlet property="loadingCloud1" destination="8uM-YQ-WYo" id="Bbg-Ic-yVt"/>
+                        <outlet property="loadingCloud2" destination="rhp-Cu-3b4" id="5iM-O3-c0h"/>
+                        <outlet property="loadingCloud3" destination="WRq-7E-lrz" id="iKn-Hp-Is8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Y3-zy-xmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -417,6 +440,7 @@
     <resources>
         <image name="addButton" width="240" height="150"/>
         <image name="backButton" width="164.5" height="100"/>
+        <image name="loadingCloud" width="880.5" height="530.5"/>
         <image name="thoughfulLogo" width="617" height="334"/>
     </resources>
 </document>

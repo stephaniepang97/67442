@@ -14,11 +14,13 @@ class HomeQuizViewController: UIViewController {
 	
 	@IBOutlet weak var greetingName : UILabel!
 	
-	@IBOutlet weak var loadingCloud1 : UILabel!
-	@IBOutlet weak var loadingCloud2 : UILabel!
-	@IBOutlet weak var loadingCloud3 : UILabel!
+	@IBOutlet weak var loadingBackdrop : UIView!
+	@IBOutlet weak var loadingCloud1 : UIImageView!
+	@IBOutlet weak var loadingCloud2 : UIImageView!
+	@IBOutlet weak var loadingCloud3 : UIImageView!
 
 	let loadingObject = LoadingScreen()
+	var loaded = false
 	var secondsElapsed = 0
 	var timer = Timer()
 	
@@ -43,14 +45,17 @@ class HomeQuizViewController: UIViewController {
 			print("fuck")
 			print(self.currentUser["proper_name"].string!)
 			print(self.greetingName.text)
+			self.loaded = true
 		}
 	}
+	
+	
 	
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// start loading screen
-		scheduleLoadingScreen()
+		startLoadingScreen()
 		// Do any additional setup after loading the view, typically from a nib.
 		print(userObject)
 		print("fucl")
@@ -60,28 +65,58 @@ class HomeQuizViewController: UIViewController {
 		userObject?.refresh { [unowned self] in
 			DispatchQueue.main.async {
 				self.userObject!.fetchUser(familyName: self.familyName, userName: self.userName, completion: self.configureView)
+				
 			}
 		}
 	}
 	
-	func scheduleLoadingScreen() {
-		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: Selector(("updateCounting")), userInfo: nil, repeats: true)
+	func startLoadingScreen() {
+		loadingBackdrop.isHidden = false
+		loadingCloud1.isHidden = true
+		loadingCloud2.isHidden = true
+		loadingCloud3.isHidden = true
+		self.timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.updateLoading), userInfo: nil, repeats: true)
 	}
 	
-	func updateCounting(){
-		self.secondsElapsed = self.secondsElapsed + 1
-		var cloudsDisplay = loadingObject.calculateVisibleClouds(currentSeconds: self.secondsElapsed)
-		
-//		switch (cloudsDisplay) {
-//			case 1:
-//
-//			case 2:
-//
-//			case 3:
-//
-//			default:
-//
-//		}
+	@objc func updateLoading(){
+		print(self.loaded)
+		// still loading
+		if (!self.loaded) {
+			self.secondsElapsed = (self.secondsElapsed + 1) % 100
+			var cloudsDisplay = loadingObject.calculateVisibleClouds(currentSeconds: self.secondsElapsed)
+			print(self.secondsElapsed)
+			// adjust cloud display based on seconds passed
+			switch (cloudsDisplay) {
+			case 1:
+				loadingBackdrop.isHidden = false
+				loadingCloud1.fadeIn()
+				loadingCloud2.isHidden = true
+				loadingCloud3.isHidden = true
+			case 2:
+				loadingBackdrop.isHidden = false
+				loadingCloud1.isHidden = false
+				loadingCloud2.fadeIn()
+				loadingCloud3.isHidden = true
+			case 3:
+				loadingBackdrop.isHidden = false
+				loadingCloud1.isHidden = false
+				loadingCloud2.isHidden = false
+				loadingCloud3.fadeIn()
+			default:
+				loadingBackdrop.isHidden = false
+				loadingCloud1.isHidden = false
+				loadingCloud2.isHidden = false
+				loadingCloud3.isHidden = false
+			}
+		}
+		// done loading, hide everything
+		else {
+			loadingBackdrop.fadeOut()
+			loadingCloud1.isHidden = true
+			loadingCloud2.isHidden = true
+			loadingCloud3.isHidden = true
+		}
+
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
