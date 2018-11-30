@@ -17,16 +17,13 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
   // MARK: - General
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.navigationItem.leftBarButtonItem = self.editButtonItem
+    self.navigationController?.setNavigationBarHidden(true, animated: true)
     
     questionsVM.loadQuestions(tableViewController: self)
     print("question: \(String(describing: questionsVM.questions))")
     let cellNib = UINib(nibName: "QuestionTableCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
     
-    customTabBarView.frame.size.width = self.view.frame.width
-    customTabBarView.frame.origin.y = self.tableView.frame.height-customTabBarView.frame.height
-    customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
     self.view.addSubview(customTabBarView)
   }
   
@@ -34,6 +31,20 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
   }
 
     // MARK: - Table view data source
+  
+  override func tableView(_ tableView: UITableView,
+                          viewForFooterInSection section: Int) -> UIView? {
+    tableView.sectionFooterHeight = customTabBarView.frame.size.height
+    customTabBarView.frame.size.width = self.view.frame.width
+    customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
+    return customTabBarView
+  }
+  
+  override func tableView(_ tableView: UITableView,
+                          viewForHeaderInSection section: Int) -> UIView? {
+    let view = UIImageView(image: UIImage(named: "topCloudRow"))
+    return view
+  }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

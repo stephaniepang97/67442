@@ -46,6 +46,7 @@ class QuestionDetailViewController: UIViewController {
 
     // Do any additional setup after loading the view.
     self.configureView()
+    self.navigationController?.setNavigationBarHidden(true, animated: true)
     customTabBarView.frame.size.width = self.view.frame.width
     customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
     customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
