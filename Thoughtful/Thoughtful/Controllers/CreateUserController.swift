@@ -15,6 +15,8 @@ class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerView
 	@IBOutlet weak var firstNameInput: UITextField!
 	@IBOutlet weak var lastNameInput: UITextField!
 	@IBOutlet weak var familyNameInput: UITextField!
+  
+  @IBOutlet var customTabBarView: UIView!
 
 	var selectedValue : String = ""
 	var roleData: [String] = [String]()
@@ -34,6 +36,11 @@ class CreateUserController: UIViewController, UIPickerViewDelegate, UIPickerView
 		self.firstNameInput.delegate = self
 		self.lastNameInput.delegate = self
 		self.familyNameInput.delegate = self
+    
+    customTabBarView.frame.size.width = self.view.frame.width
+    customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
+    customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
+    self.view.addSubview(customTabBarView)
 
 	}
 	

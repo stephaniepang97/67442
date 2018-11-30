@@ -15,6 +15,9 @@ class QuizViewController: UIViewController {
 	@IBOutlet weak var loadingCloud1 : UIImageView!
 	@IBOutlet weak var loadingCloud2 : UIImageView!
 	@IBOutlet weak var loadingCloud3 : UIImageView!
+  
+  @IBOutlet var customTabBarView: UIView!
+  
 	let loadingObject = LoadingScreen()
 	var loaded = false
 	var secondsElapsed = 0
@@ -81,9 +84,11 @@ class QuizViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		
-
-
+    customTabBarView.frame.size.width = self.view.frame.width
+    customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
+    customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
+    self.view.addSubview(customTabBarView)
+    
 		// start loading screen
 		startLoadingScreen()
 		// Do any additional setup after loading the view, typically from a nib.
