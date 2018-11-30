@@ -22,8 +22,6 @@ class HomeQuizViewController: UIViewController {
 	var loaded = false
 	var secondsElapsed = 0
 	var timer = Timer()
-	
-
 
 	var userName : String = ""
 	
@@ -150,15 +148,15 @@ class HomeQuizViewController: UIViewController {
 
 	}
 	
-//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    if (segue.destination is QuizViewController) {
-//      let quizVC = segue.destination as! QuizViewController
-//      quizVC.quizObject = self.quizObject
-//      quizVC.startTime = Date.init()
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if (segue.destination is QuizViewController) {
+      let quizVC = segue.destination as! QuizViewController
+      quizVC.quizObject = self.quizObject
+      quizVC.startTime = Date.init()
 //      quizVC.endTime =
 //      quizVC.patientId =
-//    }
-//  }
+    }
+  }
 	
 	
 	

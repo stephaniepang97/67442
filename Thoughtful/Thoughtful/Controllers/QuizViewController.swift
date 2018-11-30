@@ -90,10 +90,10 @@ class QuizViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-    customTabBarView.frame.size.width = self.view.frame.width
-    customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
-    customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
-    self.view.addSubview(customTabBarView)
+		customTabBarView.frame.size.width = self.view.frame.width
+		customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
+		customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
+		self.view.addSubview(customTabBarView)
     
 		// start loading screen
 		startLoadingScreen()
