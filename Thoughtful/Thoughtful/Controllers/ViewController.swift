@@ -55,27 +55,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		// set the input data from the storyboard
 		setInputs()
-	
-
-		if segue.identifier == "QuizStartSegue" {
-			let tabBarController = segue.destination as! UITabBarController
-			// iterate through navigation controllers
-			for navController in tabBarController.viewControllers! {
-				print(navController)
-				// iterate through view controllers of navigation controllers
-				for controller in navController.childViewControllers {
-					print(controller)
-					// set the user input data, instantiate that model
-					if controller is HomeQuizViewController {
-						let quizView = controller as! HomeQuizViewController
-						quizView.familyName = self.familyName
-						quizView.userName = self.userName
-						quizView.quizObject = QuizViewModel(familyName: self.familyName)
-						quizView.userObject = UserViewModel()
-					}
-				}
-
-			}
+		let controller = segue.destination as! HomeQuizViewController
+		if controller is HomeQuizViewController {
+			let quizView = controller as! HomeQuizViewController
+			quizView.familyName = self.familyName
+			quizView.userName = self.userName
+			quizView.quizObject = QuizViewModel(familyName: self.familyName)
+			quizView.userObject = UserViewModel()
 		}
   }
 	

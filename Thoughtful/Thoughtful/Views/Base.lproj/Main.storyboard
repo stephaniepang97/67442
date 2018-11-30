@@ -342,11 +342,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi, Alec!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FI3-jU-JgU">
-                                <rect key="frame" x="39" y="117" width="143" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi, " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FI3-jU-JgU">
+                                <rect key="frame" x="39" y="117" width="301" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rit-E1-Kng">
@@ -405,15 +405,18 @@
                         <viewLayoutGuide key="safeArea" id="lNe-wB-18k"/>
                     </view>
                     <navigationItem key="navigationItem" id="rAl-X3-xQT"/>
+                    <connections>
+                        <outlet property="greetingName" destination="FI3-jU-JgU" id="RbC-1f-jGT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Y3-zy-xmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="517"/>
+            <point key="canvasLocation" x="725.60000000000002" y="516.79160419790105"/>
         </scene>
     </scenes>
     <resources>
-        <image name="addButton" width="480" height="300"/>
-        <image name="backButton" width="329" height="200"/>
-        <image name="thoughfulLogo" width="1234" height="668"/>
+        <image name="addButton" width="240" height="150"/>
+        <image name="backButton" width="164.5" height="100"/>
+        <image name="thoughfulLogo" width="617" height="334"/>
     </resources>
 </document>
