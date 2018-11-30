@@ -18,6 +18,9 @@ class HomeQuizViewController: UIViewController {
 	@IBOutlet weak var loadingCloud1 : UIImageView!
 	@IBOutlet weak var loadingCloud2 : UIImageView!
 	@IBOutlet weak var loadingCloud3 : UIImageView!
+  
+  @IBOutlet var customTabBarView: UIView!
+  
 	let loadingObject = LoadingScreen()
 	var loaded = false
 	var secondsElapsed = 0
@@ -63,6 +66,12 @@ class HomeQuizViewController: UIViewController {
 				
 			}
 		}
+    
+    // Do any additional setup after loading the view.
+    customTabBarView.frame.size.width = self.view.frame.width
+    customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
+    customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
+    self.view.addSubview(customTabBarView)
 	}
   
   override func viewWillAppear(_ animated: Bool) {
