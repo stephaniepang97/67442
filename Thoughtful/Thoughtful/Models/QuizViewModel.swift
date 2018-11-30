@@ -16,6 +16,7 @@ class QuizViewModel {
 	
 	func refresh(completion: @escaping () -> Void) {
 		fetchQuestions(completion: completion)
+		completion()
 	}
 	
 	init(familyName: String) {
@@ -71,7 +72,6 @@ class QuizViewModel {
 									}
 								}
 							}
-							
 							print(question.question)
 							if let currentFamilyName = q["user"]["family_name"].string {
 								if (currentFamilyName == self.familyName) {

@@ -204,6 +204,32 @@
                                 <rect key="frame" x="67" y="151" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zRK-zY-zTd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="F2j-0F-xXW">
+                                        <rect key="frame" x="78" y="307" width="57" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="7vt-Nc-iAc">
+                                        <rect key="frame" x="199" y="280" width="100" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="npI-Jy-Ecm">
+                                        <rect key="frame" x="125" y="293" width="85" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="thinking of memories..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4f-9J-j7F">
+                                        <rect key="frame" x="99" y="350" width="176" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.88235294117647056" green="0.96470588235294119" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="yal-vi-aWg"/>
@@ -211,6 +237,10 @@
                     <toolbarItems/>
                     <connections>
                         <outlet property="imageView" destination="e6l-Et-ZTr" id="C6k-Pi-7We"/>
+                        <outlet property="loadingBackdrop" destination="zRK-zY-zTd" id="dIx-JE-Apo"/>
+                        <outlet property="loadingCloud1" destination="F2j-0F-xXW" id="457-Uf-KRR"/>
+                        <outlet property="loadingCloud2" destination="npI-Jy-Ecm" id="GTP-lf-iLx"/>
+                        <outlet property="loadingCloud3" destination="7vt-Nc-iAc" id="zGJ-T0-14t"/>
                         <outlet property="promptAnswerLabel" destination="kgk-NA-IlJ" id="Ppk-ge-f6b"/>
                         <outlet property="questionLabel" destination="FvB-Q1-GWZ" id="jc9-im-p0O"/>
                     </connections>
@@ -434,7 +464,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hold on, we're thinking.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSj-oZ-rPA">
-                                        <rect key="frame" x="96" y="350" width="187" height="23"/>
+                                        <rect key="frame" x="94" y="350" width="187" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -471,10 +501,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addButton" width="480" height="300"/>
-        <image name="backButton" width="329" height="200"/>
-        <image name="loadingCloud" width="1761" height="1061"/>
-        <image name="thoughfulLogo" width="1234" height="668"/>
-        <image name="whiteCloudLogo" width="1104" height="667"/>
+        <image name="addButton" width="781.5" height="493"/>
+        <image name="backButton" width="164.5" height="100"/>
+        <image name="loadingCloud" width="880.5" height="530.5"/>
+        <image name="thoughfulLogo" width="617" height="334"/>
+        <image name="whiteCloudLogo" width="552" height="333.5"/>
     </resources>
 </document>

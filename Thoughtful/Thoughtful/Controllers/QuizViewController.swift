@@ -11,6 +11,16 @@ import SwiftyJSON
 
 class QuizViewController: UIViewController {
 	
+	@IBOutlet weak var loadingBackdrop : UIView!
+	@IBOutlet weak var loadingCloud1 : UIImageView!
+	@IBOutlet weak var loadingCloud2 : UIImageView!
+	@IBOutlet weak var loadingCloud3 : UIImageView!
+	let loadingObject = LoadingScreen()
+	var loaded = false
+	var secondsElapsed = 0
+	var timer = Timer()
+	
+	
 	@IBOutlet weak var questionLabel: UILabel!
 	@IBOutlet weak var promptAnswerLabel: UILabel!
 	var clickedYes: Bool?
@@ -26,12 +36,25 @@ class QuizViewController: UIViewController {
 		if let quiz: QuizViewModel = self.quizObject {
 			var question = Question()
 			if let tempQuestion = self.currentQuestion {
+				// skip if image is set
+				if let imageSet = tempQuestion.attachment {
+					self.loaded = true
+					imageView.image = imageSet
+					return
+				}
 				question = tempQuestion
 			}
+				
+			if (quiz.questions.isEmpty) {
+				return
+			}
+				
 			else {
 				question = quiz.getRandomQuestion()
 				self.currentQuestion = question
 			}
+			
+
 			
 			if let questionText = question.question {
 				questionLabel.text = questionText
@@ -52,17 +75,70 @@ class QuizViewController: UIViewController {
 			if let picture = question.attachment {
 				print("picture")
 				imageView.image = picture
+				self.loaded = true
 			}
 		}
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		// start loading screen
+		startLoadingScreen()
 		// Do any additional setup after loading the view, typically from a nib.
 		quizObject?.refresh { [unowned self] in
 			DispatchQueue.main.async {
 				self.quizObject!.fetchQuestions(completion: self.configureView)
 			}
+		}
+	}
+	
+	
+	
+	func startLoadingScreen() {
+		loadingBackdrop.isHidden = false
+		loadingCloud1.isHidden = true
+		loadingCloud2.isHidden = true
+		loadingCloud3.isHidden = true
+		self.timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.updateLoading), userInfo: nil, repeats: true)
+	}
+	
+	@objc func updateLoading(){
+		configureView()
+		// still loading
+		if (!self.loaded) {
+			self.secondsElapsed = (self.secondsElapsed + 1) % 100
+			var cloudsDisplay = loadingObject.calculateVisibleClouds(currentSeconds: self.secondsElapsed)
+			print(self.secondsElapsed)
+			// adjust cloud display based on seconds passed
+			switch (cloudsDisplay) {
+			case 1:
+				loadingBackdrop.isHidden = false
+				loadingCloud1.fadeIn()
+				loadingCloud2.isHidden = true
+				loadingCloud3.isHidden = true
+			case 2:
+				loadingBackdrop.isHidden = false
+				loadingCloud1.isHidden = false
+				loadingCloud2.fadeIn()
+				loadingCloud3.isHidden = true
+			case 3:
+				loadingBackdrop.isHidden = false
+				loadingCloud1.isHidden = false
+				loadingCloud2.isHidden = false
+				loadingCloud3.fadeIn()
+			default:
+				loadingBackdrop.isHidden = false
+				loadingCloud1.isHidden = false
+				loadingCloud2.isHidden = false
+				loadingCloud3.isHidden = false
+			}
+		}
+			// done loading, hide everything
+		else {
+			loadingBackdrop.fadeOut()
+			loadingCloud1.isHidden = true
+			loadingCloud2.isHidden = true
+			loadingCloud3.isHidden = true
 		}
 		
 	}

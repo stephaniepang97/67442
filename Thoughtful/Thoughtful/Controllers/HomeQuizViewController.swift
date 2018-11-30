@@ -18,7 +18,6 @@ class HomeQuizViewController: UIViewController {
 	@IBOutlet weak var loadingCloud1 : UIImageView!
 	@IBOutlet weak var loadingCloud2 : UIImageView!
 	@IBOutlet weak var loadingCloud3 : UIImageView!
-
 	let loadingObject = LoadingScreen()
 	var loaded = false
 	var secondsElapsed = 0
@@ -53,8 +52,6 @@ class HomeQuizViewController: UIViewController {
 		// start loading screen
 		startLoadingScreen()
 		// Do any additional setup after loading the view, typically from a nib.
-		print(userObject)
-		print("fucl")
 		userObject?.currentUserFamilyName = self.familyName
 		userObject?.currentUserName = self.userName
 		// Do any additional setup after loading the view, typically from a nib.
