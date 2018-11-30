@@ -341,6 +341,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c8y-6J-DRg"/>
                     </view>
+                    <connections>
+                        <outlet property="customTabBarView" destination="0EJ-Qv-SnI" id="b6x-Ti-Udk"/>
+                    </connections>
                 </viewController>
                 <view opaque="NO" contentMode="scaleToFill" id="0EJ-Qv-SnI">
                     <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
@@ -635,6 +638,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="rAl-X3-xQT"/>
                     <connections>
+                        <outlet property="customTabBarView" destination="ddT-qn-BJV" id="xlN-QK-uP8"/>
                         <outlet property="greetingName" destination="FI3-jU-JgU" id="RbC-1f-jGT"/>
                         <outlet property="loadingBackdrop" destination="Vxm-Li-ZjQ" id="YL3-hF-saS"/>
                         <outlet property="loadingCloud1" destination="8uM-YQ-WYo" id="Bbg-Ic-yVt"/>
