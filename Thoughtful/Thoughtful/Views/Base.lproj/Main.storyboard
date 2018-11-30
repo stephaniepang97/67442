@@ -471,7 +471,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addButton" width="480" height="300"/>
+        <image name="addButton" width="1563" height="986"/>
         <image name="backButton" width="329" height="200"/>
         <image name="loadingCloud" width="1761" height="1061"/>
         <image name="thoughfulLogo" width="1234" height="668"/>

@@ -25,7 +25,7 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
     
     customTabBarView.frame.size.width = self.view.frame.width
-    customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
+    customTabBarView.frame.origin.y = self.tableView.frame.height-customTabBarView.frame.height
     customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
     self.view.addSubview(customTabBarView)
   }

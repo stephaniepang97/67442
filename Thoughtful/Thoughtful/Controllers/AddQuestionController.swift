@@ -20,7 +20,7 @@ protocol AddQuestionControllerDelegate: class {
 }
 
 // MARK: - AddQuestionController
-class AddQuestionController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
+class AddQuestionController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     // MARK: - Outlets
     @IBOutlet weak var questionField: UITextField!
     @IBOutlet weak var answerField: UITextField!
@@ -80,12 +80,6 @@ class AddQuestionController: UITableViewController, UIImagePickerControllerDeleg
       if question.question.count > 0 {
         delegate?.addQuestionController(controller: self, didFinishAddingQuestion: question)
       }
-  }
-
-  // MARK: - Table View
-  
-  func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-    return nil
   }
   
   @IBAction func loadImageButtonTapped(sender: UIButton) {
