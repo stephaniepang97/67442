@@ -92,7 +92,6 @@ class HomeQuizViewController: UIViewController {
 	}
 	
 	@objc func updateLoading(){
-		print(self.loaded)
 		// still loading
 		if (!self.loaded) {
 			self.secondsElapsed = (self.secondsElapsed + 1) % 100
