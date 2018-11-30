@@ -19,6 +19,8 @@
 		53EBA87121AF569B001DDC4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53EBA87021AF569B001DDC4F /* Assets.xcassets */; };
 		53EBA87321B0D96E001DDC4F /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA87221B0D96E001DDC4F /* LoadingScreen.swift */; };
 		53EBA87521B103F9001DDC4F /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA87421B103F9001DDC4F /* UIKitExtensions.swift */; };
+		53EBA87721B13236001DDC4F /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA87621B13236001DDC4F /* SessionViewModel.swift */; };
+		53EBA87921B1AE2D001DDC4F /* EndQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA87821B1AE2D001DDC4F /* EndQuizViewController.swift */; };
 		72BEC0CD8B3CFF393AE8794B /* Pods_Thoughtful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38680F01BE4A916757C8AF15 /* Pods_Thoughtful.framework */; };
 		90149FF321B112C1005DB369 /* QuestionTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90149FF221B112C1005DB369 /* QuestionTabBarController.swift */; };
 		907CB79B2186A0C2004A6A27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CB79A2186A0C2004A6A27 /* AppDelegate.swift */; };
@@ -60,6 +62,8 @@
 		53EBA87021AF569B001DDC4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53EBA87221B0D96E001DDC4F /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		53EBA87421B103F9001DDC4F /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		53EBA87621B13236001DDC4F /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		53EBA87821B1AE2D001DDC4F /* EndQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndQuizViewController.swift; sourceTree = "<group>"; };
 		5EB9C88D8F7D7ABCE4D38A8A /* Pods-Thoughtful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thoughtful.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thoughtful/Pods-Thoughtful.debug.xcconfig"; sourceTree = "<group>"; };
 		64E4AE1B0374248EB897FF96 /* Pods-Thoughtful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thoughtful.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thoughtful/Pods-Thoughtful.release.xcconfig"; sourceTree = "<group>"; };
 		90149FF221B112C1005DB369 /* QuestionTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTabBarController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 			children = (
 				90C1EDBD219615AD0027440F /* QuestionDetailViewController.swift */,
 				53CBBB0221AD1A4200F7EC6D /* HomeQuizViewController.swift */,
+				53EBA87821B1AE2D001DDC4F /* EndQuizViewController.swift */,
 				5368EE3721904AC60011860F /* ViewController.swift */,
 				5368EE3821904AC60011860F /* AddQuestionController.swift */,
 				5368EE4B219093F70011860F /* QuizViewController.swift */,
@@ -206,6 +211,7 @@
 			children = (
 				90C1EDB1219566560027440F /* Question.swift */,
 				534C4E8E21A54FE0007ED5FE /* QuizViewModel.swift */,
+				53EBA87621B13236001DDC4F /* SessionViewModel.swift */,
 				534C4E8C21A53999007ED5FE /* UserViewModel.swift */,
 				90C1EDB52195EEEB0027440F /* QuestionViewModel.swift */,
 				53EBA87221B0D96E001DDC4F /* LoadingScreen.swift */,
@@ -381,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90C1EDBC21960E900027440F /* QuestionTableCell.swift in Sources */,
+				53EBA87721B13236001DDC4F /* SessionViewModel.swift in Sources */,
 				907CB7A32186A0C2004A6A27 /* Thoughtful.xcdatamodeld in Sources */,
 				5368EE3A21904AC60011860F /* AddQuestionController.swift in Sources */,
 				90C1EDB42195EB870027440F /* QuestionsController.swift in Sources */,
@@ -397,6 +404,7 @@
 				90C1EDB2219566560027440F /* Question.swift in Sources */,
 				90C1EDB62195EEEB0027440F /* QuestionViewModel.swift in Sources */,
 				5368EE4A219086510011860F /* CreateUserController.swift in Sources */,
+				53EBA87921B1AE2D001DDC4F /* EndQuizViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

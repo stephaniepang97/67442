@@ -12,6 +12,7 @@ import UIKit
 class Question: NSObject {
   
   // MARK: - Properties
+  var id: Int!
   var question: String!
   var answer: String!
   var created_by: Int!

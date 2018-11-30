@@ -18,12 +18,15 @@ class HomeQuizViewController: UIViewController {
 	@IBOutlet weak var loadingCloud1 : UIImageView!
 	@IBOutlet weak var loadingCloud2 : UIImageView!
 	@IBOutlet weak var loadingCloud3 : UIImageView!
-
 	let loadingObject = LoadingScreen()
 	var loaded = false
 	var secondsElapsed = 0
 	var timer = Timer()
 	
+	var startTime : Date = Date()
+	var endTime : Date = Date()
+	var answeredQuestions : [JSON] = []
+
 	var userName : String = ""
 	
 	var familyName : String = ""
@@ -31,6 +34,8 @@ class HomeQuizViewController: UIViewController {
 	var quizObject: QuizViewModel?
 	
 	var userObject: UserViewModel?
+	
+	var sessionObject: SessionViewModel?
 	
 	var currentUser : JSON = JSON()
 	
@@ -53,8 +58,6 @@ class HomeQuizViewController: UIViewController {
 		// start loading screen
 		startLoadingScreen()
 		// Do any additional setup after loading the view, typically from a nib.
-		print(userObject)
-		print("fucl")
 		userObject?.currentUserFamilyName = self.familyName
 		userObject?.currentUserName = self.userName
 		// Do any additional setup after loading the view, typically from a nib.
@@ -79,7 +82,22 @@ class HomeQuizViewController: UIViewController {
     // Show the navigation bar on other view controllers
     self.navigationController?.setNavigationBarHidden(false, animated: animated)
   }
-  
+	
+	@IBAction func startSession() {
+		self.startTime = Date.init()
+	}
+	
+	func createSessionQuestions(sessionId: Int) -> Void {
+		for answered in self.answeredQuestions {
+			sessionObject?.createSessionQuestion(patientSessionId: sessionId, questionId: answered["questionId"].int!, correct: answered["correct"].bool!)
+		}
+	}
+	
+	func endSession() {
+		self.endTime = Date.init()
+		sessionObject?.createSession(startTime: self.startTime, endTime: self.endTime, patientId: self.currentUser["id"].int!, completion: createSessionQuestions)
+	}
+	
   @IBAction func unwindToHomeQuizView(segue: UIStoryboardSegue) {
   }
 	
@@ -90,6 +108,9 @@ class HomeQuizViewController: UIViewController {
 		loadingCloud3.isHidden = true
 		self.timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.updateLoading), userInfo: nil, repeats: true)
 	}
+	
+	
+	
 	
 	@objc func updateLoading(){
 		// still loading

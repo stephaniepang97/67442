@@ -98,6 +98,7 @@ class UserViewModel {
 			Alamofire.request("https://thoughtfulapi.herokuapp.com/users", method: .post, parameters: parameters).responseJSON
 				{ response in switch response.result {
 				case .success(let jsonData):
+					print(jsonData)
 					self.recentStatus = true
 				case .failure(let error):
 					self.recentStatus = false

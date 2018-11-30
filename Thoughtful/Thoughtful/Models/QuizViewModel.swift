@@ -16,6 +16,22 @@ class QuizViewModel {
 	
 	func refresh(completion: @escaping () -> Void) {
 		fetchQuestions(completion: completion)
+		completion()
+	}
+	
+	func getRandomAnswer(currentQuestion: Question) -> String {
+		var questionId = currentQuestion.id
+		var count = self.questions.count
+		if (count <= 1) {
+			return "Temp Wrong Answer"
+		}
+		var randomIndex = Int.random(in: 0..<count)
+		var randomQuestion = self.questions[randomIndex]
+		if (randomQuestion.id == currentQuestion.id) {
+			return getRandomAnswer(currentQuestion: currentQuestion)
+		} else {
+			return randomQuestion.answer
+		}
 	}
 	
 	init(familyName: String) {
@@ -59,6 +75,7 @@ class QuizViewModel {
 						for index in 0..<qs.count {
 							let question = Question()
 							let q = swiftyJson[index]
+							question.id = q["id"].int
 							question.question = q["question"].string
 							question.answer = q["answer"].string
 							question.created_by = q["user"]["user_id"].int
@@ -71,7 +88,6 @@ class QuizViewModel {
 									}
 								}
 							}
-							
 							print(question.question)
 							if let currentFamilyName = q["user"]["family_name"].string {
 								if (currentFamilyName == self.familyName) {
