@@ -23,9 +23,7 @@ class HomeQuizViewController: UIViewController {
 	var secondsElapsed = 0
 	var timer = Timer()
 	
-	var startTime : Date = Date()
-	var endTime : Date = Date()
-	var answeredQuestions : [JSON] = []
+
 
 	var userName : String = ""
 	
@@ -156,6 +154,8 @@ class HomeQuizViewController: UIViewController {
 		if (segue.destination is QuizViewController) {
 			let quizVC = segue.destination as! QuizViewController
 			quizVC.quizObject = self.quizObject
+			quizVC.startTime = Date.init()
+			quizVC.patientId =
 		}
 	}
 	
