@@ -17,6 +17,7 @@
 		5368EE4C219093F70011860F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5368EE4B219093F70011860F /* QuizViewController.swift */; };
 		53CBBB0321AD1A4200F7EC6D /* HomeQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBBB0221AD1A4200F7EC6D /* HomeQuizViewController.swift */; };
 		53EBA87121AF569B001DDC4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53EBA87021AF569B001DDC4F /* Assets.xcassets */; };
+		53EBA87321B0D96E001DDC4F /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA87221B0D96E001DDC4F /* LoadingScreen.swift */; };
 		72BEC0CD8B3CFF393AE8794B /* Pods_Thoughtful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38680F01BE4A916757C8AF15 /* Pods_Thoughtful.framework */; };
 		907CB79B2186A0C2004A6A27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CB79A2186A0C2004A6A27 /* AppDelegate.swift */; };
 		907CB7A32186A0C2004A6A27 /* Thoughtful.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 907CB7A12186A0C2004A6A27 /* Thoughtful.xcdatamodeld */; };
@@ -55,6 +56,7 @@
 		5368EE4B219093F70011860F /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		53CBBB0221AD1A4200F7EC6D /* HomeQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeQuizViewController.swift; sourceTree = "<group>"; };
 		53EBA87021AF569B001DDC4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53EBA87221B0D96E001DDC4F /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		5EB9C88D8F7D7ABCE4D38A8A /* Pods-Thoughtful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thoughtful.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thoughtful/Pods-Thoughtful.debug.xcconfig"; sourceTree = "<group>"; };
 		64E4AE1B0374248EB897FF96 /* Pods-Thoughtful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thoughtful.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thoughtful/Pods-Thoughtful.release.xcconfig"; sourceTree = "<group>"; };
 		907CB7972186A0C2004A6A27 /* Thoughtful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thoughtful.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +203,7 @@
 				534C4E8E21A54FE0007ED5FE /* QuizViewModel.swift */,
 				534C4E8C21A53999007ED5FE /* UserViewModel.swift */,
 				90C1EDB52195EEEB0027440F /* QuestionViewModel.swift */,
+				53EBA87221B0D96E001DDC4F /* LoadingScreen.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				5368EE3A21904AC60011860F /* AddQuestionController.swift in Sources */,
 				90C1EDB42195EB870027440F /* QuestionsController.swift in Sources */,
 				5368EE4C219093F70011860F /* QuizViewController.swift in Sources */,
+				53EBA87321B0D96E001DDC4F /* LoadingScreen.swift in Sources */,
 				5368EE3921904AC60011860F /* ViewController.swift in Sources */,
 				90C1EDBE219615AD0027440F /* QuestionDetailViewController.swift in Sources */,
 				907CB79B2186A0C2004A6A27 /* AppDelegate.swift in Sources */,
