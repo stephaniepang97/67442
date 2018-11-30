@@ -150,6 +150,7 @@
                                 <connections>
                                     <action selector="newQuestion" destination="42X-ad-Fpx" eventType="touchUpInside" id="XaN-cc-BP7"/>
                                     <action selector="printQuestion" destination="42X-ad-Fpx" eventType="touchUpInside" id="EJb-qI-9Fj"/>
+                                    <segue destination="7Yr-nC-OPU" kind="show" id="xWj-Ek-AZN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sr1-aA-cAP">
@@ -247,7 +248,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4Z-pU-dcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="517"/>
+            <point key="canvasLocation" x="1838" y="517"/>
+        </scene>
+        <!--End Quiz View Controller-->
+        <scene sceneID="52K-bs-pCB">
+            <objects>
+                <viewController id="7Yr-nC-OPU" customClass="EndQuizViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zPX-zl-N9V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="whiteCloudLogo" translatesAutoresizingMaskIntoConstraints="NO" id="SD2-R0-mkK">
+                                <rect key="frame" x="102" y="98" width="183" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="109" id="Umj-Kn-Swt"/>
+                                    <constraint firstAttribute="width" constant="183" id="fIW-jg-oOJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="congratulations! you completed today's exercises" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvB-UV-BuS">
+                                <rect key="frame" x="77" y="271" width="220" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87843137250000003" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="c8y-6J-DRg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zok-Ov-Vgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2720.8000000000002" y="516.79160419790105"/>
         </scene>
         <!--Question-->
         <scene sceneID="siz-ad-sGo">
@@ -257,7 +289,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2UQ-0I-2ff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="726" y="975"/>
+            <point key="canvasLocation" x="727" y="1294"/>
         </scene>
         <!--Create User Controller-->
         <scene sceneID="CEI-L9-5ne">

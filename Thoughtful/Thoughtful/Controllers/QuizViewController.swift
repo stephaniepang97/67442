@@ -20,7 +20,6 @@ class QuizViewController: UIViewController {
 	var secondsElapsed = 0
 	var timer = Timer()
 	
-	
 	@IBOutlet weak var questionLabel: UILabel!
 	@IBOutlet weak var promptAnswerLabel: UILabel!
 	var clickedYes: Bool?
@@ -30,8 +29,8 @@ class QuizViewController: UIViewController {
 	
 	var quizObject: QuizViewModel?
 	var currentQuestion: Question?
-
-
+	
+	
 	func configureView() -> Void {
 		// Update the user interface for the detail item.
 		if let quiz: QuizViewModel = self.quizObject {
@@ -55,21 +54,19 @@ class QuizViewController: UIViewController {
 				self.currentQuestion = question
 			}
 			
-
-			
 			if let questionText = question.question {
 				questionLabel.text = questionText
 			}
 			if let answer = question.answer {
-				var random = Int.random(in: 0...10000) % 2
+				var random = Int.random(in: 0...10000) % 4
 				// show correct
-				if (random == 0) {
+				if (random <= 2) {
 					promptAnswerLabel.text = answer + "?"
 					self.showCorrectAnswer = true
 				}
 				// show incorrect
 				else {
-					promptAnswerLabel.text =  "Wrong ? lmao"
+					promptAnswerLabel.text =  quizObject?.getRandomAnswer(currentQuestion: question)
 					self.showCorrectAnswer = false
 				}
 			}
@@ -83,6 +80,10 @@ class QuizViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		
+
+
 		// start loading screen
 		startLoadingScreen()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -153,15 +154,22 @@ class QuizViewController: UIViewController {
 	@IBAction func clickedYesButton() {
 		self.clickedYes = true
 		print("Clicked Yes")
-		quizObject?.correctAnswer(question: self.currentQuestion!, clickedYes: true, shownCorrectAnswer: self.showCorrectAnswer)
-		newQuestion()
+		var correct = quizObject?.correctAnswer(question: self.currentQuestion!, clickedYes: true, shownCorrectAnswer: self.showCorrectAnswer)
+		submitAnswer(correct: correct!)
 	}
 	
 	@IBAction func clickedNoButton() {
 		self.clickedYes = false
 		print("Clicked No")
-		quizObject?.correctAnswer(question: self.currentQuestion!, clickedYes: false, shownCorrectAnswer: self.showCorrectAnswer)
+		var correct = quizObject?.correctAnswer(question: self.currentQuestion!, clickedYes: false, shownCorrectAnswer: self.showCorrectAnswer)
+		submitAnswer(correct: correct!)
+	}
+	
+	func submitAnswer(correct: Bool) {
+		
+		// move to next question
 		newQuestion()
+
 	}
 	
 	
@@ -176,15 +184,15 @@ class QuizViewController: UIViewController {
 		var question = quizObject!.getRandomQuestion()
 		self.currentQuestion = question
 		questionLabel.text = question.question
-		var random = Int.random(in: 0...10000) % 2
+		var random = Int.random(in: 0...10000) % 4
 		// show correct
-		if (random == 0) {
+		if (random <= 2) {
 			promptAnswerLabel.text = question.answer + "?"
 			self.showCorrectAnswer = true
 		}
 			// show incorrect
 		else {
-			promptAnswerLabel.text =  "Wrong ? lmao"
+			promptAnswerLabel.text =  quizObject?.getRandomAnswer(currentQuestion: question)
 			self.showCorrectAnswer = false
 		}
 		imageView.image = question.attachment

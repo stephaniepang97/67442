@@ -19,6 +19,21 @@ class QuizViewModel {
 		completion()
 	}
 	
+	func getRandomAnswer(currentQuestion: Question) -> String {
+		var questionId = currentQuestion.id
+		var count = self.questions.count
+		if (count <= 1) {
+			return "Temp Wrong Answer"
+		}
+		var randomIndex = Int.random(in: 0..<count)
+		var randomQuestion = self.questions[randomIndex]
+		if (randomQuestion.id == currentQuestion.id) {
+			return getRandomAnswer(currentQuestion: currentQuestion)
+		} else {
+			return randomQuestion.answer
+		}
+	}
+	
 	init(familyName: String) {
 		self.familyName = familyName
 	}
