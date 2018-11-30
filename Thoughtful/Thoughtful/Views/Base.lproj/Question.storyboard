@@ -10,21 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Questions-->
+        <!--Questions Controller-->
         <scene sceneID="zJh-p5-0OP">
             <objects>
                 <tableViewController id="fRo-HF-Fek" customClass="QuestionsController" customModule="Thoughtful" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="T9s-7g-Sce">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="80" sectionFooterHeight="28" id="T9s-7g-Sce">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ycB-0o-J0X" customClass="QuestionTableCell" customModule="Thoughtful" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="52" id="ycB-0o-J0X" customClass="QuestionTableCell" customModule="Thoughtful" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="80" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ycB-0o-J0X" id="taf-3O-Eld">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -38,8 +38,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" title="Questions" id="fCO-N0-KsB"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="customTabBarView" destination="bAk-Ha-lic" id="i0Y-ib-8pw"/>
                     </connections>
@@ -49,26 +48,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bottomCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="QdN-R5-IKA">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="1000" ambiguous="YES" image="bottomCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="QdN-R5-IKA">
                             <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGV-EB-TUF">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGV-EB-TUF">
                             <rect key="frame" x="26" y="36" width="81" height="54"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="81" id="ATj-GO-e0a"/>
-                                <constraint firstAttribute="height" constant="54" id="ypc-gG-U8E"/>
-                            </constraints>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="backButton"/>
                             <connections>
                                 <segue destination="aqY-93-Qfl" kind="unwind" unwindAction="unwindToHomeQuizViewWithSegue:" id="qIG-Tx-DVb"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9p-Nl-TNd">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9p-Nl-TNd">
                             <rect key="frame" x="266" y="36" width="81" height="54"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="54" id="UEZ-yV-MiA"/>
-                                <constraint firstAttribute="width" constant="81" id="bez-sx-VOf"/>
-                            </constraints>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="addButton"/>
                             <connections>
                                 <segue destination="Isk-0j-FSL" kind="show" id="kU4-oR-en0"/>
@@ -77,12 +70,8 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="Ah7-RF-4mW" firstAttribute="trailing" secondItem="q9p-Nl-TNd" secondAttribute="trailing" constant="26" id="CkC-0E-U7h"/>
-                        <constraint firstItem="QdN-R5-IKA" firstAttribute="height" secondItem="bAk-Ha-lic" secondAttribute="height" id="Dwi-qn-3bD"/>
-                        <constraint firstItem="VGV-EB-TUF" firstAttribute="leading" secondItem="Ah7-RF-4mW" secondAttribute="leading" constant="26" id="ElZ-Mp-Mk5"/>
-                        <constraint firstItem="QdN-R5-IKA" firstAttribute="width" secondItem="bAk-Ha-lic" secondAttribute="width" id="Ypd-Xx-qgK"/>
-                        <constraint firstItem="Ah7-RF-4mW" firstAttribute="bottom" secondItem="q9p-Nl-TNd" secondAttribute="bottom" constant="20" id="gAT-z6-9vq"/>
-                        <constraint firstItem="Ah7-RF-4mW" firstAttribute="bottom" secondItem="VGV-EB-TUF" secondAttribute="bottom" constant="20" id="qAN-Rl-hU2"/>
+                        <constraint firstItem="QdN-R5-IKA" firstAttribute="width" secondItem="bAk-Ha-lic" secondAttribute="width" id="Q7q-ON-Vb8"/>
+                        <constraint firstItem="QdN-R5-IKA" firstAttribute="height" secondItem="bAk-Ha-lic" secondAttribute="height" id="u6t-bS-ugH"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="Ah7-RF-4mW"/>
                 </view>
@@ -140,13 +129,13 @@
                         <color key="backgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="QDf-Ha-Stg" firstAttribute="top" secondItem="I7c-Uu-U6M" secondAttribute="bottom" constant="43" id="5sK-Iy-9qg"/>
-                            <constraint firstItem="skG-01-IqG" firstAttribute="top" secondItem="6tO-1q-Ppg" secondAttribute="top" constant="50" id="AjU-HR-I2g"/>
+                            <constraint firstItem="skG-01-IqG" firstAttribute="top" secondItem="6tO-1q-Ppg" secondAttribute="top" constant="112" id="AjU-HR-I2g"/>
                             <constraint firstItem="QDf-Ha-Stg" firstAttribute="centerX" secondItem="6tO-1q-Ppg" secondAttribute="centerX" id="BSn-Dh-4N9"/>
                             <constraint firstItem="gpX-f7-OGw" firstAttribute="top" secondItem="QDf-Ha-Stg" secondAttribute="bottom" constant="43" id="Jvp-qE-8OS"/>
                             <constraint firstItem="gpX-f7-OGw" firstAttribute="leading" secondItem="6tO-1q-Ppg" secondAttribute="leading" constant="38" id="QOW-5A-bEL"/>
                             <constraint firstItem="jSR-z6-A47" firstAttribute="centerY" secondItem="gpX-f7-OGw" secondAttribute="centerY" id="Wq6-b4-mQx"/>
                             <constraint firstItem="skG-01-IqG" firstAttribute="leading" secondItem="6tO-1q-Ppg" secondAttribute="leading" constant="38" id="d6f-a6-CS8"/>
-                            <constraint firstItem="I7c-Uu-U6M" firstAttribute="top" secondItem="skG-01-IqG" secondAttribute="bottom" constant="15" id="qbo-yU-uFO"/>
+                            <constraint firstItem="I7c-Uu-U6M" firstAttribute="top" secondItem="skG-01-IqG" secondAttribute="bottom" constant="8" id="qbo-yU-uFO"/>
                             <constraint firstItem="XAb-pc-PLd" firstAttribute="leading" secondItem="6tO-1q-Ppg" secondAttribute="leading" constant="32" id="tM8-qK-lhU"/>
                             <constraint firstItem="jSR-z6-A47" firstAttribute="leading" secondItem="gpX-f7-OGw" secondAttribute="trailing" constant="8" id="x7e-Xd-8S7"/>
                             <constraint firstItem="I7c-Uu-U6M" firstAttribute="leading" secondItem="6tO-1q-Ppg" secondAttribute="leading" constant="38" id="xyo-Q6-sbe"/>
