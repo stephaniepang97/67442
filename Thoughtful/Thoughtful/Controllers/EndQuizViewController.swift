@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class EndQuizViewController {
+	var startTime : Date?
+	var endTime : Date?
+	var answeredQuestions : [JSON]?
+	
+	var sessionObject: SessionViewModel = SessionViewModel()
+	
+	
 	
 }

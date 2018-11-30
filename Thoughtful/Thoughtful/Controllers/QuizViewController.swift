@@ -20,6 +20,12 @@ class QuizViewController: UIViewController {
 	var secondsElapsed = 0
 	var timer = Timer()
 	
+	
+	var startTime : Date?
+	var answeredQuestions : [JSON] = []
+	
+	
+	
 	@IBOutlet weak var questionLabel: UILabel!
 	@IBOutlet weak var promptAnswerLabel: UILabel!
 	var clickedYes: Bool?
