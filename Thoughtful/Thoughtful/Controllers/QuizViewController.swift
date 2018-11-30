@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class QuizViewController: UIViewController {
 	
@@ -23,10 +24,17 @@ class QuizViewController: UIViewController {
 	func configureView() -> Void {
 		// Update the user interface for the detail item.
 		if let quiz: QuizViewModel = self.quizObject {
-			var question = quiz.getRandomQuestion()
-			self.currentQuestion = question
-			if let question = question.question {
-				questionLabel.text = question
+			var question = Question()
+			if let tempQuestion = self.currentQuestion {
+				question = tempQuestion
+			}
+			else {
+				question = quiz.getRandomQuestion()
+				self.currentQuestion = question
+			}
+			
+			if let questionText = question.question {
+				questionLabel.text = questionText
 			}
 			if let answer = question.answer {
 				var random = Int.random(in: 0...10000) % 2
@@ -40,7 +48,6 @@ class QuizViewController: UIViewController {
 					promptAnswerLabel.text =  "Wrong ? lmao"
 					self.showCorrectAnswer = false
 				}
-				
 			}
 			if let picture = question.attachment {
 				print("picture")
@@ -51,12 +58,10 @@ class QuizViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
 		// Do any additional setup after loading the view, typically from a nib.
 		quizObject?.refresh { [unowned self] in
 			DispatchQueue.main.async {
 				self.quizObject!.fetchQuestions(completion: self.configureView)
-				
 			}
 		}
 		

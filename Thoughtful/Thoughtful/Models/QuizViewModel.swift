@@ -71,6 +71,7 @@ class QuizViewModel {
 									}
 								}
 							}
+							
 							print(question.question)
 							if let currentFamilyName = q["user"]["family_name"].string {
 								if (currentFamilyName == self.familyName) {
