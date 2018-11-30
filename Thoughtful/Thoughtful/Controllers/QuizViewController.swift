@@ -25,6 +25,7 @@ class QuizViewController: UIViewController {
 	@IBOutlet weak var promptAnswerLabel: UILabel!
 	var clickedYes: Bool?
 	var showCorrectAnswer: Bool = true
+
 	@IBOutlet weak var imageView: UIImageView!
 	
 	var quizObject: QuizViewModel?

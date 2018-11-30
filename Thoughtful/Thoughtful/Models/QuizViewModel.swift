@@ -60,6 +60,7 @@ class QuizViewModel {
 						for index in 0..<qs.count {
 							let question = Question()
 							let q = swiftyJson[index]
+							question.id = q["id"].int
 							question.question = q["question"].string
 							question.answer = q["answer"].string
 							question.created_by = q["user"]["user_id"].int
