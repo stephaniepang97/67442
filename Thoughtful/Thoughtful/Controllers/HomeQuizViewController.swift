@@ -41,7 +41,7 @@ class HomeQuizViewController: UIViewController {
 	
 	func configureView() -> Void {
 		// Update the user interface for the detail item.
-		self.greetingName.text = "Hi, " + self.userName
+		self.greetingName.text = "hi, " + self.userName
 		if let user: UserViewModel = self.userObject {
 			var currentUser = user.currentUser
 			self.currentUser = currentUser
