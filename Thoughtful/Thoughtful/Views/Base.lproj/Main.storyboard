@@ -83,7 +83,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="Skw-Y7-9je">
-                                <rect key="frame" x="0.0" y="-15" width="375" height="78"/>
+                                <rect key="frame" x="0.0" y="-4" width="375" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="LAI-Cm-8D3"/>
                                 </constraints>
@@ -188,7 +188,7 @@
                                     <action selector="clickedYesButton" destination="42X-ad-Fpx" eventType="touchUpInside" id="HZi-ii-0OV"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="rzY-lV-9Qo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="topCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="rzY-lV-9Qo">
                                 <rect key="frame" x="0.0" y="-18" width="375" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="i6w-eV-KVb"/>
@@ -238,14 +238,14 @@
                                     <constraint firstItem="F2j-0F-xXW" firstAttribute="leading" secondItem="zRK-zY-zTd" secondAttribute="leading" constant="78" id="ycC-0V-BkB"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thoughfulLogo" translatesAutoresizingMaskIntoConstraints="NO" id="u6z-fh-WUg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="thoughfulLogo" translatesAutoresizingMaskIntoConstraints="NO" id="u6z-fh-WUg">
                                 <rect key="frame" x="16" y="66" width="133" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="ePm-Rn-Jx9"/>
                                     <constraint firstAttribute="width" constant="133" id="l4D-dr-vY5"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUo-h2-VEW">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUo-h2-VEW">
                                 <rect key="frame" x="258" y="83.5" width="101" height="35"/>
                                 <color key="backgroundColor" red="0.94367343189999997" green="0.99225538970000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -375,7 +375,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="LTQ-jL-DSS">
-                                <rect key="frame" x="0.0" y="-15" width="375" height="68"/>
+                                <rect key="frame" x="0.0" y="-14" width="375" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="qIJ-XX-JCZ"/>
                                 </constraints>
@@ -622,6 +622,45 @@
             </objects>
             <point key="canvasLocation" x="1804" y="-289.20539730134936"/>
         </scene>
+        <!--Progress View Controller-->
+        <scene sceneID="UBA-TB-ch5">
+            <objects>
+                <viewController id="GXg-c3-Unk" customClass="ProgressViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZV8-p5-7zA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="topCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="Wyq-XN-9Kk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="Bqv-Hn-n2t"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="thoughfulLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3NW-KM-fEl">
+                                <rect key="frame" x="16" y="75" width="133" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="WR4-AL-9LO"/>
+                                    <constraint firstAttribute="height" constant="70" id="sxf-Po-rue"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYM-gU-YIC">
+                                <rect key="frame" x="195" y="95" width="121" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="wY0-fe-Nuw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87843137250000003" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="0MU-Ly-sYw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFR-XU-kCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="557"/>
+        </scene>
         <!--Home Quiz View Controller-->
         <scene sceneID="1iQ-0p-bK5">
             <objects>
@@ -771,13 +810,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backButton" width="329" height="200"/>
-        <image name="bottomCloudRow" width="1543" height="499"/>
-        <image name="homeCloud" width="413" height="249"/>
-        <image name="loadingCloud" width="1761" height="1061"/>
-        <image name="questionCloud" width="377" height="228"/>
-        <image name="thoughfulLogo" width="1234" height="668"/>
-        <image name="topCloudRow" width="1603" height="279"/>
-        <image name="whiteCloudLogo" width="1104" height="667"/>
+        <image name="backButton" width="164.5" height="100"/>
+        <image name="bottomCloudRow" width="771.5" height="249.5"/>
+        <image name="homeCloud" width="206.5" height="124.5"/>
+        <image name="loadingCloud" width="880.5" height="530.5"/>
+        <image name="questionCloud" width="188.5" height="114"/>
+        <image name="thoughfulLogo" width="617" height="334"/>
+        <image name="topCloudRow" width="801.5" height="139.5"/>
+        <image name="whiteCloudLogo" width="552" height="333.5"/>
     </resources>
 </document>

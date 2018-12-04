@@ -7,6 +7,7 @@ target 'Thoughtful' do
   # Pods for Thoughtful
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'Charts'
 
   target 'ThoughtfulTests' do
     inherit! :search_paths
