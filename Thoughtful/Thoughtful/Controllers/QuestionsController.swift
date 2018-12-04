@@ -13,11 +13,17 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
   // MARK: - Properties
   var questionsVM = QuestionViewModel()
   @IBOutlet var customTabBarView: UIView!
+  @IBOutlet var topCloudRow: UIImageView!
 
   // MARK: - General
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationController?.setNavigationBarHidden(true, animated: true)
+    self.tableView.separatorStyle = .none
+    
+//    topCloudRow.frame.size.width = self.tableView.frame.width
+    topCloudRow.frame.origin.y = -35
+    self.navigationController?.view = topCloudRow
     
     questionsVM.loadQuestions(tableViewController: self)
     print("question: \(String(describing: questionsVM.questions))")
@@ -40,19 +46,17 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
     return customTabBarView
   }
   
-  override func tableView(_ tableView: UITableView,
-                          viewForHeaderInSection section: Int) -> UIView? {
-    let view = UIImageView(image: UIImage(named: "topCloudRow"))
-    return view
-  }
+//  override func tableView(_ tableView: UITableView,
+//                          viewForHeaderInSection section: Int) -> UIView? {
+//    let view = UIImageView(image: UIImage(named: "topCloudRow"))
+//    return view
+//  }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return questionsVM.questions.count
     }
 
