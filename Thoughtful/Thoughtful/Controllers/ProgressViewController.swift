@@ -11,35 +11,78 @@ import Charts
 
 
 class ProgressViewController: UIViewController  {
-	@IBOutlet var chartView: BarChartView!
+	@IBOutlet var barChartView: BarChartView!
+	
 	
 	var months: [String]!
 	
 	override func viewDidLoad() {
 		
-		chartView.noDataText = "No patient data available"
+		barChartView.noDataText = "No patient data available"
 	
-		months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-		let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
-		
+		months = ["Jan", "Feb", "Mar"]
+		let unitsSold = [0.0, 1.0, 2.0]
+		// set data
 		setChart(dataPoints: months, values: unitsSold)
+		barChartView.minOffset = 25
+		barChartView.scaleXEnabled = false
+		barChartView.scaleYEnabled = false
+
+		barChartView.extraTopOffset = -50
+		barChartView.xAxis.labelFont = UIFont.init(name: "Futura", size: 10)!
+		barChartView.leftAxis.labelFont = UIFont.init(name: "Futura", size: 10)!
+		barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:months)
+		barChartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
+		barChartView.leftAxis.drawGridLinesEnabled = false
+		barChartView.xAxis.drawGridLinesEnabled = false
+		barChartView.rightAxis.enabled = false
+		
+		barChartView.leftAxis.axisMinimum = 0.0
+		barChartView.leftAxis.axisMaximum = 100.0
+		
+		barChartView.legend.enabled = false
+
 
 	}
 	
 	func setChart(dataPoints: [String], values: [Double]) {
 		var dataEntries: [BarChartDataEntry] = Array()
 		var counter = 0.0
-		
+		var red : UIColor = UIColor(red: 1, green: 132/255, blue: 153/255, alpha: 1)
+		var green : UIColor = UIColor(red: 141/255, green: 220/255, blue: 133/255, alpha: 1)
+
+		var barColors : Array<UIColor> = []
 		for i in 0..<dataPoints.count {
-			counter += 1.0
-			let dataEntry = BarChartDataEntry(x: values[i], y: counter)
+			print("set")
+			
+			var value = 0.0
+			switch (i) {
+				case 0:
+					value = 40.0
+				case 1:
+					value = 100.0
+				default:
+					value = 65.0
+			}
+			if (value < 50.0) {
+				barColors.append(red) // red
+			} else {
+				barColors.append(green) // green
+			}
+			
+			let dataEntry = BarChartDataEntry(x: values[i], y: value)
 			dataEntries.append(dataEntry)
 		}
 		
 		let chartDataSet = BarChartDataSet(values: dataEntries, label: "Time")
+		chartDataSet.colors = barColors
+		chartDataSet.highlightEnabled = false
+		chartDataSet.valueFont = UIFont.init(name: "Futura", size: 8)!
 		let chartData = BarChartData()
 		chartData.addDataSet(chartDataSet)
-		chartView.data = chartData
+		barChartView.data = chartData
+		barChartView.fitScreen()
+		barChartView.notifyDataSetChanged()
 	}
 	
 	

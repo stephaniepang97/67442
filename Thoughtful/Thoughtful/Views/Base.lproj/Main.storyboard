@@ -630,20 +630,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="topCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="Wyq-XN-9Kk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="Wyq-XN-9Kk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="Bqv-Hn-n2t"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="buu-mp-IbU"/>
+                                    <constraint firstAttribute="width" constant="375" id="u2E-P6-d3e"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="thoughfulLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3NW-KM-fEl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thoughfulLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3NW-KM-fEl">
                                 <rect key="frame" x="16" y="75" width="133" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="133" id="WR4-AL-9LO"/>
-                                    <constraint firstAttribute="height" constant="70" id="sxf-Po-rue"/>
+                                    <constraint firstAttribute="height" constant="70" id="83q-7n-vyk"/>
+                                    <constraint firstAttribute="width" constant="133" id="gkg-Oe-D2e"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYM-gU-YIC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYM-gU-YIC">
                                 <rect key="frame" x="195" y="95" width="121" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="wY0-fe-Nuw"/>
@@ -652,22 +654,33 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ox-vX-vhs" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="67" y="189" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ox-vX-vhs" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="205" width="343" height="195"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.87843137250000003" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3NW-KM-fEl" firstAttribute="leading" secondItem="8Ox-vX-vhs" secondAttribute="leading" id="7Fu-lA-5UA"/>
+                            <constraint firstItem="0MU-Ly-sYw" firstAttribute="bottom" secondItem="8Ox-vX-vhs" secondAttribute="bottom" constant="203" id="CUq-68-zx8"/>
+                            <constraint firstItem="YYM-gU-YIC" firstAttribute="leading" secondItem="3NW-KM-fEl" secondAttribute="trailing" constant="46" id="EBO-0h-968"/>
+                            <constraint firstItem="8Ox-vX-vhs" firstAttribute="top" secondItem="ZV8-p5-7zA" secondAttribute="top" constant="269" id="QC0-Cj-ArH"/>
+                            <constraint firstItem="3NW-KM-fEl" firstAttribute="top" secondItem="Wyq-XN-9Kk" secondAttribute="bottom" constant="8" symbolic="YES" id="YA0-qc-wl2"/>
+                            <constraint firstItem="3NW-KM-fEl" firstAttribute="top" secondItem="ZV8-p5-7zA" secondAttribute="top" constant="75" id="dfy-5D-gcP"/>
+                            <constraint firstItem="3NW-KM-fEl" firstAttribute="leading" secondItem="ZV8-p5-7zA" secondAttribute="leadingMargin" id="ict-Ml-jni"/>
+                            <constraint firstItem="8Ox-vX-vhs" firstAttribute="trailing" secondItem="ZV8-p5-7zA" secondAttribute="trailingMargin" id="jX5-OK-PMZ"/>
+                            <constraint firstItem="YYM-gU-YIC" firstAttribute="top" secondItem="Wyq-XN-9Kk" secondAttribute="bottom" constant="28" id="tIA-SY-nc0"/>
+                            <constraint firstItem="8Ox-vX-vhs" firstAttribute="centerX" secondItem="Wyq-XN-9Kk" secondAttribute="centerX" id="wYC-vM-K8V"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0MU-Ly-sYw"/>
                     </view>
                     <connections>
-                        <outlet property="chartView" destination="8Ox-vX-vhs" id="ObR-sz-hbX"/>
+                        <outlet property="barChartView" destination="8Ox-vX-vhs" id="t4O-ju-Yfj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFR-XU-kCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-135" y="557"/>
+            <point key="canvasLocation" x="-135.19999999999999" y="555.47226386806597"/>
         </scene>
         <!--Home Quiz View Controller-->
         <scene sceneID="1iQ-0p-bK5">
