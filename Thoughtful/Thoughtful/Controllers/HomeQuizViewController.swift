@@ -19,7 +19,7 @@ class HomeQuizViewController: UIViewController {
 	@IBOutlet weak var loadingCloud2 : UIImageView!
 	@IBOutlet weak var loadingCloud3 : UIImageView!
   
-  @IBOutlet var customTabBarView: UIView!
+    @IBOutlet var customTabBarView: UIView!
   
 	let loadingObject = LoadingScreen()
 	var loaded = false
@@ -67,11 +67,11 @@ class HomeQuizViewController: UIViewController {
 			}
 		}
     
-    // Do any additional setup after loading the view.
-    customTabBarView.frame.size.width = self.view.frame.width
-    customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
-    customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
-    self.view.addSubview(customTabBarView)
+		// Do any additional setup after loading the view.
+		customTabBarView.frame.size.width = self.view.frame.width
+		customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
+		customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
+		self.view.addSubview(customTabBarView)
 	}
   
   override func viewWillAppear(_ animated: Bool) {
@@ -161,7 +161,8 @@ class HomeQuizViewController: UIViewController {
     if (segue.destination is QuizViewController) {
       let quizVC = segue.destination as! QuizViewController
       quizVC.quizObject = self.quizObject
-      quizVC.startTime = Date.init()
+		quizVC.startTime = Date.init()
+		quizVC.patientId = self.currentUser["user_id"].int!
 //      quizVC.endTime =
 //      quizVC.patientId =
     }

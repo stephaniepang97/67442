@@ -135,50 +135,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zRK-zY-zTd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="F2j-0F-xXW">
-                                        <rect key="frame" x="78" y="307" width="57" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="Mtb-YS-4ap"/>
-                                            <constraint firstAttribute="width" constant="57" id="yro-Tn-tTO"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="7vt-Nc-iAc">
-                                        <rect key="frame" x="199" y="280" width="100" height="62"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="62" id="4rF-kG-SHT"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="npI-Jy-Ecm">
-                                        <rect key="frame" x="125" y="293" width="85" height="49"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="49" id="LuO-Wt-oM0"/>
-                                            <constraint firstAttribute="width" constant="85" id="ax8-l6-lIk"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thinking of memories..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4f-9J-j7F">
-                                        <rect key="frame" x="99" y="350" width="177" height="23"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="X4f-9J-j7F" firstAttribute="centerX" secondItem="zRK-zY-zTd" secondAttribute="centerX" id="9Vc-GR-EDz"/>
-                                    <constraint firstItem="X4f-9J-j7F" firstAttribute="top" secondItem="F2j-0F-xXW" secondAttribute="bottom" constant="8" symbolic="YES" id="Hw7-km-Edi"/>
-                                    <constraint firstItem="7vt-Nc-iAc" firstAttribute="top" secondItem="zRK-zY-zTd" secondAttribute="top" constant="280" id="JQ8-vy-gjV"/>
-                                    <constraint firstAttribute="trailing" secondItem="7vt-Nc-iAc" secondAttribute="trailing" constant="76" id="P0t-8W-MI9"/>
-                                    <constraint firstItem="X4f-9J-j7F" firstAttribute="leading" secondItem="zRK-zY-zTd" secondAttribute="leading" constant="99" id="hdO-J5-usK"/>
-                                    <constraint firstItem="X4f-9J-j7F" firstAttribute="top" secondItem="7vt-Nc-iAc" secondAttribute="bottom" constant="8" symbolic="YES" id="mFR-7F-aDz"/>
-                                    <constraint firstItem="X4f-9J-j7F" firstAttribute="top" secondItem="npI-Jy-Ecm" secondAttribute="bottom" constant="8" symbolic="YES" id="sxU-1X-KJW"/>
-                                    <constraint firstItem="npI-Jy-Ecm" firstAttribute="leading" secondItem="zRK-zY-zTd" secondAttribute="leading" constant="125" id="vVN-TX-LFg"/>
-                                    <constraint firstItem="7vt-Nc-iAc" firstAttribute="leading" secondItem="F2j-0F-xXW" secondAttribute="trailing" constant="64" id="yMU-AO-tzN"/>
-                                    <constraint firstItem="F2j-0F-xXW" firstAttribute="leading" secondItem="zRK-zY-zTd" secondAttribute="leading" constant="78" id="ycC-0V-BkB"/>
-                                </constraints>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e6l-Et-ZTr">
                                 <rect key="frame" x="67" y="151" width="240" height="240"/>
                                 <constraints>
@@ -245,6 +201,50 @@
                                     <constraint firstAttribute="width" constant="133" id="l4D-dr-vY5"/>
                                 </constraints>
                             </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zRK-zY-zTd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="F2j-0F-xXW">
+                                        <rect key="frame" x="78" y="307" width="57" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Mtb-YS-4ap"/>
+                                            <constraint firstAttribute="width" constant="57" id="yro-Tn-tTO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="7vt-Nc-iAc">
+                                        <rect key="frame" x="199" y="280" width="100" height="62"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="62" id="4rF-kG-SHT"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="npI-Jy-Ecm">
+                                        <rect key="frame" x="125" y="293" width="85" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="LuO-Wt-oM0"/>
+                                            <constraint firstAttribute="width" constant="85" id="ax8-l6-lIk"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thinking of memories..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4f-9J-j7F">
+                                        <rect key="frame" x="99" y="350" width="177" height="23"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="X4f-9J-j7F" firstAttribute="centerX" secondItem="zRK-zY-zTd" secondAttribute="centerX" id="9Vc-GR-EDz"/>
+                                    <constraint firstItem="X4f-9J-j7F" firstAttribute="top" secondItem="F2j-0F-xXW" secondAttribute="bottom" constant="8" symbolic="YES" id="Hw7-km-Edi"/>
+                                    <constraint firstItem="7vt-Nc-iAc" firstAttribute="top" secondItem="zRK-zY-zTd" secondAttribute="top" constant="280" id="JQ8-vy-gjV"/>
+                                    <constraint firstAttribute="trailing" secondItem="7vt-Nc-iAc" secondAttribute="trailing" constant="76" id="P0t-8W-MI9"/>
+                                    <constraint firstItem="X4f-9J-j7F" firstAttribute="leading" secondItem="zRK-zY-zTd" secondAttribute="leading" constant="99" id="hdO-J5-usK"/>
+                                    <constraint firstItem="X4f-9J-j7F" firstAttribute="top" secondItem="7vt-Nc-iAc" secondAttribute="bottom" constant="8" symbolic="YES" id="mFR-7F-aDz"/>
+                                    <constraint firstItem="X4f-9J-j7F" firstAttribute="top" secondItem="npI-Jy-Ecm" secondAttribute="bottom" constant="8" symbolic="YES" id="sxU-1X-KJW"/>
+                                    <constraint firstItem="npI-Jy-Ecm" firstAttribute="leading" secondItem="zRK-zY-zTd" secondAttribute="leading" constant="125" id="vVN-TX-LFg"/>
+                                    <constraint firstItem="7vt-Nc-iAc" firstAttribute="leading" secondItem="F2j-0F-xXW" secondAttribute="trailing" constant="64" id="yMU-AO-tzN"/>
+                                    <constraint firstItem="F2j-0F-xXW" firstAttribute="leading" secondItem="zRK-zY-zTd" secondAttribute="leading" constant="78" id="ycC-0V-BkB"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUo-h2-VEW">
                                 <rect key="frame" x="258" y="83.5" width="101" height="35"/>
                                 <color key="backgroundColor" red="0.94367343189999997" green="0.99225538970000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -252,7 +252,7 @@
                                     <constraint firstAttribute="width" constant="101" id="iDD-mH-Ckl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <state key="normal" title="next">
+                                <state key="normal" title="end">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -261,7 +261,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="newQuestion" destination="42X-ad-Fpx" eventType="touchUpInside" id="XaN-cc-BP7"/>
                                     <action selector="printQuestion" destination="42X-ad-Fpx" eventType="touchUpInside" id="EJb-qI-9Fj"/>
                                     <segue destination="7Yr-nC-OPU" kind="show" id="xWj-Ek-AZN"/>
                                 </connections>
@@ -352,7 +351,7 @@
         <!--End Quiz View Controller-->
         <scene sceneID="52K-bs-pCB">
             <objects>
-                <viewController id="7Yr-nC-OPU" customClass="EndQuizViewController" sceneMemberID="viewController">
+                <viewController id="7Yr-nC-OPU" customClass="EndQuizViewController" customModule="Thoughtful" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zPX-zl-N9V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

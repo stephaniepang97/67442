@@ -13,16 +13,27 @@ import SwiftyJSON
 class SessionViewModel {
 	
 	public func createSessionQuestion(patientSessionId: Int, questionId: Int, correct: Bool) -> Void {
-		let parameters: Parameters = [
-			"patient_session_id": patientSessionId,
-			"question_id": questionId,
-			"correct": correct,
+		var parameters : Parameters
+		if (correct) {
+			parameters = [
+				"patient_session_id": patientSessionId,
+				"question_id": questionId,
+				"correct": true
 			]
-		print(parameters)
+		}
+		else {
+			parameters = [
+				"patient_session_id": patientSessionId,
+				"question_id": questionId,
+				"correct": false
+			]
+		}
+
 		Alamofire.request("https://thoughtfulapi.herokuapp.com/session_questions", method: .post, parameters: parameters).responseJSON { response in
 			switch response.result {
 			case .success(let responseJson):
 				print("Created Session Question")
+				print(parameters)
 				print(responseJson)
 			case .failure(let error):
 				print("Failed Creating Session Question")

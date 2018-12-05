@@ -23,12 +23,6 @@ class QuizViewController: UIViewController {
 	var secondsElapsed = 0
 	var timer = Timer()
 	
-	
-	var startTime : Date?
-	var answeredQuestions : [JSON] = []
-	
-	
-	
 	@IBOutlet weak var questionLabel: UILabel!
 	@IBOutlet weak var promptAnswerLabel: UILabel!
 	var clickedYes: Bool?
@@ -39,6 +33,12 @@ class QuizViewController: UIViewController {
 	var quizObject: QuizViewModel?
 	var currentQuestion: Question?
 	
+	// session information
+	var sessionObject = SessionViewModel()
+	var patientId : Int?
+	var startTime : Date?
+	var endTime : Date?
+	var answeredQuestions : [JSON] = []
 	
 	func configureView() -> Void {
 		// Update the user interface for the detail item.
@@ -90,6 +90,7 @@ class QuizViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		// add custom tab bar
 		customTabBarView.frame.size.width = self.view.frame.width
 		customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
 		customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
@@ -166,24 +167,25 @@ class QuizViewController: UIViewController {
 		self.clickedYes = true
 		print("Clicked Yes")
 		var correct = quizObject?.correctAnswer(question: self.currentQuestion!, clickedYes: true, shownCorrectAnswer: self.showCorrectAnswer)
-		submitAnswer(correct: correct!)
+		addQuestion(correct: correct!, questionId: (self.currentQuestion?.id)!)
 	}
 	
 	@IBAction func clickedNoButton() {
 		self.clickedYes = false
 		print("Clicked No")
 		var correct = quizObject?.correctAnswer(question: self.currentQuestion!, clickedYes: false, shownCorrectAnswer: self.showCorrectAnswer)
-		submitAnswer(correct: correct!)
+		addQuestion(correct: correct!, questionId: (self.currentQuestion?.id)!)
 	}
 	
-	func submitAnswer(correct: Bool) {
-		
+	func addQuestion(correct: Bool, questionId: Int) {
+		let response: JSON = [
+			"questionId": questionId,
+			"correct": correct
+			]
+		answeredQuestions.append(response)
 		// move to next question
 		newQuestion()
-
 	}
-	
-	
 	
 	@IBAction func printQuestion() {
 		var question = quizObject?.getRandomQuestion()
@@ -208,5 +210,24 @@ class QuizViewController: UIViewController {
 		}
 		imageView.image = question.attachment
 	}
+	
+	// add session questions
+	func submitQuestions(sessionId: Int) {
+		for question in answeredQuestions {
+			sessionObject.createSessionQuestion(patientSessionId: sessionId, questionId: question["questionId"].int!, correct: question["correct"].bool!)
+		}
+	}
+	
+	
+	// whenever leaving this view, we want to end the session
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if (answeredQuestions.count > 0) {
+			self.endTime = Date.init()
+			sessionObject.createSession(startTime: self.startTime!, endTime: self.endTime!, patientId: self.patientId!, completion: submitQuestions)
+		}
+		print(segue.destination)
+		
+	}
+	
 }
 
