@@ -8,5 +8,5 @@ class SessionQuestion < ApplicationRecord
   scope :correctly_answered, -> { where("correct = true") }
 
   # Validations
-  validates_presence_of :patient_session_id, :question_id, :correct
+  validates_presence_of :patient_session_id, :question_id
 end
