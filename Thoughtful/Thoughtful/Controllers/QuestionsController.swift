@@ -8,59 +8,45 @@
 
 import UIKit
 
-class QuestionsController: UITableViewController, AddQuestionControllerDelegate {
+class QuestionsController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddQuestionControllerDelegate {
   
   // MARK: - Properties
   var questionsVM = QuestionViewModel()
   @IBOutlet var customTabBarView: UIView!
-  @IBOutlet var topCloudRow: UIImageView!
+  @IBOutlet var tableView: UITableView!
 
   // MARK: - General
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationController?.setNavigationBarHidden(true, animated: true)
     self.tableView.separatorStyle = .none
+    self.tableView.delegate = self
     
-//    topCloudRow.frame.size.width = self.tableView.frame.width
-    topCloudRow.frame.origin.y = -35
-    self.navigationController?.view = topCloudRow
+    customTabBarView.frame.size.width = self.view.frame.width
+    customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
+    customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
+    self.view.addSubview(customTabBarView)
     
     questionsVM.loadQuestions(tableViewController: self)
     print("question: \(String(describing: questionsVM.questions))")
     let cellNib = UINib(nibName: "QuestionTableCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
-    
-    self.view.addSubview(customTabBarView)
   }
   
   @IBAction func unwindToQuestions(segue: UIStoryboardSegue) {
   }
 
     // MARK: - Table view data source
-  
-  override func tableView(_ tableView: UITableView,
-                          viewForFooterInSection section: Int) -> UIView? {
-    tableView.sectionFooterHeight = customTabBarView.frame.size.height
-    customTabBarView.frame.size.width = self.view.frame.width
-    customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
-    return customTabBarView
-  }
-  
-//  override func tableView(_ tableView: UITableView,
-//                          viewForHeaderInSection section: Int) -> UIView? {
-//    let view = UIImageView(image: UIImage(named: "topCloudRow"))
-//    return view
-//  }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questionsVM.questions.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! QuestionTableCell
     
       let question = questionsVM.questions[indexPath.row]
@@ -72,13 +58,13 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
     }
 
     // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
 
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -87,7 +73,7 @@ class QuestionsController: UITableViewController, AddQuestionControllerDelegate 
         }    
     }
   
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       self.performSegue(withIdentifier: "showDetail", sender: tableView)
     }
   

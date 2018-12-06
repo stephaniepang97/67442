@@ -12,7 +12,7 @@ class QuestionDetailViewController: UIViewController {
   
   @IBOutlet weak var questionLabel: UILabel!
   @IBOutlet weak var answerLabel: UILabel!
-  @IBOutlet weak var createdByLabel: UILabel!
+//  @IBOutlet weak var createdByLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet var customTabBarView: UIView!
   
@@ -32,9 +32,9 @@ class QuestionDetailViewController: UIViewController {
       if let answer = self.answerLabel {
         answer.text = detail.answer
       }
-      if let createdBy = self.createdByLabel {
-        createdBy.text = "\(detail.created_by!)"
-      }
+//      if let createdBy = self.createdByLabel {
+//        createdBy.text = "\(detail.created_by!)"
+//      }
       if let imageView = self.imageView {
         imageView.image = detail.attachment
       }
