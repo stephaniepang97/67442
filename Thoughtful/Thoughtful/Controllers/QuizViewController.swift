@@ -16,7 +16,7 @@ class QuizViewController: UIViewController {
 	@IBOutlet weak var loadingCloud2 : UIImageView!
 	@IBOutlet weak var loadingCloud3 : UIImageView!
   
-  @IBOutlet var customTabBarView: UIView!
+    @IBOutlet var customTabBarView: UIView!
   
 	let loadingObject = LoadingScreen()
 	var loaded = false

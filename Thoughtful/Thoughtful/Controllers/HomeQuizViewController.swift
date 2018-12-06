@@ -161,11 +161,15 @@ class HomeQuizViewController: UIViewController {
     if (segue.destination is QuizViewController) {
       let quizVC = segue.destination as! QuizViewController
       quizVC.quizObject = self.quizObject
-		quizVC.startTime = Date.init()
-		quizVC.patientId = self.currentUser["user_id"].int!
-//      quizVC.endTime =
-//      quizVC.patientId =
+	  quizVC.startTime = Date.init()
+	  quizVC.patientId = self.currentUser["user_id"].int!
     }
+	
+	else if (segue.destination is ProgressViewController) {
+		let progressVC = segue.destination as! ProgressViewController
+//		progressVC.analyticsObject = 
+		
+	}
   }
 	
 	

@@ -13,10 +13,18 @@ import Charts
 class ProgressViewController: UIViewController  {
 	@IBOutlet var barChartView: BarChartView!
 	
+	@IBOutlet var customTabBarView: UIView!
+
 	
 	var months: [String]!
 	
+	
+	@IBAction func unwindToHomeQuizView(segue: UIStoryboardSegue) {
+	}
+	
 	override func viewDidLoad() {
+		
+		// load graph
 		
 		barChartView.noDataText = "No patient data available"
 	
@@ -43,6 +51,12 @@ class ProgressViewController: UIViewController  {
 		barChartView.legend.enabled = false
 
 
+		
+		// Do any additional setup after loading the view.
+		customTabBarView.frame.size.width = self.view.frame.width
+		customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
+		customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
+		self.view.addSubview(customTabBarView)
 	}
 	
 	func setChart(dataPoints: [String], values: [Double]) {

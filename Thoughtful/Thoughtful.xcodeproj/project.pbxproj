@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53083B0C21B90120004EE69F /* UserAnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53083B0B21B9011F004EE69F /* UserAnalyticsViewModel.swift */; };
 		534C4E8D21A53999007ED5FE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534C4E8C21A53999007ED5FE /* UserViewModel.swift */; };
 		534C4E8F21A54FE0007ED5FE /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534C4E8E21A54FE0007ED5FE /* QuizViewModel.swift */; };
 		535864B021B6EF500006A197 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535864AF21B6EF500006A197 /* ProgressViewController.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		134467094834F48FC6B34B20 /* Pods-ThoughtfulTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtfulTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtfulTests/Pods-ThoughtfulTests.debug.xcconfig"; sourceTree = "<group>"; };
 		38680F01BE4A916757C8AF15 /* Pods_Thoughtful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thoughtful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53083B0B21B9011F004EE69F /* UserAnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnalyticsViewModel.swift; sourceTree = "<group>"; };
 		534C4E8C21A53999007ED5FE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		534C4E8E21A54FE0007ED5FE /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		535864AF21B6EF500006A197 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				90C1EDB1219566560027440F /* Question.swift */,
+				53083B0B21B9011F004EE69F /* UserAnalyticsViewModel.swift */,
 				534C4E8E21A54FE0007ED5FE /* QuizViewModel.swift */,
 				53EBA87621B13236001DDC4F /* SessionViewModel.swift */,
 				534C4E8C21A53999007ED5FE /* UserViewModel.swift */,
@@ -393,6 +396,7 @@
 			files = (
 				90C1EDBC21960E900027440F /* QuestionTableCell.swift in Sources */,
 				53EBA87721B13236001DDC4F /* SessionViewModel.swift in Sources */,
+				53083B0C21B90120004EE69F /* UserAnalyticsViewModel.swift in Sources */,
 				907CB7A32186A0C2004A6A27 /* Thoughtful.xcdatamodeld in Sources */,
 				5368EE3A21904AC60011860F /* AddQuestionController.swift in Sources */,
 				90C1EDB42195EB870027440F /* QuestionsController.swift in Sources */,
