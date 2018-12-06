@@ -39,12 +39,9 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <outlet property="customTabBarView" destination="bAk-Ha-lic" id="i0Y-ib-8pw"/>
-                        <outlet property="topCloudRow" destination="5Tj-xo-U5o" id="CtP-4s-9ne"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ls3-Rk-Gug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aqY-93-Qfl" userLabel="Exit" sceneMemberID="exit"/>
                 <view opaque="NO" contentMode="scaleToFill" id="bAk-Ha-lic">
                     <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -86,15 +83,6 @@
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="Ah7-RF-4mW"/>
                 </view>
-                <exit id="aqY-93-Qfl" userLabel="Exit" sceneMemberID="exit"/>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topCloudRow" id="5Tj-xo-U5o">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="67" id="4Q3-bL-zb6"/>
-                        <constraint firstAttribute="width" constant="375" id="IHW-x7-MjS"/>
-                    </constraints>
-                </imageView>
             </objects>
             <point key="canvasLocation" x="3631.1999999999998" y="229.83508245877064"/>
         </scene>
@@ -102,17 +90,17 @@
         <scene sceneID="h5g-si-bkD">
             <objects>
                 <viewController id="bWA-ru-Uil" customClass="QuestionDetailViewController" customModule="Thoughtful" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="uRD-aH-XZa">
+                    <view key="view" contentMode="scaleToFill" id="uRD-aH-XZa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="98U-Dr-etC">
-                                <rect key="frame" x="0.0" y="-15" width="375" height="67"/>
+                                <rect key="frame" x="0.0" y="-18" width="375" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="8on-u4-7lF"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7c-Uu-U6M">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7c-Uu-U6M">
                                 <rect key="frame" x="34" y="212" width="298" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="CIs-fv-udS"/>
@@ -121,13 +109,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDf-Ha-Stg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QDf-Ha-Stg">
                                 <rect key="frame" x="63" y="276" width="240" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="OWo-pG-wWC"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Question created by: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpX-f7-OGw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question created by: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpX-f7-OGw">
                                 <rect key="frame" x="34" y="549" width="164" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Lfo-v1-qN3"/>
@@ -136,7 +124,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSR-z6-A47">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSR-z6-A47">
                                 <rect key="frame" x="206" y="549" width="140" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="aoF-9Q-u49"/>
@@ -145,7 +133,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skG-01-IqG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skG-01-IqG">
                                 <rect key="frame" x="34" y="159" width="298" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="2Ea-UW-oni"/>
@@ -154,7 +142,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="thoughfulLogo" translatesAutoresizingMaskIntoConstraints="NO" id="XAb-pc-PLd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thoughfulLogo" translatesAutoresizingMaskIntoConstraints="NO" id="XAb-pc-PLd">
                                 <rect key="frame" x="28" y="57" width="137" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="eWT-Bl-Kj9"/>
@@ -356,9 +344,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bottomCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="YWW-Mb-8hi">
-                            <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
-                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgR-2Y-72j">
                             <rect key="frame" x="26" y="36" width="81" height="54"/>
                             <state key="normal" image="backButton"/>
@@ -366,6 +351,9 @@
                                 <segue destination="uOW-Uk-BLH" kind="unwind" unwindAction="unwindToQuestionsWithSegue:" id="kJE-RV-hEo"/>
                             </connections>
                         </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bottomCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="YWW-Mb-8hi">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
