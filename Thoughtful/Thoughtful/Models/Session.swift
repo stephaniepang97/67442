@@ -17,17 +17,20 @@ class Session : NSObject {
 	var id: Int!
 	var startTime: Date!
 	var endTime: Date!
-	var totalCorrect: Int!
-	var totalIncorrect: Int!
+	var totalCorrect: Int
+	var totalIncorrect: Int
 	var totalAnswered: Int
 	var answeredQuestions: [SessionQuestion]
 	
 	var percentCorrect: Double
 	
 	// Mark: - General
-	init(answeredQuestions: [JSON]) {
-		self.percentCorrect = (Double(totalCorrect) / Double(totalIncorrect)) * 100
-		self.totalAnswered = self.totalCorrect + self.totalIncorrect
+	init(totalCorrect:Int, totalAnswered:Int, answeredQuestions: [JSON]) {
+		self.totalCorrect = totalCorrect
+		self.totalAnswered = totalAnswered
+		self.totalIncorrect = totalAnswered - totalCorrect
+		self.percentCorrect = (Double(totalCorrect) / Double(self.totalIncorrect)) * 100
+
 		
 		var result : [SessionQuestion] = []
 		for question in answeredQuestions {

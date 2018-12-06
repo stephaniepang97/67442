@@ -46,7 +46,7 @@ class UserAnalyticsViewModel {
 		switch response.result
 			{
 			case .success(let jsonResponse):
-				var sessions : [JSON] = []
+				var sessions : [Session] = []
 				let swifty = JSON(jsonResponse)
 				// got through all patient sessions, if they match the provided user, save to array
 				for i in 0..<swifty.count {
@@ -54,14 +54,21 @@ class UserAnalyticsViewModel {
 					if (currentSession["user"] == user) {
 						
 						// *** MAKE SESSION OBJECT MODEL
+						var correctCount = currentSession["total_correct"].int!
+						var answeredCount = currentSession["total_answered"].int!
+						var questions = currentSession["session_questions"].array!
+
+						var session = Session(totalCorrect: correctCount, totalAnswered: answeredCount,answeredQuestions: questions)
 						
-						
-						
-						sessions.append(currentSession)
+						sessions.append(session)
 					}
 				}
 				
 				// *** PARSE DATA TO PRESENT BACK TO VIEW
+				var data = JSON()
+				for session in sessions {
+					
+				}
 				
 				print("Fetched!")
 			case .failure(let error):
