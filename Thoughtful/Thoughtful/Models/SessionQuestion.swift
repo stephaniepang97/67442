@@ -9,16 +9,17 @@
 import Foundation
 import UIKit
 
-class SessionQuestion{
+class SessionQuestion : NSObject {
 	// MARK: - Properties
 	var id: Int!
 	var correct: Bool!
 	var question: String!
+	var answer: String!
 	var attachment: UIImage?
 	
 	// Mark: - General
 	
-//	override init(){
-//		super.init()
-//	}
+	override init(){
+		super.init()
+	}
 }
