@@ -8,6 +8,7 @@
 
 import Foundation
 import Charts
+import SwiftyJSON
 
 
 class ProgressViewController: UIViewController  {
@@ -15,15 +16,46 @@ class ProgressViewController: UIViewController  {
 	
 	@IBOutlet var customTabBarView: UIView!
 
-	
+	var analyticsObject : UserAnalyticsViewModel!
+	var familyName : String!
+
 	var months: [String]!
 	
 	
 	@IBAction func unwindToHomeQuizView(segue: UIStoryboardSegue) {
 	}
 	
+	func setData(data: JSON) {
+		print("success!!!!!")
+		print(data["incorrect_questions"])
+	}
+	
+	
+	func configureView() -> Void {
+		// Update the user interface for the detail item.
+		if let data: UserAnalyticsViewModel = self.analyticsObject {
+			var currentData : JSON = data.currentData
+			var sessions : [Session] = currentData["recent_sessions"].arrayObject! as! [Session]
+			var incorrect_questions : [SessionQuestion] = currentData["incorrect_questions"].arrayObject! as! [SessionQuestion]
+			for session in sessions {
+				print(session.percentCorrect)
+			}
+
+			print("hey")
+//			self.loaded = true
+		}
+	}
+	
 	override func viewDidLoad() {
 		
+		
+		// get the data
+//		analyticsObject.getPatientDataFromFamilyName(familyName: self.familyName, completion: setData)
+		analyticsObject.refresh { [unowned self] in
+			DispatchQueue.main.async {
+				self.analyticsObject.getPatientDataFromFamilyName(familyName: self.familyName, completion: self.configureView)
+			}
+		}
 		// load graph
 		
 		barChartView.noDataText = "No patient data available"

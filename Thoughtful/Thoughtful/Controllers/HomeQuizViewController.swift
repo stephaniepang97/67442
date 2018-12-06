@@ -63,7 +63,6 @@ class HomeQuizViewController: UIViewController {
 		userObject?.refresh { [unowned self] in
 			DispatchQueue.main.async {
 				self.userObject!.fetchUser(familyName: self.familyName, userName: self.userName, completion: self.configureView)
-				
 			}
 		}
     
@@ -87,21 +86,6 @@ class HomeQuizViewController: UIViewController {
     // Show the navigation bar on other view controllers
     self.navigationController?.setNavigationBarHidden(false, animated: animated)
   }
-	
-//  @IBAction func startSession() {
-//    self.startTime = Date.init()
-//  }
-//
-//  func createSessionQuestions(sessionId: Int) -> Void {
-//    for answered in self.answeredQuestions {
-//      sessionObject?.createSessionQuestion(patientSessionId: sessionId, questionId: answered["questionId"].int!, correct: answered["correct"].bool!)
-//    }
-//  }
-//
-//  func endSession() {
-//    self.endTime = Date.init()
-//    sessionObject?.createSession(startTime: self.startTime, endTime: self.endTime, patientId: self.currentUser["id"].int!, completion: createSessionQuestions)
-//  }
 	
   @IBAction func unwindToHomeQuizView(segue: UIStoryboardSegue) {
   }
@@ -157,6 +141,9 @@ class HomeQuizViewController: UIViewController {
 
 	}
 	
+	
+	
+
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if (segue.destination is QuizViewController) {
       let quizVC = segue.destination as! QuizViewController
@@ -167,8 +154,9 @@ class HomeQuizViewController: UIViewController {
 	
 	else if (segue.destination is ProgressViewController) {
 		let progressVC = segue.destination as! ProgressViewController
-//		progressVC.analyticsObject = 
-		
+		progressVC.analyticsObject = UserAnalyticsViewModel()
+		progressVC.analyticsObject.familyName = self.currentUser["family_name"].string!
+		progressVC.familyName = self.currentUser["family_name"].string!
 	}
   }
 	
