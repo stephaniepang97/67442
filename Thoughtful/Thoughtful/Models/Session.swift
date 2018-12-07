@@ -21,6 +21,7 @@ class Session : NSObject {
 	var totalIncorrect: Int
 	var totalAnswered: Int
 	var answeredQuestions: [SessionQuestion]
+  var incorrectQuestions: [SessionQuestion] = [SessionQuestion]()
 	
 	var percentCorrect: Double
 	
@@ -51,6 +52,10 @@ class Session : NSObject {
 				}
 			}
 			result.append(object)
+      
+      if !object.correct {
+        incorrectQuestions.append(object)
+      }
 		}
 		self.answeredQuestions = result
 		

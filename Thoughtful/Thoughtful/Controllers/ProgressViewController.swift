@@ -93,8 +93,9 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
 		self.view.addSubview(customTabBarView)
     
     let cellNib = UINib(nibName: "SessionTableCell", bundle: nil)
-    tableView.register(cellNib, forCellReuseIdentifier: "sessionTableCell")
+    self.tableView.register(cellNib, forCellReuseIdentifier: "sessionTableCell")
 	}
+  
   
   // MARK: - Table View properties
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -119,6 +120,8 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
     self.performSegue(withIdentifier: "showSessionDetail", sender: tableView)
   }
 	
+  
+  
   // MARK: - Bar Chart
 	func setChart(dataPoints: [String], values: [Double]) {
 		var dataEntries: [BarChartDataEntry] = Array()
@@ -161,6 +164,9 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
 	}
 	
 	
+  // MARK: - Navigation
+  @IBAction func unwindToProgress(segue: UIStoryboardSegue) {
+  }
 	
 	
 }
