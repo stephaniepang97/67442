@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thoughtful/Models/UserAnalyticsViewModel.swift"
-            timestampString = "565856115.167089"
+            timestampString = "565860210.09866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "getThreeRecentSessions(sessions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thoughtful/Models/UserAnalyticsViewModel.swift"
-            timestampString = "565856115.167153"
+            timestampString = "565860210.0987279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "isMoreRecentSession(session1:session2:)"
             landmarkType = "7">
          </BreakpointContent>

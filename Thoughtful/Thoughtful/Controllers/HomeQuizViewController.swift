@@ -21,6 +21,8 @@ class HomeQuizViewController: UIViewController {
 	
 	@IBOutlet weak var quizButton : UIButton!
 	@IBOutlet weak var progressButton : UIButton!
+	@IBOutlet weak var homeLabel : UILabel!
+
 
     @IBOutlet var customTabBarView: UIView!
   
@@ -57,9 +59,11 @@ class HomeQuizViewController: UIViewController {
 			if (role == "patient") {
 				progressButton.isHidden = true
 				quizButton.isHidden = false
+				homeLabel.text = "press the button to do memory exercises"
 			} else {
 				progressButton.isHidden = false
 				quizButton.isHidden = true
+				homeLabel.text = "press the button check your relatives memory, or add memories below"
 			}
 			
 			self.loaded = true
@@ -109,11 +113,8 @@ class HomeQuizViewController: UIViewController {
 		loadingCloud1.isHidden = true
 		loadingCloud2.isHidden = true
 		loadingCloud3.isHidden = true
-		self.timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.updateLoading), userInfo: nil, repeats: true)
+		self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateLoading), userInfo: nil, repeats: true)
 	}
-	
-	
-	
 	
 	@objc func updateLoading(){
 		// still loading

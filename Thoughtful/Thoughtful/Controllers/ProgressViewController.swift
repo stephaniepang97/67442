@@ -12,10 +12,21 @@ import SwiftyJSON
 
 
 class ProgressViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+	
+	@IBOutlet weak var loadingBackdrop : UIView!
+	@IBOutlet weak var loadingCloud1 : UIImageView!
+	@IBOutlet weak var loadingCloud2 : UIImageView!
+	@IBOutlet weak var loadingCloud3 : UIImageView!
+	
+	let loadingObject = LoadingScreen()
+	var loaded = false
+	var secondsElapsed = 0
+	var timer = Timer()
   
 	@IBOutlet var barChartView: BarChartView!
 	@IBOutlet var customTabBarView: UIView!
-  @IBOutlet var tableView: UITableView!
+	@IBOutlet var userLabel: UILabel!
+    @IBOutlet var tableView: UITableView!
 
 	var analyticsObject : UserAnalyticsViewModel!
 	var familyName : String!
@@ -33,11 +44,18 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
 			for session in sessions {
 				print(session.percentCorrect)
 			}
+			if let name = currentData["name"].string {
+				userLabel.text = name
+			}
 			// reverse for bar chart ordering
 			self.sessions = sessions.reversed()
 //			self.loaded = true
 			loadGraph()
+			
+			self.loaded = true
 		}
+		
+		
 	}
 	
 	private func loadGraph() {
@@ -74,7 +92,8 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
 	}
 	
 	override func viewDidLoad() {
-		
+		// start loading screen
+		startLoadingScreen()
 		
 		// get the data
 		analyticsObject.refresh { [unowned self] in
@@ -92,8 +111,8 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
 		customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
 		self.view.addSubview(customTabBarView)
     
-    let cellNib = UINib(nibName: "SessionTableCell", bundle: nil)
-    self.tableView.register(cellNib, forCellReuseIdentifier: "sessionTableCell")
+    	let cellNib = UINib(nibName: "SessionTableCell", bundle: nil)
+    	self.tableView.register(cellNib, forCellReuseIdentifier: "sessionTableCell")
 	}
   
   
@@ -167,6 +186,58 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
   // MARK: - Navigation
   @IBAction func unwindToProgress(segue: UIStoryboardSegue) {
   }
+	
+	
+	// loading screen
+	func startLoadingScreen() {
+		loadingBackdrop.isHidden = false
+		loadingCloud1.isHidden = true
+		loadingCloud2.isHidden = true
+		loadingCloud3.isHidden = true
+		self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateLoading), userInfo: nil, repeats: true)
+	}
+	
+	@objc func updateLoading(){
+		print(self.loaded)
+		// still loading
+		if (!self.loaded) {
+			self.secondsElapsed = (self.secondsElapsed + 1) % 100
+			var cloudsDisplay = loadingObject.calculateVisibleClouds(currentSeconds: self.secondsElapsed)
+			print(self.secondsElapsed)
+			// adjust cloud display based on seconds passed
+			switch (cloudsDisplay) {
+			case 1:
+				loadingBackdrop.isHidden = false
+				loadingCloud1.fadeIn()
+				loadingCloud2.isHidden = true
+				loadingCloud3.isHidden = true
+			case 2:
+				loadingBackdrop.isHidden = false
+				loadingCloud1.isHidden = false
+				loadingCloud2.fadeIn()
+				loadingCloud3.isHidden = true
+			case 3:
+				loadingBackdrop.isHidden = false
+				loadingCloud1.isHidden = false
+				loadingCloud2.isHidden = false
+				loadingCloud3.fadeIn()
+			default:
+				loadingBackdrop.isHidden = false
+				loadingCloud1.isHidden = false
+				loadingCloud2.isHidden = false
+				loadingCloud3.isHidden = false
+			}
+		}
+			// done loading, hide everything
+		else {
+			loadingBackdrop.fadeOut()
+			loadingBackdrop.isHidden = true
+			loadingCloud1.isHidden = true
+			loadingCloud2.isHidden = true
+			loadingCloud3.isHidden = true
+		}
+		
+	}
 	
 	
 }

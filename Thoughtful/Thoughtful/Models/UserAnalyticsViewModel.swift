@@ -13,7 +13,8 @@ import SwiftyJSON
 class UserAnalyticsViewModel {
 	
 	var familyName = ""
-	
+	var patientName = ""
+
 	var currentData : JSON = JSON()
 
 	func refresh(completion: @escaping () -> Void) {
@@ -35,8 +36,10 @@ class UserAnalyticsViewModel {
 							let users = family["users"].array!
 							for user in users {
 								let role = user["role"]
+								let name = user["proper_name"]
 								if (role == "patient") {
 									print("got patient data!!!!")
+									self.patientName = name.string!
 									print(user)
 									print("--")
 									self.getDataForUser(user: user, completion: completion)
@@ -54,6 +57,7 @@ class UserAnalyticsViewModel {
 	
 	private func getDataForUser(user: JSON, completion: @escaping () -> Void) {
 		var userId = user["user_id"].int
+		self.patientName = user["proper_name"].string!
 		Alamofire.request("https://thoughtfulapi.herokuapp.com/patient_sessions").responseJSON { response in
 		switch response.result
 			{
@@ -129,10 +133,12 @@ class UserAnalyticsViewModel {
 		
 		var data : JSON = [
 			"recent_sessions":recentSessions,
-			"incorrect_questions":incorrectQuestions
+			"incorrect_questions":incorrectQuestions,
+			"name": self.patientName
 		]
 		print("parsed data!")
 		self.currentData = data
+		
 		completion()
 	}
 	
