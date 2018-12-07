@@ -1020,6 +1020,8 @@
                         <outlet property="loadingCloud1" destination="8uM-YQ-WYo" id="Bbg-Ic-yVt"/>
                         <outlet property="loadingCloud2" destination="rhp-Cu-3b4" id="5iM-O3-c0h"/>
                         <outlet property="loadingCloud3" destination="WRq-7E-lrz" id="iKn-Hp-Is8"/>
+                        <outlet property="progressButton" destination="32Q-WJ-H0E" id="Ih2-AH-6YT"/>
+                        <outlet property="quizButton" destination="yha-7g-PdH" id="Gio-hr-c7h"/>
                     </connections>
                 </viewController>
                 <view opaque="NO" contentMode="scaleToFill" id="ddT-qn-BJV">

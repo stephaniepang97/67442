@@ -18,7 +18,10 @@ class HomeQuizViewController: UIViewController {
 	@IBOutlet weak var loadingCloud1 : UIImageView!
 	@IBOutlet weak var loadingCloud2 : UIImageView!
 	@IBOutlet weak var loadingCloud3 : UIImageView!
-  
+	
+	@IBOutlet weak var quizButton : UIButton!
+	@IBOutlet weak var progressButton : UIButton!
+
     @IBOutlet var customTabBarView: UIView!
   
 	let loadingObject = LoadingScreen()
@@ -48,6 +51,17 @@ class HomeQuizViewController: UIViewController {
 			print(self.currentUser)
 			print(self.currentUser["proper_name"].string!)
 			print(self.greetingName.text)
+			
+			var role = self.currentUser["role"].string!
+			// set buttons
+			if (role == "patient") {
+				progressButton.isHidden = true
+				quizButton.isHidden = false
+			} else {
+				progressButton.isHidden = false
+				quizButton.isHidden = true
+			}
+			
 			self.loaded = true
 		}
 	}
