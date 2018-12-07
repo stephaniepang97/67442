@@ -37,6 +37,7 @@ class Session : NSObject {
 			var object = SessionQuestion()
 			var questionDetails = question["question_details"]
 			object.id = questionDetails["id"].int
+      object.question = questionDetails["question"].string
 			object.answer = questionDetails["answer"].string
 			object.correct = question["correct"].bool
 			

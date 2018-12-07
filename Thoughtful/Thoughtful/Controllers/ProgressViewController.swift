@@ -194,6 +194,17 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
   // MARK: - Navigation
   @IBAction func unwindToProgress(segue: UIStoryboardSegue) {
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if (segue.identifier == "showSessionDetail") {
+      let sdvc = segue.destination as! SessionDetailViewController
+      if let indexPath = self.tableView.indexPathForSelectedRow {
+        let n = self.sessions.count - 1
+        let question = self.sessions[n-indexPath.row]
+        sdvc.detailItem = question
+      }
+    }
+  }
 	
 	
 	// loading screen

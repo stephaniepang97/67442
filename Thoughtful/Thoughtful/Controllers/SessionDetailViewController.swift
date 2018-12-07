@@ -13,6 +13,10 @@ class SessionDetailViewController: UIViewController, UITableViewDataSource, UITa
   @IBOutlet weak var startTimeLabel: UILabel!
   @IBOutlet weak var endTimeLabel: UILabel!
   @IBOutlet weak var percentCorrectLabel: UILabel!
+  @IBOutlet weak var numCorrectLabel: UILabel!
+  @IBOutlet weak var numIncorrectLabel: UILabel!
+  @IBOutlet weak var numTotalLabel: UILabel!
+  
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet var customTabBarView: UIView!
   
@@ -26,11 +30,26 @@ class SessionDetailViewController: UIViewController, UITableViewDataSource, UITa
   func configureView() {
     // Update the user interface for the detail item.
     if let detail: Session = self.detailItem {
+      let formatter = DateFormatter()
+      // initially set the format based on your datepicker date / server String
+      formatter.dateFormat = "EEEE, MMM d, h:mm a"
+      let startTimeString = formatter.string(from: detail.startTime!)
+      let endTimeString = formatter.string(from: detail.endTime!)
+      
       if let startTime = self.startTimeLabel {
-        startTime.text = String(describing: detail.startTime)
+        startTime.text = startTimeString
       }
       if let endTime = self.endTimeLabel {
-        endTime.text = String(describing: detail.endTime)
+        endTime.text = endTimeString
+      }
+      if let numTotal = self.numTotalLabel {
+        numTotal.text = String(detail.totalAnswered) + " questions answered"
+      }
+      if let numCorrect = self.numCorrectLabel {
+        numCorrect.text = String(detail.totalCorrect) + " questions correct"
+      }
+      if let numIncorrect = self.numIncorrectLabel {
+        numIncorrect.text = String(detail.totalIncorrect) + " questions incorrect"
       }
       if let percentCorrect = self.percentCorrectLabel {
         percentCorrect.text = String(detail.percentCorrect) + "%"
@@ -51,7 +70,8 @@ class SessionDetailViewController: UIViewController, UITableViewDataSource, UITa
       
       self.tableView.delegate = self
       let cellNib = UINib(nibName: "IncorrectQuestionCell", bundle: nil)
-      self.tableView.register(cellNib, forCellReuseIdentifier: "incorrectQuestionCell")    }
+      self.tableView.register(cellNib, forCellReuseIdentifier: "incorrectQuestionCell")
+  }
   
   // MARK: - Table View properties
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,8 +91,8 @@ class SessionDetailViewController: UIViewController, UITableViewDataSource, UITa
     if let detail: Session = self.detailItem {
       let question = detail.incorrectQuestions[indexPath.row]
       // Configure the cell...
-      cell.question?.text = String(describing: question.question)
-      cell.answer?.text = String(describing: question.answer)
+      cell.question?.text = question.question
+      cell.answer?.text = question.answer
     }
     
     return cell
@@ -81,5 +101,9 @@ class SessionDetailViewController: UIViewController, UITableViewDataSource, UITa
   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     // Return false if you do not want the specified item to be editable.
     return false
+  }
+  
+  func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    return nil
   }
 }
