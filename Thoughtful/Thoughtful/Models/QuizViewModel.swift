@@ -15,7 +15,8 @@ class QuizViewModel {
 	var familyName :String?
 	
 	func refresh(completion: @escaping () -> Void) {
-		fetchQuestions(completion: completion)
+		fetchQuestions(completion: completion,pictureCallback: {} )
+		completion()
 	}
 	
 	func getRandomAnswer(currentQuestion: Question) -> String {
@@ -59,7 +60,7 @@ class QuizViewModel {
 	}
 	
 	
-	public func fetchQuestions(completion: @escaping () -> Void) {
+	public func fetchQuestions(completion: @escaping () -> Void, pictureCallback: @escaping () -> Void) {
 		Alamofire.request("https://thoughtfulapi.herokuapp.com/questions").responseJSON { response in
 			switch response.result
 			{
@@ -85,6 +86,7 @@ class QuizViewModel {
 									if let data = response.result.value {
 										question.attachment = UIImage(data: data)
 									}
+									pictureCallback()
 								}
 							}
 							print(question.question)
