@@ -642,15 +642,6 @@
                                     <constraint firstAttribute="width" constant="133" id="gkg-Oe-D2e"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYM-gU-YIC">
-                                <rect key="frame" x="195" y="99" width="121" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="121" id="wY0-fe-Nuw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ox-vX-vhs" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="205" width="343" height="195"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -676,6 +667,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="recent performance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJg-YK-6gF">
+                                <rect key="frame" x="103" y="171" width="179" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alec Lam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77C-Nq-J10">
+                                <rect key="frame" x="150" y="139" width="84" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYM-gU-YIC">
+                                <rect key="frame" x="238" y="100" width="121" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="wY0-fe-Nuw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -888,13 +902,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backButton" width="329" height="200"/>
-        <image name="bottomCloudRow" width="1543" height="499"/>
-        <image name="homeCloud" width="413" height="249"/>
-        <image name="loadingCloud" width="1761" height="1061"/>
-        <image name="questionCloud" width="377" height="228"/>
-        <image name="thoughfulLogo" width="1234" height="668"/>
-        <image name="topCloudRow" width="1603" height="279"/>
-        <image name="whiteCloudLogo" width="1104" height="667"/>
+        <image name="backButton" width="164.5" height="100"/>
+        <image name="bottomCloudRow" width="771.5" height="249.5"/>
+        <image name="homeCloud" width="206.5" height="124.5"/>
+        <image name="loadingCloud" width="880.5" height="530.5"/>
+        <image name="questionCloud" width="188.5" height="114"/>
+        <image name="thoughfulLogo" width="617" height="334"/>
+        <image name="topCloudRow" width="801.5" height="139.5"/>
+        <image name="whiteCloudLogo" width="552" height="333.5"/>
     </resources>
 </document>
