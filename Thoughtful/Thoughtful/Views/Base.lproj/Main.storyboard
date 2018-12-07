@@ -262,7 +262,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="printQuestion" destination="42X-ad-Fpx" eventType="touchUpInside" id="EJb-qI-9Fj"/>
-                                    <segue destination="7Yr-nC-OPU" kind="show" id="xWj-Ek-AZN"/>
+                                    <segue destination="7Yr-nC-OPU" kind="show" identifier="EndQuizSegue" id="xWj-Ek-AZN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgk-NA-IlJ">
@@ -1070,13 +1070,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backButton" width="329" height="200"/>
-        <image name="bottomCloudRow" width="1543" height="499"/>
-        <image name="homeCloud" width="413" height="249"/>
-        <image name="loadingCloud" width="1761" height="1061"/>
-        <image name="questionCloud" width="377" height="228"/>
-        <image name="thoughfulLogo" width="1234" height="668"/>
-        <image name="topCloudRow" width="1603" height="279"/>
-        <image name="whiteCloudLogo" width="1104" height="667"/>
+        <image name="backButton" width="164.5" height="100"/>
+        <image name="bottomCloudRow" width="771.5" height="249.5"/>
+        <image name="homeCloud" width="206.5" height="124.5"/>
+        <image name="loadingCloud" width="880.5" height="530.5"/>
+        <image name="questionCloud" width="188.5" height="114"/>
+        <image name="thoughfulLogo" width="617" height="334"/>
+        <image name="topCloudRow" width="801.5" height="139.5"/>
+        <image name="whiteCloudLogo" width="552" height="333.5"/>
     </resources>
 </document>

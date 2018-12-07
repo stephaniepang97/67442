@@ -27,6 +27,8 @@ class QuizViewController: UIViewController {
 	@IBOutlet weak var promptAnswerLabel: UILabel!
 	var clickedYes: Bool?
 	var showCorrectAnswer: Bool = true
+	
+	var answeredCount = 0
 
 	@IBOutlet weak var imageView: UIImageView!
 	
@@ -178,13 +180,21 @@ class QuizViewController: UIViewController {
 	}
 	
 	func addQuestion(correct: Bool, questionId: Int) {
+		self.answeredCount = self.answeredCount + 1
 		let response: JSON = [
 			"questionId": questionId,
 			"correct": correct
 			]
 		answeredQuestions.append(response)
-		// move to next question
-		newQuestion()
+		
+		// stop after 10 questions
+		if (self.answeredCount >= 10) {
+			performSegue(withIdentifier: "EndQuizSegue", sender: nil)
+		} else {
+			// move to next question
+			newQuestion()
+		}
+		
 	}
 	
 	@IBAction func printQuestion() {
