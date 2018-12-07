@@ -19,7 +19,7 @@ class HomeQuizViewController: UIViewController {
 	@IBOutlet weak var loadingCloud2 : UIImageView!
 	@IBOutlet weak var loadingCloud3 : UIImageView!
   
-    @IBOutlet var customTabBarView: UIView!
+  @IBOutlet var customTabBarView: UIView!
   
 	let loadingObject = LoadingScreen()
 	var loaded = false
@@ -47,7 +47,6 @@ class HomeQuizViewController: UIViewController {
 			self.currentUser = currentUser
 			print(self.currentUser)
 			print(self.currentUser["proper_name"].string!)
-			print(self.greetingName.text)
 			self.loaded = true
 		}
 	}
@@ -97,9 +96,6 @@ class HomeQuizViewController: UIViewController {
 		loadingCloud3.isHidden = true
 		self.timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.updateLoading), userInfo: nil, repeats: true)
 	}
-	
-	
-	
 	
 	@objc func updateLoading(){
 		// still loading
@@ -152,12 +148,18 @@ class HomeQuizViewController: UIViewController {
 	  quizVC.patientId = self.currentUser["user_id"].int!
     }
 	
-	else if (segue.destination is ProgressViewController) {
-		let progressVC = segue.destination as! ProgressViewController
-		progressVC.analyticsObject = UserAnalyticsViewModel()
-		progressVC.analyticsObject.familyName = self.currentUser["family_name"].string!
-		progressVC.familyName = self.currentUser["family_name"].string!
-	}
+    else if (segue.destination is ProgressViewController) {
+      let progressVC = segue.destination as! ProgressViewController
+      progressVC.analyticsObject = UserAnalyticsViewModel()
+      progressVC.analyticsObject.familyName = self.currentUser["family_name"].string!
+      progressVC.familyName = self.currentUser["family_name"].string!
+    }
+    
+    else if (segue.destination is QuestionsController) {
+      let questionsVC = segue.destination as! QuestionsController
+      questionsVC.familyName = self.currentUser["family_name"].string!
+      questionsVC.questionsVM = QuestionViewModel(familyName: self.currentUser["family_name"].string!)
+    }
   }
 	
 	

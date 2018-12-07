@@ -19,9 +19,7 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
 
 	var analyticsObject : UserAnalyticsViewModel!
 	var familyName : String!
-
 	var months: [String]!
-	
 	var sessions : [Session] = []
 	
 	func configureView() -> Void {
@@ -37,44 +35,13 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
 			self.sessions = sessions.reversed()
 //			self.loaded = true
 			loadGraph()
+      
+      self.tableView.reloadData()
 		}
 	}
-	
-	private func loadGraph() {
-		barChartView.noDataText = "No patient data available"
-		
-		var xLabels : [String] = []
-		for session in self.sessions {
-			let formatter = DateFormatter()
-			// initially set the format based on your datepicker date / server String
-			formatter.dateFormat = "hh:mm a\nMM/dd/yyyy"
-			let timeString = formatter.string(from: session.endTime!) // string purpose I add here
-			xLabels.append(timeString)
-		}
-		let unitsSold = [0.0, 1.0, 2.0]
-		// set data
-		setChart(dataPoints: xLabels, values: unitsSold)
-		barChartView.minOffset = 30
-		barChartView.scaleXEnabled = false
-		barChartView.scaleYEnabled = false
-		
-		barChartView.extraTopOffset = -50
-		barChartView.xAxis.labelFont = UIFont.init(name: "Futura", size: 10)!
-		barChartView.leftAxis.labelFont = UIFont.init(name: "Futura", size: 10)!
-		barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xLabels)
-		barChartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
-		barChartView.leftAxis.drawGridLinesEnabled = false
-		barChartView.xAxis.drawGridLinesEnabled = false
-		barChartView.rightAxis.enabled = false
-		
-		barChartView.leftAxis.axisMinimum = 0.0
-		barChartView.leftAxis.axisMaximum = 100.0
-		
-		barChartView.legend.enabled = false
-	}
+
 	
 	override func viewDidLoad() {
-		
 		
 		// get the data
 		analyticsObject.refresh { [unowned self] in
@@ -92,6 +59,7 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
 		customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
 		self.view.addSubview(customTabBarView)
     
+    self.tableView.delegate = self
     let cellNib = UINib(nibName: "SessionTableCell", bundle: nil)
     self.tableView.register(cellNib, forCellReuseIdentifier: "sessionTableCell")
 	}
@@ -103,15 +71,21 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return sessions.count
+    return self.sessions.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "sessionTableCell", for: indexPath) as! SessionTableCell
     
-    let session = sessions[indexPath.row]
+    let n = self.sessions.count-1
+    let session = self.sessions[n-indexPath.row]
     // Configure the cell...
-    cell.startTime?.text = String(describing: session.startTime)
+    let formatter = DateFormatter()
+    // initially set the format based on your datepicker date / server String
+    formatter.dateFormat = "EEEE, MMM d, h:mm a"
+    let timeString = formatter.string(from: session.startTime!)
+    
+    cell.startTime?.text = timeString
     
     return cell
   }
@@ -120,9 +94,45 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
     self.performSegue(withIdentifier: "showSessionDetail", sender: tableView)
   }
 	
-  
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    // Return false if you do not want the specified item to be editable.
+    return true
+  }
   
   // MARK: - Bar Chart
+  private func loadGraph() {
+    barChartView.noDataText = "No patient data available"
+    
+    var xLabels : [String] = []
+    for session in self.sessions {
+      let formatter = DateFormatter()
+      // initially set the format based on your datepicker date / server String
+      formatter.dateFormat = "hh:mm a\nMM/dd/yyyy"
+      let timeString = formatter.string(from: session.endTime!)
+      xLabels.append(timeString)
+    }
+    let unitsSold = [0.0, 1.0, 2.0]
+    // set data
+    setChart(dataPoints: xLabels, values: unitsSold)
+    barChartView.minOffset = 30
+    barChartView.scaleXEnabled = false
+    barChartView.scaleYEnabled = false
+    
+    barChartView.extraTopOffset = -50
+    barChartView.xAxis.labelFont = UIFont.init(name: "Futura", size: 10)!
+    barChartView.leftAxis.labelFont = UIFont.init(name: "Futura", size: 10)!
+    barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values:xLabels)
+    barChartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
+    barChartView.leftAxis.drawGridLinesEnabled = false
+    barChartView.xAxis.drawGridLinesEnabled = false
+    barChartView.rightAxis.enabled = false
+    
+    barChartView.leftAxis.axisMinimum = 0.0
+    barChartView.leftAxis.axisMaximum = 100.0
+    
+    barChartView.legend.enabled = false
+  }
+  
 	func setChart(dataPoints: [String], values: [Double]) {
 		var dataEntries: [BarChartDataEntry] = Array()
 		var counter = 0.0

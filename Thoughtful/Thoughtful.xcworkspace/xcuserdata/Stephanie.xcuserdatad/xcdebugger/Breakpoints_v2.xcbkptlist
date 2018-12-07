@@ -25,28 +25,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Thoughtful/Controllers/QuestionsController.swift"
-            timestampString = "565842421.854669"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "addQuestionController(controller:didFinishAddingQuestion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Thoughtful/Models/QuestionViewModel.swift"
-            timestampString = "565254753.367226"
+            timestampString = "565860004.969465"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "saveQuestion(question:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,12 +42,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thoughtful/Models/QuestionViewModel.swift"
-            timestampString = "565254753.367318"
+            timestampString = "565860004.969548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "saveQuestion(question:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Thoughtful/Controllers/ProgressViewController.swift"
+            timestampString = "565860004.969617"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "configureView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

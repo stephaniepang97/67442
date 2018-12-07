@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sessionTableCell" rowHeight="40" id="PtD-qc-JXW" customClass="SessionTableCell" customModule="Thoughtful" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PtD-qc-JXW" id="dk1-Q5-hSc">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRN-g1-wTa">
+                        <rect key="frame" x="8" y="0.0" width="359" height="39.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDH-Wh-xye">
+                                <rect key="frame" x="8" y="8" width="343" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WDH-Wh-xye" firstAttribute="bottom" secondItem="TRN-g1-wTa" secondAttribute="bottomMargin" id="Mdg-4H-OeU"/>
+                            <constraint firstItem="WDH-Wh-xye" firstAttribute="top" secondItem="TRN-g1-wTa" secondAttribute="topMargin" id="abe-04-VMz"/>
+                            <constraint firstItem="WDH-Wh-xye" firstAttribute="leading" secondItem="TRN-g1-wTa" secondAttribute="leadingMargin" id="i8o-6C-gI7"/>
+                            <constraint firstItem="WDH-Wh-xye" firstAttribute="trailing" secondItem="TRN-g1-wTa" secondAttribute="trailingMargin" id="rYC-UE-2i9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="TRN-g1-wTa" firstAttribute="leading" secondItem="dk1-Q5-hSc" secondAttribute="leadingMargin" constant="-8" id="4OB-T5-7Ys"/>
+                    <constraint firstItem="TRN-g1-wTa" firstAttribute="centerY" secondItem="dk1-Q5-hSc" secondAttribute="centerY" id="IOr-3P-Yyz"/>
+                    <constraint firstItem="TRN-g1-wTa" firstAttribute="top" secondItem="dk1-Q5-hSc" secondAttribute="top" id="Mhy-dy-460"/>
+                    <constraint firstItem="TRN-g1-wTa" firstAttribute="centerX" secondItem="dk1-Q5-hSc" secondAttribute="centerX" id="m5T-tr-vB7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="startTime" destination="WDH-Wh-xye" id="x0K-DL-rq3"/>
+            </connections>
+            <point key="canvasLocation" x="181.59999999999999" y="344.52773613193403"/>
+        </tableViewCell>
+    </objects>
+</document>
