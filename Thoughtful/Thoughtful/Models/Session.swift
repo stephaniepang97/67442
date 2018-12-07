@@ -31,7 +31,6 @@ class Session : NSObject {
 		self.totalIncorrect = totalAnswered - totalCorrect
 		self.percentCorrect = (Double(totalCorrect) / Double(totalAnswered)) * 100
 
-		
 		var result : [SessionQuestion] = []
 		for question in answeredQuestions {
 			var object = SessionQuestion()

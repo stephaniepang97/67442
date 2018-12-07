@@ -16,7 +16,6 @@ class QuizViewModel {
 	
 	func refresh(completion: @escaping () -> Void) {
 		fetchQuestions(completion: completion)
-		completion()
 	}
 	
 	func getRandomAnswer(currentQuestion: Question) -> String {

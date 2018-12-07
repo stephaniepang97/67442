@@ -57,8 +57,14 @@ class UserViewModel {
 							}
 						}
 					}
-					completion()
-					self.currentUser = targetUser!
+					
+					if let safeUser = targetUser {
+						self.currentUser = safeUser
+						completion()
+					} else {
+						// failure()
+					}
+					
 				case .failure(let error):
 					self.recentStatus = false
 			}
@@ -102,6 +108,7 @@ class UserViewModel {
 					self.recentStatus = true
 				case .failure(let error):
 					self.recentStatus = false
+					// failure()
 				}
 			}
 			
