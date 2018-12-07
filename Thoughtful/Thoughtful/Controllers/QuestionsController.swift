@@ -88,8 +88,7 @@ class QuestionsController: UIViewController, UITableViewDataSource, UITableViewD
           qdvc.detailItem = question
         }
       } else if segue.identifier == "addQuestion" {
-        let navigationController = segue.destination as! UINavigationController
-        let controller = navigationController.topViewController as! AddQuestionController
+        let controller = segue.destination as! AddQuestionController
         controller.delegate = self
       }
     }

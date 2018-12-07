@@ -96,7 +96,7 @@
                             </constraints>
                             <state key="normal" image="addButton"/>
                             <connections>
-                                <segue destination="Isk-0j-FSL" kind="show" identifier="addQuestion" id="Du4-To-CWA"/>
+                                <segue destination="Isk-0j-FSL" kind="show" identifier="addQuestion" id="JZO-mZ-aOU"/>
                             </connections>
                         </button>
                     </subviews>
