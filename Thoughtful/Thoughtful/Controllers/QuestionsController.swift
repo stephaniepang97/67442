@@ -11,7 +11,8 @@ import UIKit
 class QuestionsController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddQuestionControllerDelegate {
   
   // MARK: - Properties
-  var questionsVM = QuestionViewModel()
+  var familyName: String = ""
+  var questionsVM: QuestionViewModel?
   @IBOutlet var customTabBarView: UIView!
   @IBOutlet var tableView: UITableView!
 
@@ -27,7 +28,7 @@ class QuestionsController: UIViewController, UITableViewDataSource, UITableViewD
     customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
     self.view.addSubview(customTabBarView)
     
-    questionsVM.loadQuestions(tableViewController: self)
+    questionsVM!.loadQuestions(tableViewController: self)
     
     let cellNib = UINib(nibName: "QuestionTableCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
@@ -38,18 +39,18 @@ class QuestionsController: UIViewController, UITableViewDataSource, UITableViewD
 
     // MARK: - Table view data source
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questionsVM.questions.count
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return questionsVM!.questions.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! QuestionTableCell
     
-      let question = questionsVM.questions[indexPath.row]
+      let question = questionsVM!.questions[indexPath.row]
       // Configure the cell...
       cell.question?.text = question.question
       cell.answer?.text = question.answer
@@ -83,7 +84,7 @@ class QuestionsController: UIViewController, UITableViewDataSource, UITableViewD
       if (segue.identifier == "showDetail") {
         let qdvc = segue.destination as! QuestionDetailViewController
         if let indexPath = self.tableView.indexPathForSelectedRow {
-          let question = questionsVM.questions[indexPath.row]
+          let question = questionsVM!.questions[indexPath.row]
           qdvc.detailItem = question
         }
       } else if segue.identifier == "addQuestion" {
@@ -99,9 +100,9 @@ class QuestionsController: UIViewController, UITableViewDataSource, UITableViewD
   }
   
   func addQuestionController(controller: AddQuestionController, didFinishAddingQuestion question: Question) {
-    let newRowIndex = questionsVM.questions.count
+    let newRowIndex = questionsVM!.questions.count
     
-    questionsVM.saveQuestion(question: question)
+    questionsVM!.saveQuestion(question: question)
     
     let indexPath = NSIndexPath(row: newRowIndex, section: 0)
     let indexPaths = [indexPath]

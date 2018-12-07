@@ -34,10 +34,12 @@
 		909C26F72190A0390008FC48 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909C26F52190A0390008FC48 /* Question.storyboard */; };
 		90A8565F21BA108F0081BCFD /* SessionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8565E21BA108F0081BCFD /* SessionTableCell.swift */; };
 		90A8566121BA28590081BCFD /* SessionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8566021BA28580081BCFD /* SessionDetailViewController.swift */; };
+		90A8566521BA4E120081BCFD /* IncorrectQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8566421BA4E120081BCFD /* IncorrectQuestionCell.xib */; };
+		90A8566721BA4E410081BCFD /* SessionTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90A8566621BA4E410081BCFD /* SessionTableCell.xib */; };
 		90C1EDB2219566560027440F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDB1219566560027440F /* Question.swift */; };
 		90C1EDB42195EB870027440F /* QuestionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDB32195EB870027440F /* QuestionsController.swift */; };
 		90C1EDB62195EEEB0027440F /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDB52195EEEB0027440F /* QuestionViewModel.swift */; };
-		90C1EDBA21960DEF0027440F /* tableCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90C1EDB921960DEF0027440F /* tableCells.xib */; };
+		90C1EDBA21960DEF0027440F /* QuestionTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90C1EDB921960DEF0027440F /* QuestionTableCell.xib */; };
 		90C1EDBC21960E900027440F /* QuestionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDBB21960E900027440F /* QuestionTableCell.swift */; };
 		90C1EDBE219615AD0027440F /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDBD219615AD0027440F /* QuestionDetailViewController.swift */; };
 		C2037C10836386D914F2DA8A /* Pods_ThoughtfulTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93EEDDE52E256EDF5D75AF85 /* Pods_ThoughtfulTests.framework */; };
@@ -88,10 +90,12 @@
 		909C26F62190A0390008FC48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Question.storyboard; sourceTree = "<group>"; };
 		90A8565E21BA108F0081BCFD /* SessionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableCell.swift; sourceTree = "<group>"; };
 		90A8566021BA28580081BCFD /* SessionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailViewController.swift; sourceTree = "<group>"; };
+		90A8566421BA4E120081BCFD /* IncorrectQuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncorrectQuestionCell.xib; sourceTree = "<group>"; };
+		90A8566621BA4E410081BCFD /* SessionTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableCell.xib; sourceTree = "<group>"; };
 		90C1EDB1219566560027440F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		90C1EDB32195EB870027440F /* QuestionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsController.swift; sourceTree = "<group>"; };
 		90C1EDB52195EEEB0027440F /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
-		90C1EDB921960DEF0027440F /* tableCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tableCells.xib; sourceTree = "<group>"; };
+		90C1EDB921960DEF0027440F /* QuestionTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionTableCell.xib; sourceTree = "<group>"; };
 		90C1EDBB21960E900027440F /* QuestionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableCell.swift; sourceTree = "<group>"; };
 		90C1EDBD219615AD0027440F /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewController.swift; sourceTree = "<group>"; };
 		93EEDDE52E256EDF5D75AF85 /* Pods_ThoughtfulTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThoughtfulTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,9 +165,11 @@
 			children = (
 				909C26F52190A0390008FC48 /* Question.storyboard */,
 				5368EE4021904ADD0011860F /* Main.storyboard */,
-				90C1EDB921960DEF0027440F /* tableCells.xib */,
+				90C1EDB921960DEF0027440F /* QuestionTableCell.xib */,
 				90C1EDBB21960E900027440F /* QuestionTableCell.swift */,
 				90A8565E21BA108F0081BCFD /* SessionTableCell.swift */,
+				90A8566421BA4E120081BCFD /* IncorrectQuestionCell.xib */,
+				90A8566621BA4E410081BCFD /* SessionTableCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,8 +329,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				907CB7A82186A0C3004A6A27 /* LaunchScreen.storyboard in Resources */,
+				90A8566721BA4E410081BCFD /* SessionTableCell.xib in Resources */,
 				909C26F72190A0390008FC48 /* Question.storyboard in Resources */,
-				90C1EDBA21960DEF0027440F /* tableCells.xib in Resources */,
+				90C1EDBA21960DEF0027440F /* QuestionTableCell.xib in Resources */,
+				90A8566521BA4E120081BCFD /* IncorrectQuestionCell.xib in Resources */,
 				5368EE46219050C30011860F /* LaunchScreen.storyboard in Resources */,
 				53EBA87121AF569B001DDC4F /* Assets.xcassets in Resources */,
 				5368EE4221904ADD0011860F /* Main.storyboard in Resources */,

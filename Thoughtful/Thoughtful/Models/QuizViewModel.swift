@@ -96,8 +96,8 @@ class QuizViewModel {
 						}
 					}
 				}
-				completion()
 				self.setQuestions(questions: quizQuestions)
+        completion()
 			case .failure(let error):
 				print("Failed to Fetch")
 				self.setQuestions(questions: [])

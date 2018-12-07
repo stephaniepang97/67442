@@ -76,7 +76,6 @@ class UserViewModel {
 	
 	
 	func createUser(firstName: String, lastName: String, familyName: String, role: String) -> Bool {
-		print("Creating User..")
 		var result = true
 		
 		Alamofire.request("https://thoughtfulapi.herokuapp.com/families").responseJSON { response in
@@ -100,7 +99,6 @@ class UserViewModel {
 				"family_id": familyId,
 				"role": role.lowercased()
 			]
-			print(parameters)
 			Alamofire.request("https://thoughtfulapi.herokuapp.com/users", method: .post, parameters: parameters).responseJSON
 				{ response in switch response.result {
 				case .success(let jsonData):

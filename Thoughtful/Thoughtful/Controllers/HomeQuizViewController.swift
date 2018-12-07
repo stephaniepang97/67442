@@ -22,9 +22,7 @@ class HomeQuizViewController: UIViewController {
 	@IBOutlet weak var quizButton : UIButton!
 	@IBOutlet weak var progressButton : UIButton!
 	@IBOutlet weak var homeLabel : UILabel!
-
-
-    @IBOutlet var customTabBarView: UIView!
+  @IBOutlet var customTabBarView: UIView!
   
 	let loadingObject = LoadingScreen()
 	var loaded = false
@@ -65,7 +63,6 @@ class HomeQuizViewController: UIViewController {
 				quizButton.isHidden = true
 				homeLabel.text = "press the button check your relatives memory, or add memories below"
 			}
-			
 			self.loaded = true
 		}
 	}
@@ -167,12 +164,18 @@ class HomeQuizViewController: UIViewController {
 	  quizVC.patientId = self.currentUser["user_id"].int!
     }
 	
-	else if (segue.destination is ProgressViewController) {
-		let progressVC = segue.destination as! ProgressViewController
-		progressVC.analyticsObject = UserAnalyticsViewModel()
-		progressVC.analyticsObject.familyName = self.currentUser["family_name"].string!
-		progressVC.familyName = self.currentUser["family_name"].string!
-	}
+    else if (segue.destination is ProgressViewController) {
+      let progressVC = segue.destination as! ProgressViewController
+      progressVC.analyticsObject = UserAnalyticsViewModel()
+      progressVC.analyticsObject.familyName = self.currentUser["family_name"].string!
+      progressVC.familyName = self.currentUser["family_name"].string!
+    }
+    
+    else if (segue.destination is QuestionsController) {
+      let questionsVC = segue.destination as! QuestionsController
+      questionsVC.familyName = self.currentUser["family_name"].string!
+      questionsVC.questionsVM = QuestionViewModel(familyName: self.currentUser["family_name"].string!)
+    }
   }
 	
 	

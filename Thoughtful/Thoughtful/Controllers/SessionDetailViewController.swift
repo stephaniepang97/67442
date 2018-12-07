@@ -48,7 +48,10 @@ class SessionDetailViewController: UIViewController, UITableViewDataSource, UITa
       customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
       customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
       self.view.addSubview(customTabBarView)
-    }
+      
+      self.tableView.delegate = self
+      let cellNib = UINib(nibName: "IncorrectQuestionCell", bundle: nil)
+      self.tableView.register(cellNib, forCellReuseIdentifier: "incorrectQuestionCell")    }
   
   // MARK: - Table View properties
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -73,5 +76,10 @@ class SessionDetailViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    // Return false if you do not want the specified item to be editable.
+    return false
   }
 }
