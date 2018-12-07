@@ -131,7 +131,7 @@
         <scene sceneID="8bA-sh-1qb">
             <objects>
                 <viewController id="42X-ad-Fpx" customClass="QuizViewController" customModule="Thoughtful" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="qwQ-am-noh">
+                    <view key="view" contentMode="scaleToFill" id="qwQ-am-noh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -630,11 +630,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="Wyq-XN-9Kk">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                <rect key="frame" x="0.0" y="-15" width="375" height="67"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="Bqv-Hn-n2t"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="buu-mp-IbU"/>
-                                    <constraint firstAttribute="width" constant="375" id="u2E-P6-d3e"/>
+                                    <constraint firstAttribute="height" constant="67" id="343-29-ZaZ"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thoughfulLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3NW-KM-fEl">
@@ -645,7 +643,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYM-gU-YIC">
-                                <rect key="frame" x="195" y="95" width="121" height="32"/>
+                                <rect key="frame" x="195" y="99" width="121" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="wY0-fe-Nuw"/>
                                 </constraints>
@@ -657,51 +655,79 @@
                                 <rect key="frame" x="16" y="205" width="343" height="195"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XEX-5A-sQX">
+                                <rect key="frame" x="0.0" y="460" width="375" height="146"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="showDetail" rowHeight="52" id="5vb-ZG-ozI" customClass="QuestionTableCell" customModule="Thoughtful" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="375" height="52"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5vb-ZG-ozI" id="lUl-vb-NfU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="incorrect questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vP6-ze-HJa">
+                                <rect key="frame" x="103" y="426" width="169" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.87843137250000003" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3NW-KM-fEl" firstAttribute="leading" secondItem="8Ox-vX-vhs" secondAttribute="leading" id="7Fu-lA-5UA"/>
                             <constraint firstItem="0MU-Ly-sYw" firstAttribute="bottom" secondItem="8Ox-vX-vhs" secondAttribute="bottom" constant="203" id="CUq-68-zx8"/>
                             <constraint firstItem="YYM-gU-YIC" firstAttribute="leading" secondItem="3NW-KM-fEl" secondAttribute="trailing" constant="46" id="EBO-0h-968"/>
+                            <constraint firstItem="Wyq-XN-9Kk" firstAttribute="leading" secondItem="ZV8-p5-7zA" secondAttribute="leading" id="IqJ-Iu-FAt"/>
                             <constraint firstItem="8Ox-vX-vhs" firstAttribute="top" secondItem="ZV8-p5-7zA" secondAttribute="top" constant="269" id="QC0-Cj-ArH"/>
-                            <constraint firstItem="3NW-KM-fEl" firstAttribute="top" secondItem="Wyq-XN-9Kk" secondAttribute="bottom" constant="8" symbolic="YES" id="YA0-qc-wl2"/>
                             <constraint firstItem="3NW-KM-fEl" firstAttribute="top" secondItem="ZV8-p5-7zA" secondAttribute="top" constant="75" id="dfy-5D-gcP"/>
                             <constraint firstItem="3NW-KM-fEl" firstAttribute="leading" secondItem="ZV8-p5-7zA" secondAttribute="leadingMargin" id="ict-Ml-jni"/>
                             <constraint firstItem="8Ox-vX-vhs" firstAttribute="trailing" secondItem="ZV8-p5-7zA" secondAttribute="trailingMargin" id="jX5-OK-PMZ"/>
-                            <constraint firstItem="YYM-gU-YIC" firstAttribute="top" secondItem="Wyq-XN-9Kk" secondAttribute="bottom" constant="28" id="tIA-SY-nc0"/>
-                            <constraint firstItem="8Ox-vX-vhs" firstAttribute="centerX" secondItem="Wyq-XN-9Kk" secondAttribute="centerX" id="wYC-vM-K8V"/>
+                            <constraint firstItem="YYM-gU-YIC" firstAttribute="top" secondItem="Wyq-XN-9Kk" secondAttribute="bottom" constant="47" id="lrG-OD-yHW"/>
+                            <constraint firstItem="Wyq-XN-9Kk" firstAttribute="centerX" secondItem="8Ox-vX-vhs" secondAttribute="centerX" id="oPo-Gi-G4w"/>
+                            <constraint firstItem="Wyq-XN-9Kk" firstAttribute="top" secondItem="ZV8-p5-7zA" secondAttribute="topMargin" constant="-35" id="sY4-Yd-DtD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0MU-Ly-sYw"/>
                     </view>
                     <connections>
                         <outlet property="barChartView" destination="8Ox-vX-vhs" id="t4O-ju-Yfj"/>
-                        <outlet property="customTabBarView" destination="wBs-na-Kz1" id="M3g-iu-4IO"/>
+                        <outlet property="customTabBarView" destination="yfV-Z7-0pm" id="OOY-HC-nVH"/>
                     </connections>
                 </viewController>
                 <view opaque="NO" contentMode="scaleToFill" id="yfV-Z7-0pm">
                     <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bottomCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="wBs-na-Kz1">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bottomCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="2B1-3G-awB">
                             <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qat-6m-wM0">
                             <rect key="frame" x="26" y="36" width="81" height="54"/>
                             <state key="normal" image="backButton"/>
+                            <connections>
+                                <segue destination="LXv-29-bl1" kind="unwind" unwindAction="unwindToHomeQuizViewWithSegue:" id="5VK-HQ-0je"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="qat-6m-wM0" firstAttribute="top" secondItem="G0q-TX-YY1" secondAttribute="top" constant="36" id="MCK-8L-T3T"/>
-                        <constraint firstItem="G0q-TX-YY1" firstAttribute="trailing" secondItem="qat-6m-wM0" secondAttribute="trailing" constant="266" id="ao2-9U-z37"/>
-                        <constraint firstAttribute="bottom" secondItem="qat-6m-wM0" secondAttribute="bottom" constant="20" symbolic="YES" id="djw-A8-yYS"/>
-                        <constraint firstItem="wBs-na-Kz1" firstAttribute="width" secondItem="yfV-Z7-0pm" secondAttribute="width" id="feg-kl-7gj"/>
-                        <constraint firstItem="wBs-na-Kz1" firstAttribute="height" secondItem="yfV-Z7-0pm" secondAttribute="height" id="hSO-9g-QOZ"/>
-                        <constraint firstItem="qat-6m-wM0" firstAttribute="leading" secondItem="G0q-TX-YY1" secondAttribute="leading" constant="26" id="m1F-tx-gUx"/>
+                        <constraint firstItem="qat-6m-wM0" firstAttribute="top" secondItem="G0q-TX-YY1" secondAttribute="top" constant="36" id="3AB-Js-yif"/>
+                        <constraint firstItem="2B1-3G-awB" firstAttribute="height" secondItem="yfV-Z7-0pm" secondAttribute="height" id="FgV-77-av2"/>
+                        <constraint firstItem="qat-6m-wM0" firstAttribute="leading" secondItem="G0q-TX-YY1" secondAttribute="leading" constant="26" id="HHY-b6-N8o"/>
+                        <constraint firstItem="2B1-3G-awB" firstAttribute="width" secondItem="yfV-Z7-0pm" secondAttribute="width" id="I17-Ui-RhV"/>
+                        <constraint firstAttribute="bottom" secondItem="qat-6m-wM0" secondAttribute="bottom" constant="20" symbolic="YES" id="m2B-K4-3dF"/>
+                        <constraint firstItem="G0q-TX-YY1" firstAttribute="trailing" secondItem="qat-6m-wM0" secondAttribute="trailing" constant="266" id="ntt-xY-g9r"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="G0q-TX-YY1"/>
                 </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFR-XU-kCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LXv-29-bl1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-135.19999999999999" y="555.47226386806597"/>
         </scene>
@@ -862,13 +888,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backButton" width="164.5" height="100"/>
-        <image name="bottomCloudRow" width="771.5" height="249.5"/>
-        <image name="homeCloud" width="206.5" height="124.5"/>
-        <image name="loadingCloud" width="880.5" height="530.5"/>
-        <image name="questionCloud" width="188.5" height="114"/>
-        <image name="thoughfulLogo" width="617" height="334"/>
-        <image name="topCloudRow" width="801.5" height="139.5"/>
-        <image name="whiteCloudLogo" width="552" height="333.5"/>
+        <image name="backButton" width="329" height="200"/>
+        <image name="bottomCloudRow" width="1543" height="499"/>
+        <image name="homeCloud" width="413" height="249"/>
+        <image name="loadingCloud" width="1761" height="1061"/>
+        <image name="questionCloud" width="377" height="228"/>
+        <image name="thoughfulLogo" width="1234" height="668"/>
+        <image name="topCloudRow" width="1603" height="279"/>
+        <image name="whiteCloudLogo" width="1104" height="667"/>
     </resources>
 </document>

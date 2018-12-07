@@ -10,17 +10,15 @@ import Foundation
 import Charts
 
 
-class ProgressViewController: UIViewController  {
+class ProgressViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+  
 	@IBOutlet var barChartView: BarChartView!
-	
 	@IBOutlet var customTabBarView: UIView!
+  @IBOutlet var tableView: UITableView!
 
-	
 	var months: [String]!
-	
-	
-	@IBAction func unwindToHomeQuizView(segue: UIStoryboardSegue) {
-	}
+  var sessions: [Session]
+  
 	
 	override func viewDidLoad() {
 		
@@ -57,8 +55,32 @@ class ProgressViewController: UIViewController  {
 		customTabBarView.frame.origin.y = self.view.frame.height-customTabBarView.frame.height
 		customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
 		self.view.addSubview(customTabBarView)
+    
+    let cellNib = UINib(nibName: "SessionTableCell", bundle: nil)
+    tableView.register(cellNib, forCellReuseIdentifier: "sessionTableCell")
 	}
+  
+  // MARK: - Table View properties
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    sessions.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "sessionTableCell", for: indexPath) as! SessionTableCell
+    
+    let session = sessions[indexPath.row]
+    // Configure the cell...
+    cell.startTime?.text = session.startTime
+    cell.endTime?.text = session.endTime
+    
+    return cell
+  }
 	
+  // MARK: - Bar Chart
 	func setChart(dataPoints: [String], values: [Double]) {
 		var dataEntries: [BarChartDataEntry] = Array()
 		var counter = 0.0

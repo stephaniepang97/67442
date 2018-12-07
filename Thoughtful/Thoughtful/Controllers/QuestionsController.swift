@@ -28,7 +28,7 @@ class QuestionsController: UIViewController, UITableViewDataSource, UITableViewD
     self.view.addSubview(customTabBarView)
     
     questionsVM.loadQuestions(tableViewController: self)
-    print("question: \(String(describing: questionsVM.questions))")
+    
     let cellNib = UINib(nibName: "QuestionTableCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "cell")
   }
