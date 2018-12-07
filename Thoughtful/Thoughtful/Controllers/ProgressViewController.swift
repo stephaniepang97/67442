@@ -198,12 +198,10 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
 	}
 	
 	@objc func updateLoading(){
-		print(self.loaded)
 		// still loading
 		if (!self.loaded) {
 			self.secondsElapsed = (self.secondsElapsed + 1) % 100
 			var cloudsDisplay = loadingObject.calculateVisibleClouds(currentSeconds: self.secondsElapsed)
-			print(self.secondsElapsed)
 			// adjust cloud display based on seconds passed
 			switch (cloudsDisplay) {
 			case 1:
@@ -231,7 +229,6 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
 			// done loading, hide everything
 		else {
 			loadingBackdrop.fadeOut()
-			loadingBackdrop.isHidden = true
 			loadingCloud1.isHidden = true
 			loadingCloud2.isHidden = true
 			loadingCloud3.isHidden = true

@@ -86,11 +86,15 @@ class QuizViewController: UIViewController {
 				imageView.image = picture
 				self.loaded = true
 			}
+			self.loaded = true
 		}
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		// start loading screen
+		startLoadingScreen()
 		
 		// add custom tab bar
 		customTabBarView.frame.size.width = self.view.frame.width
@@ -98,8 +102,7 @@ class QuizViewController: UIViewController {
 		customTabBarView.backgroundColor = UIColor(white: 1, alpha: 0)
 		self.view.addSubview(customTabBarView)
     
-		// start loading screen
-		startLoadingScreen()
+		
 		// Do any additional setup after loading the view, typically from a nib.
 		quizObject?.refresh { [unowned self] in
 			DispatchQueue.main.async {
@@ -110,16 +113,18 @@ class QuizViewController: UIViewController {
 	
 	
 	
+	
+	// loading screen
 	func startLoadingScreen() {
 		loadingBackdrop.isHidden = false
 		loadingCloud1.isHidden = true
 		loadingCloud2.isHidden = true
 		loadingCloud3.isHidden = true
-		self.timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.updateLoading), userInfo: nil, repeats: true)
+		self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateLoading), userInfo: nil, repeats: true)
 	}
 	
 	@objc func updateLoading(){
-		configureView()
+		print(self.loaded)
 		// still loading
 		if (!self.loaded) {
 			self.secondsElapsed = (self.secondsElapsed + 1) % 100
