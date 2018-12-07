@@ -194,6 +194,8 @@ class QuizViewController: UIViewController {
 	}
 	
 	@IBAction func newQuestion() {
+		
+
 		var question = quizObject!.getRandomQuestion()
 		self.currentQuestion = question
 		questionLabel.text = question.question
@@ -209,6 +211,9 @@ class QuizViewController: UIViewController {
 			self.showCorrectAnswer = false
 		}
 		imageView.image = question.attachment
+		imageView.slowOut()
+		imageView.slowIn()
+
 	}
 	
 	// add session questions
