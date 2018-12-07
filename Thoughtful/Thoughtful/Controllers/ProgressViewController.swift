@@ -102,7 +102,7 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    sessions.count
+    return sessions.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -110,10 +110,13 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
     
     let session = sessions[indexPath.row]
     // Configure the cell...
-    cell.startTime?.text = session.startTime
-    cell.endTime?.text = session.endTime
+    cell.startTime?.text = String(describing: session.startTime)
     
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    self.performSegue(withIdentifier: "showSessionDetail", sender: tableView)
   }
 	
   // MARK: - Bar Chart

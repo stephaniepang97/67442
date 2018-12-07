@@ -32,6 +32,7 @@
 		907CB7A82186A0C3004A6A27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907CB7A62186A0C3004A6A27 /* LaunchScreen.storyboard */; };
 		907CB7B32186A0C4004A6A27 /* ThoughtfulTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CB7B22186A0C4004A6A27 /* ThoughtfulTests.swift */; };
 		909C26F72190A0390008FC48 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909C26F52190A0390008FC48 /* Question.storyboard */; };
+		90A8565F21BA108F0081BCFD /* SessionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8565E21BA108F0081BCFD /* SessionTableCell.swift */; };
 		90C1EDB2219566560027440F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDB1219566560027440F /* Question.swift */; };
 		90C1EDB42195EB870027440F /* QuestionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDB32195EB870027440F /* QuestionsController.swift */; };
 		90C1EDB62195EEEB0027440F /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1EDB52195EEEB0027440F /* QuestionViewModel.swift */; };
@@ -84,6 +85,7 @@
 		907CB7B22186A0C4004A6A27 /* ThoughtfulTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtfulTests.swift; sourceTree = "<group>"; };
 		907CB7B42186A0C4004A6A27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		909C26F62190A0390008FC48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Question.storyboard; sourceTree = "<group>"; };
+		90A8565E21BA108F0081BCFD /* SessionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableCell.swift; sourceTree = "<group>"; };
 		90C1EDB1219566560027440F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		90C1EDB32195EB870027440F /* QuestionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsController.swift; sourceTree = "<group>"; };
 		90C1EDB52195EEEB0027440F /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				5368EE4021904ADD0011860F /* Main.storyboard */,
 				90C1EDB921960DEF0027440F /* tableCells.xib */,
 				90C1EDBB21960E900027440F /* QuestionTableCell.swift */,
+				90A8565E21BA108F0081BCFD /* SessionTableCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				53083B0C21B90120004EE69F /* UserAnalyticsViewModel.swift in Sources */,
 				907CB7A32186A0C2004A6A27 /* Thoughtful.xcdatamodeld in Sources */,
 				53083B1221B9123E004EE69F /* SessionQuestion.swift in Sources */,
+				90A8565F21BA108F0081BCFD /* SessionTableCell.swift in Sources */,
 				5368EE3A21904AC60011860F /* AddQuestionController.swift in Sources */,
 				90C1EDB42195EB870027440F /* QuestionsController.swift in Sources */,
 				5368EE4C219093F70011860F /* QuizViewController.swift in Sources */,
