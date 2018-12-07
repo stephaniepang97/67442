@@ -820,14 +820,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recent performance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJg-YK-6gF">
-                                <rect key="frame" x="103" y="200" width="179" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="recent performance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJg-YK-6gF">
+                                <rect key="frame" x="103" y="204" width="179" height="26"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Alec Lam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77C-Nq-J10">
-                                <rect key="frame" x="137" y="153" width="100" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77C-Nq-J10">
+                                <rect key="frame" x="55" y="164" width="265" height="32"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -847,6 +847,31 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MmV-GJ-bG8" userLabel="Loading Backdrop">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="iQn-le-cZ5">
+                                        <rect key="frame" x="78" y="307" width="57" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="5L0-Br-aB1">
+                                        <rect key="frame" x="199" y="280" width="100" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loadingCloud" translatesAutoresizingMaskIntoConstraints="NO" id="YGh-Am-GdW">
+                                        <rect key="frame" x="125" y="293" width="85" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hold on, we're thinking.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Uf-5o-hah">
+                                        <rect key="frame" x="94" y="350" width="187" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.88235294119999996" green="0.96470588239999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -855,31 +880,40 @@
                             <constraint firstItem="bJg-YK-6gF" firstAttribute="leading" secondItem="0MU-Ly-sYw" secondAttribute="leading" constant="103" id="BVi-pQ-EUZ"/>
                             <constraint firstItem="XEX-5A-sQX" firstAttribute="trailing" secondItem="Wyq-XN-9Kk" secondAttribute="trailing" id="Bn0-E7-Ocb"/>
                             <constraint firstItem="0MU-Ly-sYw" firstAttribute="bottom" secondItem="8Ox-vX-vhs" secondAttribute="bottom" constant="238" id="CUq-68-zx8"/>
-                            <constraint firstItem="77C-Nq-J10" firstAttribute="leading" secondItem="0MU-Ly-sYw" secondAttribute="leading" constant="137" id="DUx-u7-LV1"/>
+                            <constraint firstItem="MmV-GJ-bG8" firstAttribute="top" secondItem="ZV8-p5-7zA" secondAttribute="top" id="DXh-C1-SOU"/>
                             <constraint firstItem="YYM-gU-YIC" firstAttribute="leading" secondItem="3NW-KM-fEl" secondAttribute="trailing" constant="89" id="EBO-0h-968"/>
                             <constraint firstItem="vP6-ze-HJa" firstAttribute="centerX" secondItem="XEX-5A-sQX" secondAttribute="centerX" id="F4s-k1-Naj"/>
+                            <constraint firstItem="MmV-GJ-bG8" firstAttribute="bottom" secondItem="0MU-Ly-sYw" secondAttribute="bottom" id="FkT-X1-K1S"/>
                             <constraint firstItem="vP6-ze-HJa" firstAttribute="top" secondItem="8Ox-vX-vhs" secondAttribute="bottom" constant="26" id="GfV-yZ-Bji"/>
+                            <constraint firstItem="MmV-GJ-bG8" firstAttribute="trailing" secondItem="XEX-5A-sQX" secondAttribute="trailing" id="H1R-oy-QBM"/>
                             <constraint firstItem="Wyq-XN-9Kk" firstAttribute="leading" secondItem="ZV8-p5-7zA" secondAttribute="leading" id="IqJ-Iu-FAt"/>
-                            <constraint firstItem="77C-Nq-J10" firstAttribute="top" secondItem="3NW-KM-fEl" secondAttribute="bottom" constant="8" symbolic="YES" id="Khi-SL-TUi"/>
                             <constraint firstItem="vP6-ze-HJa" firstAttribute="leading" secondItem="0MU-Ly-sYw" secondAttribute="leading" constant="151" id="NMH-NW-TKx"/>
                             <constraint firstItem="8Ox-vX-vhs" firstAttribute="top" secondItem="ZV8-p5-7zA" secondAttribute="top" constant="234" id="QC0-Cj-ArH"/>
+                            <constraint firstItem="MmV-GJ-bG8" firstAttribute="leading" secondItem="XEX-5A-sQX" secondAttribute="leading" id="SI5-hm-8eT"/>
                             <constraint firstItem="0MU-Ly-sYw" firstAttribute="bottom" secondItem="XEX-5A-sQX" secondAttribute="bottom" constant="32" id="Xuv-8s-N0E"/>
                             <constraint firstItem="XEX-5A-sQX" firstAttribute="leading" secondItem="Wyq-XN-9Kk" secondAttribute="leading" id="cEf-5P-xTu"/>
                             <constraint firstItem="3NW-KM-fEl" firstAttribute="top" secondItem="ZV8-p5-7zA" secondAttribute="top" constant="75" id="dfy-5D-gcP"/>
+                            <constraint firstItem="77C-Nq-J10" firstAttribute="leading" secondItem="0MU-Ly-sYw" secondAttribute="leading" constant="55" id="fO2-HG-fgO"/>
                             <constraint firstItem="3NW-KM-fEl" firstAttribute="leading" secondItem="ZV8-p5-7zA" secondAttribute="leadingMargin" id="ict-Ml-jni"/>
                             <constraint firstItem="8Ox-vX-vhs" firstAttribute="trailing" secondItem="ZV8-p5-7zA" secondAttribute="trailingMargin" id="jX5-OK-PMZ"/>
-                            <constraint firstItem="77C-Nq-J10" firstAttribute="centerX" secondItem="Wyq-XN-9Kk" secondAttribute="centerX" id="jmO-re-UWz"/>
                             <constraint firstItem="YYM-gU-YIC" firstAttribute="top" secondItem="Wyq-XN-9Kk" secondAttribute="bottom" constant="48" id="lrG-OD-yHW"/>
                             <constraint firstItem="Wyq-XN-9Kk" firstAttribute="centerX" secondItem="8Ox-vX-vhs" secondAttribute="centerX" id="oPo-Gi-G4w"/>
                             <constraint firstItem="Wyq-XN-9Kk" firstAttribute="top" secondItem="ZV8-p5-7zA" secondAttribute="topMargin" constant="-35" id="sY4-Yd-DtD"/>
+                            <constraint firstItem="77C-Nq-J10" firstAttribute="centerX" secondItem="Wyq-XN-9Kk" secondAttribute="centerX" id="szS-t5-mQj"/>
                             <constraint firstItem="8Ox-vX-vhs" firstAttribute="top" secondItem="bJg-YK-6gF" secondAttribute="bottom" constant="8" symbolic="YES" id="tuo-Y6-qkW"/>
+                            <constraint firstItem="bJg-YK-6gF" firstAttribute="top" secondItem="77C-Nq-J10" secondAttribute="bottom" constant="8" symbolic="YES" id="uMI-Ue-yEM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0MU-Ly-sYw"/>
                     </view>
                     <connections>
                         <outlet property="barChartView" destination="8Ox-vX-vhs" id="t4O-ju-Yfj"/>
                         <outlet property="customTabBarView" destination="yfV-Z7-0pm" id="OOY-HC-nVH"/>
+                        <outlet property="loadingBackdrop" destination="6Uf-5o-hah" id="dsQ-eY-EyM"/>
+                        <outlet property="loadingCloud1" destination="iQn-le-cZ5" id="Y03-u8-zca"/>
+                        <outlet property="loadingCloud2" destination="YGh-Am-GdW" id="ayK-A4-T3z"/>
+                        <outlet property="loadingCloud3" destination="5L0-Br-aB1" id="4b3-Ze-F04"/>
                         <outlet property="tableView" destination="XEX-5A-sQX" id="TJ1-ED-0oQ"/>
+                        <outlet property="userLabel" destination="77C-Nq-J10" id="pz8-o6-PgV"/>
                     </connections>
                 </viewController>
                 <view opaque="NO" contentMode="scaleToFill" id="yfV-Z7-0pm">
@@ -927,22 +961,29 @@
                                     <constraint firstAttribute="height" constant="67" id="QlN-Wp-e0x"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FI3-jU-JgU">
-                                <rect key="frame" x="39" y="116.5" width="301" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hi, " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FI3-jU-JgU">
+                                <rect key="frame" x="39" y="145" width="301" height="47"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rit-E1-Kng">
-                                <rect key="frame" x="39" y="204" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32Q-WJ-H0E">
-                                <rect key="frame" x="10" y="500" width="61" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thoughfulLogo" translatesAutoresizingMaskIntoConstraints="NO" id="s7z-oj-LNn">
+                                <rect key="frame" x="16" y="75" width="133" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="V68-Gl-GJC"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="32Q-WJ-H0E">
+                                <rect key="frame" x="87" y="295" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Progress"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                <state key="normal" title="progress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="GXg-c3-Unk" kind="show" id="isM-vU-6JL"/>
                                 </connections>
@@ -971,6 +1012,13 @@
                                     <segue destination="42X-ad-Fpx" kind="show" id="MZz-gK-BAF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="instructions" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mv6-U2-Hz5">
+                                <rect key="frame" x="48" y="526" width="278" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vxm-Li-ZjQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1003,11 +1051,14 @@
                             <constraint firstItem="yha-7g-PdH" firstAttribute="centerX" secondItem="lNe-wB-18k" secondAttribute="centerX" id="5HJ-0P-xOX"/>
                             <constraint firstItem="FI3-jU-JgU" firstAttribute="leading" secondItem="lNe-wB-18k" secondAttribute="leading" constant="39" id="B0V-fy-JL1"/>
                             <constraint firstItem="yha-7g-PdH" firstAttribute="top" secondItem="FI3-jU-JgU" secondAttribute="bottom" constant="80" id="Jah-5x-Z6t"/>
-                            <constraint firstItem="FI3-jU-JgU" firstAttribute="leading" secondItem="rit-E1-Kng" secondAttribute="leading" id="SsX-d9-hxC"/>
+                            <constraint firstItem="s7z-oj-LNn" firstAttribute="top" secondItem="GTz-K1-vJN" secondAttribute="bottom" constant="23" id="Yq8-vU-Tbt"/>
                             <constraint firstItem="GTz-K1-vJN" firstAttribute="leading" secondItem="KBO-19-FCG" secondAttribute="leading" id="YxR-yt-ye4"/>
                             <constraint firstItem="GTz-K1-vJN" firstAttribute="top" secondItem="KBO-19-FCG" secondAttribute="topMargin" constant="-35" id="bFA-K4-q4H"/>
                             <constraint firstItem="GTz-K1-vJN" firstAttribute="centerX" secondItem="yha-7g-PdH" secondAttribute="centerX" id="dSc-Uf-p9f"/>
                             <constraint firstItem="yha-7g-PdH" firstAttribute="centerY" secondItem="lNe-wB-18k" secondAttribute="centerY" id="ebv-Dz-eJO"/>
+                            <constraint firstItem="lNe-wB-18k" firstAttribute="trailing" secondItem="s7z-oj-LNn" secondAttribute="trailing" constant="226" id="lFz-Aw-TX2"/>
+                            <constraint firstItem="FI3-jU-JgU" firstAttribute="top" secondItem="s7z-oj-LNn" secondAttribute="bottom" id="qxO-B6-mvS"/>
+                            <constraint firstItem="s7z-oj-LNn" firstAttribute="leading" secondItem="KBO-19-FCG" secondAttribute="leadingMargin" id="rWg-2A-3lW"/>
                             <constraint firstItem="lNe-wB-18k" firstAttribute="trailing" secondItem="FI3-jU-JgU" secondAttribute="trailing" constant="35" id="zld-RX-41X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lNe-wB-18k"/>
@@ -1016,10 +1067,13 @@
                     <connections>
                         <outlet property="customTabBarView" destination="ddT-qn-BJV" id="xlN-QK-uP8"/>
                         <outlet property="greetingName" destination="FI3-jU-JgU" id="RbC-1f-jGT"/>
+                        <outlet property="homeLabel" destination="Mv6-U2-Hz5" id="cx3-kY-40Z"/>
                         <outlet property="loadingBackdrop" destination="Vxm-Li-ZjQ" id="YL3-hF-saS"/>
                         <outlet property="loadingCloud1" destination="8uM-YQ-WYo" id="Bbg-Ic-yVt"/>
                         <outlet property="loadingCloud2" destination="rhp-Cu-3b4" id="5iM-O3-c0h"/>
                         <outlet property="loadingCloud3" destination="WRq-7E-lrz" id="iKn-Hp-Is8"/>
+                        <outlet property="progressButton" destination="32Q-WJ-H0E" id="Ih2-AH-6YT"/>
+                        <outlet property="quizButton" destination="yha-7g-PdH" id="Gio-hr-c7h"/>
                     </connections>
                 </viewController>
                 <view opaque="NO" contentMode="scaleToFill" id="ddT-qn-BJV">
@@ -1044,7 +1098,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="81" id="MkZ-qv-yMy"/>
                             </constraints>
-                            <state key="normal" image="questionCloud"/>
+                            <state key="normal" image="addButton"/>
                             <connections>
                                 <segue destination="Z87-2R-iut" kind="show" id="wRk-7i-ULR"/>
                             </connections>
@@ -1070,11 +1124,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addButton" width="781.5" height="493"/>
         <image name="backButton" width="164.5" height="100"/>
         <image name="bottomCloudRow" width="771.5" height="249.5"/>
         <image name="homeCloud" width="206.5" height="124.5"/>
         <image name="loadingCloud" width="880.5" height="530.5"/>
-        <image name="questionCloud" width="188.5" height="114"/>
         <image name="thoughfulLogo" width="617" height="334"/>
         <image name="topCloudRow" width="801.5" height="139.5"/>
         <image name="whiteCloudLogo" width="552" height="333.5"/>

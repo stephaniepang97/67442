@@ -11,7 +11,7 @@ import Foundation
 class LoadingScreen {
 	// based on the seconds
 	public func calculateVisibleClouds(currentSeconds: Int) -> Int {
-		let parseSeconds = currentSeconds % 9
+		let parseSeconds = currentSeconds % 12
 		
 		if (parseSeconds <= 2) {
 			return 1
