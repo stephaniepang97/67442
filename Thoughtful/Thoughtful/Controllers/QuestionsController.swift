@@ -106,8 +106,7 @@ class QuestionsController: UIViewController, UITableViewDataSource, UITableViewD
     let indexPath = NSIndexPath(row: newRowIndex, section: 0)
     let indexPaths = [indexPath]
     tableView.insertRows(at: indexPaths as [IndexPath], with: .automatic)
-    
-    dismiss(animated: true, completion: nil)
+
   }
  
 

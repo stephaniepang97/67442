@@ -81,13 +81,11 @@ class QuizViewModel {
 							if let attachmentUrl = q["attachment"]["url"].string {
 								let imgUrl = URL(string: attachmentUrl)
 								Alamofire.request(imgUrl!).responseData { response in
-									print("response from image retrieval: \(String(describing: response))")
 									if let data = response.result.value {
 										question.attachment = UIImage(data: data)
 									}
 								}
 							}
-							print(question.question)
 							if let currentFamilyName = q["user"]["family_name"].string {
 								if (currentFamilyName == self.familyName) {
 									quizQuestions.append(question)

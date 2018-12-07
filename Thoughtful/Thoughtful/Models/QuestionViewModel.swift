@@ -10,6 +10,13 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+extension NSMutableData {
+  func appendString(_ string: String) {
+    let data = string.data(using: String.Encoding.utf8, allowLossyConversion: false)
+    append(data!)
+  }
+}
+
 // MARK: - QuestionViewModel for interacting with question API
 class QuestionViewModel {
   
@@ -23,12 +30,66 @@ class QuestionViewModel {
   var questions = [Question]()
   
   // MARK: - Saving & Loading Data
+  func createBody(parameters: [String: String],
+                  boundary: String,
+                  data: Data,
+                  mimeType: String,
+                  filename: String) -> Data {
+    let body = NSMutableData()
+    
+    let boundaryPrefix = "--\(boundary)\r\n"
+    
+    for (key, value) in parameters {
+      body.appendString(boundaryPrefix)
+      body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+      body.appendString("\(value)\r\n")
+    }
+    
+    body.appendString(boundaryPrefix)
+    body.appendString("Content-Disposition: form-data; name=\"attachment\"; filename=\"\(filename)\"\r\n")
+    body.appendString("Content-Type: \(mimeType)\r\n\r\n")
+    body.append(data)
+    body.appendString("\r\n")
+    body.appendString("--".appending(boundary.appending("--")))
+    
+    return body as Data
+  }
   
   func saveQuestion(question : Question) {
+    
+    var r  = URLRequest(url: URL(string: "https://thoughtfulapi.herokuapp.com/questions")!)
+    r.httpMethod = "POST"
+    let boundary = "Boundary-\(UUID().uuidString)"
+    r.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+    
+    let params = [
+      "question": question.question,
+      "answer": question.answer,
+      "created_by": String(question.created_by)
+      ] as [String : String]
+    
+    if let image = question.attachment {
+      r.httpBody = createBody(parameters: params,
+                              boundary: boundary,
+                              data: (UIImageJPEGRepresentation(image, 0.7))!,
+                              mimeType: "image/jpg",
+                              filename: "attachment.jpg")
+    }
+    
+    NSURLConnection.sendAsynchronousRequest(r, queue: OperationQueue.main) {(response, data, error) in
+      guard let data = data else { return }
+      print(String(data: data, encoding: .utf8)!)
+    }
+    
+    self.questions.append(question)
+  }
+  
+//  Not working with AlamoFire for some reason
+  func saveQuestionUsingAlamofire(question : Question) {
     let parameters = [
       "question": question.question,
       "answer": question.answer,
-      "created_by": "1"
+      "created_by": String(question.created_by)
       ] as [String : String]
     
     Alamofire.upload(

@@ -222,7 +222,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bottomCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="rSO-10-Bt6">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomCloudRow" translatesAutoresizingMaskIntoConstraints="NO" id="rSO-10-Bt6">
                             <rect key="frame" x="0.0" y="0.0" width="373" height="110"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uu5-l5-0HZ">
@@ -235,12 +235,14 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="eFK-00-9j5" firstAttribute="trailing" secondItem="uu5-l5-0HZ" secondAttribute="trailing" constant="266" id="5X6-kS-Apx"/>
-                        <constraint firstItem="rSO-10-Bt6" firstAttribute="height" secondItem="hGV-ko-AHa" secondAttribute="height" id="Q46-Wj-NfR"/>
-                        <constraint firstItem="uu5-l5-0HZ" firstAttribute="leading" secondItem="eFK-00-9j5" secondAttribute="leading" constant="26" id="YFX-yA-WF2"/>
-                        <constraint firstItem="rSO-10-Bt6" firstAttribute="width" secondItem="hGV-ko-AHa" secondAttribute="width" id="bGL-eo-zQz"/>
-                        <constraint firstItem="uu5-l5-0HZ" firstAttribute="top" secondItem="eFK-00-9j5" secondAttribute="top" constant="36" id="rfN-Uj-baz"/>
-                        <constraint firstAttribute="bottom" secondItem="uu5-l5-0HZ" secondAttribute="bottom" constant="20" symbolic="YES" id="uNA-fL-Uxm"/>
+                        <constraint firstItem="rSO-10-Bt6" firstAttribute="top" secondItem="eFK-00-9j5" secondAttribute="top" id="DPu-53-gVw"/>
+                        <constraint firstItem="rSO-10-Bt6" firstAttribute="bottom" secondItem="eFK-00-9j5" secondAttribute="bottom" id="FhO-61-XZf"/>
+                        <constraint firstItem="uu5-l5-0HZ" firstAttribute="top" secondItem="eFK-00-9j5" secondAttribute="top" constant="36" id="P15-we-R8e"/>
+                        <constraint firstItem="rSO-10-Bt6" firstAttribute="leading" secondItem="hGV-ko-AHa" secondAttribute="leading" id="TTn-Mc-bYa"/>
+                        <constraint firstAttribute="trailing" secondItem="rSO-10-Bt6" secondAttribute="trailing" id="at0-4F-gWa"/>
+                        <constraint firstItem="eFK-00-9j5" firstAttribute="trailing" secondItem="uu5-l5-0HZ" secondAttribute="trailing" constant="266" id="iab-Ny-7YL"/>
+                        <constraint firstAttribute="bottom" secondItem="uu5-l5-0HZ" secondAttribute="bottom" constant="20" symbolic="YES" id="uag-wS-20k"/>
+                        <constraint firstItem="uu5-l5-0HZ" firstAttribute="leading" secondItem="eFK-00-9j5" secondAttribute="leading" constant="26" id="xe3-Fa-Di4"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="eFK-00-9j5"/>
                 </view>
