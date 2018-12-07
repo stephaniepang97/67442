@@ -16,10 +16,12 @@ class SessionDetailViewController: UIViewController, UITableViewDataSource, UITa
   @IBOutlet weak var numCorrectLabel: UILabel!
   @IBOutlet weak var numIncorrectLabel: UILabel!
   @IBOutlet weak var numTotalLabel: UILabel!
+  @IBOutlet weak var nameLabel: UILabel!
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet var customTabBarView: UIView!
   
+  var userName: String!
   var detailItem: Session? {
     didSet {
       // Update the view.
@@ -53,6 +55,9 @@ class SessionDetailViewController: UIViewController, UITableViewDataSource, UITa
       }
       if let percentCorrect = self.percentCorrectLabel {
         percentCorrect.text = String(detail.percentCorrect) + "%"
+      }
+      if let name = self.nameLabel {
+        name.text = self.userName
       }
     }
   }

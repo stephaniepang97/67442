@@ -26,9 +26,10 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
 	@IBOutlet var barChartView: BarChartView!
 	@IBOutlet var customTabBarView: UIView!
 	@IBOutlet var userLabel: UILabel!
-    @IBOutlet var tableView: UITableView!
+  @IBOutlet var tableView: UITableView!
 
 	var analyticsObject : UserAnalyticsViewModel!
+  var userName : String!
 	var familyName : String!
 	var months: [String]!
 	var sessions : [Session] = []
@@ -44,6 +45,7 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
 			}
 			if let name = currentData["name"].string {
 				userLabel.text = name
+        self.userName = name
 			}
 			// reverse for bar chart ordering
 			self.sessions = sessions.reversed()
@@ -202,6 +204,7 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
         let n = self.sessions.count - 1
         let question = self.sessions[n-indexPath.row]
         sdvc.detailItem = question
+        sdvc.userName = self.userName
       }
     }
   }
