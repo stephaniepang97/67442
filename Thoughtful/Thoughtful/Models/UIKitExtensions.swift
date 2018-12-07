@@ -26,7 +26,7 @@ extension UIView {
 	
 	func slowIn() {
 		// Move our fade out code from earlier
-		UIView.animate(withDuration: 2.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+		UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
 			self.alpha = 1.0 // Instead of a specific instance of, say, birdTypeLabel, we simply set [thisInstance] (ie, self)'s alpha
 		}, completion: nil)
 	}
@@ -34,7 +34,7 @@ extension UIView {
 	
 	
 	func slowOut() {
-		UIView.animate(withDuration: 2.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+		UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
 			self.alpha = 0.0
 		}, completion: nil)
 	}

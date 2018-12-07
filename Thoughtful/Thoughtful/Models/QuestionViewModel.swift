@@ -123,9 +123,9 @@ class QuestionViewModel {
   func loadQuestions(tableViewController: QuestionsController) {
   
     let quizVM = QuizViewModel(familyName: self.familyName)
-    quizVM.fetchQuestions {
-      self.questions = quizVM.questions
-      tableViewController.tableView.reloadData()
-    }
+	quizVM.fetchQuestions(completion: {
+		self.questions = quizVM.questions
+		tableViewController.tableView.reloadData()
+	}, pictureCallback: {})
   }
 }

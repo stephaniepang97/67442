@@ -86,7 +86,27 @@ class QuizViewController: UIViewController {
 				imageView.image = picture
 				self.loaded = true
 			}
-			self.loaded = true
+		}
+	}
+	
+	private func setPicture() {
+		if let quiz: QuizViewModel = self.quizObject {
+			var question = Question()
+			if let tempQuestion = self.currentQuestion {
+				// skip if image is set
+				if let imageSet = tempQuestion.attachment {
+					self.loaded = true
+					imageView.image = imageSet
+					return
+				}
+				question = tempQuestion
+				
+				if let picture = question.attachment {
+					print("callback")
+					imageView.image = picture
+					self.loaded = true
+				}
+			}
 		}
 	}
 	
@@ -106,7 +126,8 @@ class QuizViewController: UIViewController {
 		// Do any additional setup after loading the view, typically from a nib.
 		quizObject?.refresh { [unowned self] in
 			DispatchQueue.main.async {
-				self.quizObject!.fetchQuestions(completion: self.configureView)
+				self.quizObject!.fetchQuestions(completion: self.configureView,pictureCallback:  self.setPicture )
+				
 			}
 		}
 	}

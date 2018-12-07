@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUr-Us-f50">
-                                <rect key="frame" x="119" y="545" width="137" height="35"/>
+                                <rect key="frame" x="119" y="484" width="137" height="35"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <state key="normal" title="register">
@@ -88,31 +88,43 @@
                                     <constraint firstAttribute="height" constant="67" id="LAI-Cm-8D3"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="connecting the dots through memories and people" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oei-lo-TCW">
+                                <rect key="frame" x="64" y="536" width="246" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="Fnv-LR-qTC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.8744860520155423" green="0.96511915148276817" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="seE-XO-7fN" firstAttribute="centerX" secondItem="cNG-vX-iWH" secondAttribute="centerX" id="8hd-ov-VY9"/>
                             <constraint firstItem="Skw-Y7-9je" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-35" id="95T-c0-9yw"/>
                             <constraint firstItem="cNG-vX-iWH" firstAttribute="top" secondItem="seE-XO-7fN" secondAttribute="bottom" constant="23" id="Coo-tE-Oxk"/>
-                            <constraint firstItem="cNG-vX-iWH" firstAttribute="trailing" secondItem="eUr-Us-f50" secondAttribute="trailing" id="FZy-NU-Ovs"/>
                             <constraint firstItem="cNG-vX-iWH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="119" id="KGg-1G-AsZ"/>
                             <constraint firstItem="rJ9-Nl-Hny" firstAttribute="centerX" secondItem="Pdh-h8-3pN" secondAttribute="centerX" id="Kvt-mr-t4d"/>
                             <constraint firstItem="Skw-Y7-9je" firstAttribute="centerX" secondItem="Pdh-h8-3pN" secondAttribute="centerX" id="L4y-18-OgX"/>
                             <constraint firstItem="Pdh-h8-3pN" firstAttribute="top" secondItem="Skw-Y7-9je" secondAttribute="bottom" constant="36" id="O0X-aC-wkW"/>
                             <constraint firstItem="o9h-eu-KIH" firstAttribute="leading" secondItem="rJ9-Nl-Hny" secondAttribute="leading" id="QDB-my-XCa"/>
+                            <constraint firstItem="oei-lo-TCW" firstAttribute="top" secondItem="eUr-Us-f50" secondAttribute="bottom" constant="17" id="QZc-C0-uQh"/>
                             <constraint firstItem="o9h-eu-KIH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="SYN-Kv-Rqj"/>
                             <constraint firstItem="rJ9-Nl-Hny" firstAttribute="top" secondItem="o9h-eu-KIH" secondAttribute="bottom" constant="8" symbolic="YES" id="Sbg-gz-pOa"/>
                             <constraint firstItem="w1Q-N9-Cvg" firstAttribute="top" secondItem="rJ9-Nl-Hny" secondAttribute="bottom" constant="8" symbolic="YES" id="VHi-gf-RRz"/>
                             <constraint firstItem="Pdh-h8-3pN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="79" id="Whb-Za-2wh"/>
+                            <constraint firstItem="eUr-Us-f50" firstAttribute="leading" secondItem="cNG-vX-iWH" secondAttribute="leading" id="XzU-3F-Oj6"/>
                             <constraint firstItem="Pdh-h8-3pN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Y4u-8x-rn0"/>
                             <constraint firstItem="o9h-eu-KIH" firstAttribute="top" secondItem="Pdh-h8-3pN" secondAttribute="bottom" constant="58" id="ZJq-wq-jN6"/>
                             <constraint firstItem="w1Q-N9-Cvg" firstAttribute="leading" secondItem="seE-XO-7fN" secondAttribute="leading" id="c7z-wB-4hF"/>
                             <constraint firstItem="Skw-Y7-9je" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hn5-nY-6ox"/>
-                            <constraint firstItem="cNG-vX-iWH" firstAttribute="leading" secondItem="eUr-Us-f50" secondAttribute="leading" id="iC7-Qf-hUd"/>
                             <constraint firstItem="rJ9-Nl-Hny" firstAttribute="trailing" secondItem="seE-XO-7fN" secondAttribute="trailing" id="iwP-X5-XBa"/>
+                            <constraint firstItem="eUr-Us-f50" firstAttribute="top" secondItem="cNG-vX-iWH" secondAttribute="bottom" constant="30" id="npk-rj-r1k"/>
+                            <constraint firstItem="eUr-Us-f50" firstAttribute="trailing" secondItem="cNG-vX-iWH" secondAttribute="trailing" id="p5u-il-Unh"/>
                             <constraint firstItem="rJ9-Nl-Hny" firstAttribute="leading" secondItem="w1Q-N9-Cvg" secondAttribute="leading" id="pL9-FJ-mey"/>
                             <constraint firstItem="seE-XO-7fN" firstAttribute="top" secondItem="w1Q-N9-Cvg" secondAttribute="bottom" constant="8" symbolic="YES" id="sdB-8m-khh"/>
-                            <constraint firstItem="eUr-Us-f50" firstAttribute="top" secondItem="cNG-vX-iWH" secondAttribute="bottom" constant="91" id="udD-z2-Pko"/>
+                            <constraint firstItem="oei-lo-TCW" firstAttribute="leading" secondItem="seE-XO-7fN" secondAttribute="leading" id="vXH-ka-zky"/>
+                            <constraint firstItem="oei-lo-TCW" firstAttribute="trailing" secondItem="seE-XO-7fN" secondAttribute="trailing" id="xjS-2u-Dgz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -1153,13 +1165,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addButton" width="1563" height="986"/>
-        <image name="backButton" width="329" height="200"/>
-        <image name="bottomCloudRow" width="1543" height="499"/>
-        <image name="homeCloud" width="413" height="249"/>
-        <image name="loadingCloud" width="1761" height="1061"/>
-        <image name="thoughfulLogo" width="1234" height="668"/>
-        <image name="topCloudRow" width="1603" height="279"/>
-        <image name="whiteCloudLogo" width="1104" height="667"/>
+        <image name="addButton" width="781.5" height="493"/>
+        <image name="backButton" width="164.5" height="100"/>
+        <image name="bottomCloudRow" width="771.5" height="249.5"/>
+        <image name="homeCloud" width="206.5" height="124.5"/>
+        <image name="loadingCloud" width="880.5" height="530.5"/>
+        <image name="thoughfulLogo" width="617" height="334"/>
+        <image name="topCloudRow" width="801.5" height="139.5"/>
+        <image name="whiteCloudLogo" width="552" height="333.5"/>
     </resources>
 </document>
