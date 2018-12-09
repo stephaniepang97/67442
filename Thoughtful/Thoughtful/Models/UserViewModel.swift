@@ -66,7 +66,6 @@ class UserViewModel {
 					}
 					
 				case .failure(let error):
-					failure()
 					self.recentStatus = false
 			}
 

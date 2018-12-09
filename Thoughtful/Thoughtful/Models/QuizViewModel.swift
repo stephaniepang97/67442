@@ -38,7 +38,7 @@ class QuizViewModel {
 		self.familyName = familyName
 	}
 	
-	func setQuestions(questions: [Question]) {
+	private func setQuestions(questions: [Question]) {
 		self.questions = questions
 	}
 	
@@ -53,8 +53,11 @@ class QuizViewModel {
 	}
 
 	
-	public func getRandomQuestion() -> Question {
+	public func getRandomQuestion() -> Question? {
 		let totalQuestions = self.questions.count
+		if (totalQuestions <= 0) {
+			return nil
+		}
 		let randomIndex = Int.random(in: 0..<totalQuestions)
 		return self.questions[randomIndex]
 	}

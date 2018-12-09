@@ -61,7 +61,7 @@ class QuizViewController: UIViewController {
 			}
 				
 			else {
-				question = quiz.getRandomQuestion()
+				question = quiz.getRandomQuestion()!
 				self.currentQuestion = question
 			}
 			
@@ -232,7 +232,7 @@ class QuizViewController: UIViewController {
 	@IBAction func newQuestion() {
 		
 
-		var question = quizObject!.getRandomQuestion()
+		var question = quizObject!.getRandomQuestion()!
 		self.currentQuestion = question
 		questionLabel.text = question.question
 		var random = Int.random(in: 0...10000) % 4

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thoughtful/Models/UserAnalyticsViewModel.swift"
-            timestampString = "566072137.856459"
+            timestampString = "566082984.633716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -26,12 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thoughtful/Models/UserAnalyticsViewModel.swift"
-            timestampString = "566072137.85656"
+            timestampString = "566082984.634058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
             endingLineNumber = "146"
             landmarkName = "isMoreRecentSession(session1:session2:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Thoughtful/Models/QuizViewModel.swift"
+            timestampString = "566084902.121744"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "fetchQuestions(completion:pictureCallback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
