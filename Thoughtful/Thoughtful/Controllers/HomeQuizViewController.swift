@@ -67,6 +67,11 @@ class HomeQuizViewController: UIViewController {
 		}
 	}
 	
+	func backToLogin() {
+		performSegue(withIdentifier: "ToLoginSegue", sender: nil)
+	}
+	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// start loading screen
@@ -75,11 +80,11 @@ class HomeQuizViewController: UIViewController {
 		userObject?.currentUserFamilyName = self.familyName
 		userObject?.currentUserName = self.userName
 		// Do any additional setup after loading the view, typically from a nib.
-		userObject?.refresh { [unowned self] in
+		userObject?.refresh(completion: { [unowned self] in
 			DispatchQueue.main.async {
-				self.userObject!.fetchUser(familyName: self.familyName, userName: self.userName, completion: self.configureView)
-			}
-		}
+				self.userObject!.fetchUser(familyName: self.familyName, userName: self.userName, completion: self.configureView, failure: self.backToLogin)
+			}}, failure: backToLogin)
+		
     
 		// Do any additional setup after loading the view.
 		customTabBarView.frame.size.width = self.view.frame.width

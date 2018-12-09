@@ -1173,7 +1173,7 @@
                             </constraints>
                             <state key="normal" image="backButton"/>
                             <connections>
-                                <segue destination="Ee7-nF-UA3" kind="unwind" unwindAction="unwindToLoginWithSegue:" id="bPh-as-Bnj"/>
+                                <segue destination="Ee7-nF-UA3" kind="unwind" identifier="ToLoginSegue" unwindAction="unwindToLoginWithSegue:" id="bPh-as-Bnj"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQr-p3-DjK">
@@ -1207,13 +1207,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addButton" width="1563" height="986"/>
-        <image name="backButton" width="329" height="200"/>
-        <image name="bottomCloudRow" width="1543" height="499"/>
-        <image name="homeCloud" width="413" height="249"/>
-        <image name="loadingCloud" width="1761" height="1061"/>
-        <image name="thoughfulLogo" width="1234" height="668"/>
-        <image name="topCloudRow" width="1603" height="279"/>
-        <image name="whiteCloudLogo" width="1104" height="667"/>
+        <image name="addButton" width="781.5" height="493"/>
+        <image name="backButton" width="164.5" height="100"/>
+        <image name="bottomCloudRow" width="771.5" height="249.5"/>
+        <image name="homeCloud" width="206.5" height="124.5"/>
+        <image name="loadingCloud" width="880.5" height="530.5"/>
+        <image name="thoughfulLogo" width="617" height="334"/>
+        <image name="topCloudRow" width="801.5" height="139.5"/>
+        <image name="whiteCloudLogo" width="552" height="333.5"/>
     </resources>
 </document>

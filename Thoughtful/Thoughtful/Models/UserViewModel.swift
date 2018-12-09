@@ -18,11 +18,11 @@ class UserViewModel {
 	var currentUserFamilyName = ""
 	var currentUserName = ""
 
-	func refresh(completion: @escaping () -> Void) {
-		fetchUser(familyName: self.currentUserFamilyName, userName: self.currentUserName, completion: completion)
+	func refresh(completion: @escaping () -> Void, failure: @escaping () -> Void) {
+		fetchUser(familyName: self.currentUserFamilyName, userName: self.currentUserName, completion: completion, failure: failure)
 	}
 	
-	func fetchUser(familyName: String, userName: String, completion: @escaping () -> Void) {
+	func fetchUser(familyName: String, userName: String, completion: @escaping () -> Void, failure: @escaping () -> Void) {
 		print("Fetching User (Family Name + First Name)..")
 		Alamofire.request("https://thoughtfulapi.herokuapp.com/families").responseJSON {
 			response in switch response.result {
@@ -62,10 +62,11 @@ class UserViewModel {
 						self.currentUser = safeUser
 						completion()
 					} else {
-						// failure()
+						 failure()
 					}
 					
 				case .failure(let error):
+					failure()
 					self.recentStatus = false
 			}
 
