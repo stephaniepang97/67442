@@ -14,19 +14,19 @@ class ThoughtfulTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-		let userModel = UserViewModel()
-		let badQuestionModel = QuestionViewModel(familyName: "")
-		let questionModel = QuestionViewModel(familyName: "Lam")
-		let loadingModel = LoadingScreen()
-    }
+	}
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
 	
-	
 	func testCompletion() -> Void {
+		XCTAssert(true)
+		return
+	}
+	
+	func testFail() -> Void {
 		XCTAssert(true)
 		return
 	}
@@ -53,7 +53,6 @@ class ThoughtfulTests: XCTestCase {
 		quizModel.fetchQuestions(completion: testCompletion, pictureCallback: testCompletion)
 		quizModel.refresh(completion: testCompletion)
 		
-		
 		let expect = expectation(description: "Quiz Alamofire")
 		
 		expect.expectedFulfillmentCount = 2
@@ -75,23 +74,38 @@ class ThoughtfulTests: XCTestCase {
 	// test SessionViewModel
 	func testSession() {
 		let sessionModel = SessionViewModel()
-//		sessionModel.createSession(startTime: <#T##Date#>, endTime: <#T##Date#>, patientId: <#T##Int#>, completion: <#T##(Int) -> Void#>)
-//		sessionModel.createSessionQuestion(patientSessionId: <#T##Int#>, questionId: <#T##Int#>, correct: <#T##Bool#>)
+		sessionModel.createSession(startTime: Date.init(), endTime: Date.init(), patientId: 1, completion: {x in
+			self.testCompletion()
+		})
+		sessionModel.createSession(startTime: Date.init(), endTime: Date.init(), patientId: 1, completion: {x in
+			self.testCompletion()
+		})
 	}
 	
 	// test UserViewModel
 	func testUser() {
 		let userModel = UserViewModel()
-
-//		userModel.createUser(firstName: <#T##String#>, lastName: <#T##String#>, familyName: <#T##String#>, role: <#T##String#>)
-//		userModel.fetchUser(familyName: <#T##String#>, userName: <#T##String#>, completion: <#T##() -> Void#>, failure: <#T##() -> Void#>)
-//		userModel.refresh(completion: <#T##() -> Void#>, failure: <#T##() -> Void#>)
-		
+		userModel.fetchUser(familyName: "Lam", userName: "Alec Lam", completion: testCompletion, failure: testFail)
+		userModel.fetchUser(familyName: "", userName: "Alec Lam", completion: testCompletion, failure: testFail)
+		userModel.fetchUser(familyName: "Lam", userName: "", completion: testCompletion, failure: testFail)
+		userModel.fetchUser(familyName: "", userName: "", completion: testCompletion, failure: testFail)
+		userModel.refresh(completion: testCompletion, failure: testFail)
 	}
 	
 	// test LoadingScreen
 	func testLoading() {
+		let loadingModel = LoadingScreen()
+		let a = loadingModel.calculateVisibleClouds(currentSeconds: 0)
+		let b = loadingModel.calculateVisibleClouds(currentSeconds: 2)
+		let c = loadingModel.calculateVisibleClouds(currentSeconds: 5)
+		let d = loadingModel.calculateVisibleClouds(currentSeconds: 8)
+		let e = loadingModel.calculateVisibleClouds(currentSeconds: 11)
 		
+		XCTAssertEqual(a, 1)
+		XCTAssertEqual(b, 1)
+		XCTAssertEqual(c, 2)
+		XCTAssertEqual(d, 3)
+		XCTAssertEqual(e, 0)
 	}
     
 }
