@@ -117,7 +117,7 @@ class ThoughtfulTests: XCTestCase {
                     attachment: UIImage(named: "thoughtfulLogo"))
   }
   
-  func test_numberOfRows() {
+  func testNumberOfRows() {
     let questions = [createQuestion(), createQuestion(), createQuestion()]
     let viewModel = QuestionViewModel(familyName: "Pang")
     viewModel.questions = questions
@@ -125,7 +125,7 @@ class ThoughtfulTests: XCTestCase {
     XCTAssertEqual(viewModel.numberOfRows(), 3)
   }
   
-  func test_addingQuestion() {
+  func testAddingQuestion() {
     let viewModel = QuestionViewModel(familyName: "Pang")
     viewModel.loadQuestions(tableViewController: nil)
     let size = viewModel.numberOfRows()
