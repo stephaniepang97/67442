@@ -45,7 +45,7 @@ class QuizViewController: UIViewController {
 	func configureView() -> Void {
 		// Update the user interface for the detail item.
 		if let quiz: QuizViewModel = self.quizObject {
-			var question = Question()
+      var question = Question()
 			if let tempQuestion = self.currentQuestion {
 				// skip if image is set
 				if let imageSet = tempQuestion.attachment {

@@ -20,7 +20,15 @@ class Question: NSObject {
   
   // Mark: - General
   
-  override init(){
+  init(id: Int, question: String, answer: String, created_by: Int, attachment: UIImage?) {
+    self.id = id
+    self.question = question
+    self.answer = answer
+    self.created_by = created_by
+    self.attachment = attachment
+  }
+  
+  override init() {
     super.init()
   }
   

@@ -29,8 +29,12 @@ class QuestionViewModel {
   // MARK: - General
   var questions = [Question]()
   
+  func numberOfRows() -> Int{
+    return questions.count
+  }
+  
   // MARK: - Saving & Loading Data
-  func createBody(parameters: [String: String],
+  private func createBody(parameters: [String: String],
                   boundary: String,
                   data: Data,
                   mimeType: String,
@@ -84,8 +88,9 @@ class QuestionViewModel {
     self.questions.append(question)
   }
   
-//  Not working with AlamoFire for some reason
-  func saveQuestionUsingAlamofire(question : Question) {
+// Not working with AlamoFire for some reason
+// Use function above to save question instead
+  private func saveQuestionUsingAlamofire(question : Question) {
     let parameters = [
       "question": question.question,
       "answer": question.answer,
@@ -120,12 +125,14 @@ class QuestionViewModel {
   }
   
 
-  func loadQuestions(tableViewController: QuestionsController) {
-  
+  // load all questions from API for family with self.familyName
+  func loadQuestions(tableViewController: QuestionsController?) {
     let quizVM = QuizViewModel(familyName: self.familyName)
-	quizVM.fetchQuestions(completion: {
-		self.questions = quizVM.questions
-		tableViewController.tableView.reloadData()
-	}, pictureCallback: {})
+    quizVM.fetchQuestions(completion: {
+      self.questions = quizVM.questions
+      if let tvc = tableViewController {
+        tvc.tableView.reloadData()
+      }
+    }, pictureCallback: {})
   }
 }

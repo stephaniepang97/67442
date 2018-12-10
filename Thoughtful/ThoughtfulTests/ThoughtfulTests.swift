@@ -32,7 +32,7 @@ class ThoughtfulTests: XCTestCase {
 	}
 	
 
-	// test UserAnalyticsViewModel
+  // MARK: test UserAnalyticsViewModel
 	func testAnalytics() {
 		let analyticsModel = UserAnalyticsViewModel()
 		// test data or patient
@@ -41,7 +41,7 @@ class ThoughtfulTests: XCTestCase {
 		analyticsModel.getPatientDataFromFamilyName(familyName: "", completion: testCompletion)
 	}
 	
-	// test QuizViewModel
+	// MARK: test QuizViewModel
 	func testQuiz() {
 	
 		let badQuizModel = QuizViewModel(familyName: "")
@@ -71,7 +71,7 @@ class ThoughtfulTests: XCTestCase {
 
 	}
 	
-	// test SessionViewModel
+	// MARK: test SessionViewModel
 	func testSession() {
 		let sessionModel = SessionViewModel()
 		sessionModel.createSession(startTime: Date.init(), endTime: Date.init(), patientId: 1, completion: {x in
@@ -82,7 +82,7 @@ class ThoughtfulTests: XCTestCase {
 		})
 	}
 	
-	// test UserViewModel
+	// MARK: test UserViewModel
 	func testUser() {
 		let userModel = UserViewModel()
 		userModel.fetchUser(familyName: "Lam", userName: "Alec Lam", completion: testCompletion, failure: testFail)
@@ -92,7 +92,7 @@ class ThoughtfulTests: XCTestCase {
 		userModel.refresh(completion: testCompletion, failure: testFail)
 	}
 	
-	// test LoadingScreen
+	// MARK: test LoadingScreen
 	func testLoading() {
 		let loadingModel = LoadingScreen()
 		let a = loadingModel.calculateVisibleClouds(currentSeconds: 0)
@@ -107,5 +107,34 @@ class ThoughtfulTests: XCTestCase {
 		XCTAssertEqual(d, 3)
 		XCTAssertEqual(e, 0)
 	}
+  
+  // MARK: test QuizViewModel
+  func createQuestion() -> Question {
+    return Question(id: 1,
+                    question: "Who is this?",
+                    answer: "Stephanie Pang",
+                    created_by: 1,
+                    attachment: UIImage(named: "thoughtfulLogo"))
+  }
+  
+  func test_numberOfRows() {
+    let questions = [createQuestion(), createQuestion(), createQuestion()]
+    let viewModel = QuestionViewModel(familyName: "Pang")
+    viewModel.questions = questions
+    
+    XCTAssertEqual(viewModel.numberOfRows(), 3)
+  }
+  
+  func test_addingQuestion() {
+    let viewModel = QuestionViewModel(familyName: "Pang")
+    viewModel.loadQuestions(tableViewController: nil)
+    let size = viewModel.numberOfRows()
+    
+    let question = createQuestion()
+    viewModel.saveQuestion(question: question)
+    viewModel.loadQuestions(tableViewController: nil)
+    XCTAssertEqual(viewModel.numberOfRows(), size+1)
+  }
+  
     
 }
